@@ -1,7 +1,6 @@
 export const get_cats_list = async () => {
   const raw_data = await fetch("./src/characters/allcats.json");
   const cats = await raw_data.json().then((cats) => cats.sampledata);
-  console.log(cats);
   const serve_list_cats = await cats.reduce((cats, current_cat) => {
     const new_list = { ...cats };
     const cat_key = current_cat.key.split("-")[0];
@@ -62,15 +61,65 @@ const get_cat_targets = (cat) => {
 };
 
 const get_cat_against = (cat) => {
-  if (cat.ability && cat.ability.includes("Against") != -1) {
+  if (cat.ability && cat.ability.includes("Against")) {
     const index = cat.ability.indexOf("Against");
     const raw_ability = cat.ability.slice(
       index + "Against".length,
       cat.ability.length,
     );
     const end_against = raw_ability.indexOf("u2");
-    const block_against = raw_ability.slice(1, end_against).split(" ");
+    const block_against = raw_ability
+      .slice(1, end_against)
+      .split(" ")
+      .map((trait) => trait.replace(",", ""));
     return block_against;
   }
   return [];
+};
+
+export const TRAIT_COLORS = {
+  white: {
+    bg: "#CFCFCF",
+    text: "#000000", // light bg → black text
+  },
+  red: {
+    bg: "#FF4B4B",
+    text: "#000000", // bright red → black text
+  },
+  floating: {
+    bg: "#00FF7F",
+    text: "#000000", // bright green → black text
+  },
+  black: {
+    bg: "#000000",
+    text: "#FFFFFF", // black bg → white text
+  },
+  metal: {
+    bg: "#A8A8A8",
+    text: "#000000", // light gray → black text
+  },
+  angel: {
+    bg: "#FFFFFF",
+    text: "#000000", // white bg → black text
+  },
+  alien: {
+    bg: "#00ddff",
+    text: "#000000", // bright blue → black text
+  },
+  zombie: {
+    bg: "#a102b6",
+    text: "#FFFFFF", // strong purple → white text
+  },
+  relic: {
+    bg: "#006400",
+    text: "#FFFFFF", // dark green → white text
+  },
+  aku: {
+    bg: "#00008B",
+    text: "#FFFFFF", // dark blue → white text
+  },
+  all: {
+    bg: "#f2ff00",
+    text: "#000000", // dark blue → white text
+  },
 };
