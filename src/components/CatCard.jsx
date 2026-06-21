@@ -8,19 +8,38 @@ export default function CatCard(params) {
     set_cat_lists(
       ["Normal", "Evolved", "True", "Ultra"]
         .filter((form) => cats[form])
-        .map((cat) => (
+        .map((form, index) => (
           <div
+            key={form}
             style={{
               display: "flex",
               flexDirection: "column",
               border: "black solid 2px",
               padding: "10px",
               borderRadius: "1rem",
-              minWidth: "10rem",
-              maxWidth: "20rem",
+              maxWidth: "30rem",
+              width: "90%",
             }}
           >
-            <h3>{cats[cat].name}</h3>
+            <h3>{cats[form].name}</h3>
+            {cats[form].target.map((target) => (
+              <div
+                key={target}
+                className="target"
+                style={{
+                  padding: "5px 10px",
+                  borderRadius: "1rem",
+                  border: "1px solid black",
+                }}
+              >
+                <img
+                  src={"./src/icons/" + target + ".png"}
+                  width={"35rem"}
+                  height={"35rem"}
+                />
+                {target}
+              </div>
+            ))}
             <hr style={{ width: "100%" }} />
             <div
               style={{
@@ -29,9 +48,10 @@ export default function CatCard(params) {
                 gap: "5px",
               }}
             >
-              {cats[cat].against.length > 0
-                ? cats[cat].against.map((against) => (
+              {cats[form].against.length > 0
+                ? cats[form].against.map((against) => (
                     <div
+                      key={against}
                       style={{
                         background: TRAIT_COLORS[against]
                           ? TRAIT_COLORS[against].bg
@@ -57,15 +77,22 @@ export default function CatCard(params) {
                 gap: "5px",
               }}
             >
-              {cats[cat].abilities.length > 0
-                ? cats[cat].abilities.map((ability) => (
+              {cats[form].abilities.length > 0
+                ? cats[form].abilities.map((ability) => (
                     <div
+                      key={ability}
+                      className="ability"
                       style={{
                         padding: "5px 10px",
                         borderRadius: "1rem",
                         border: "1px solid black",
                       }}
                     >
+                      <img
+                        src={"./src/icons/" + ability + ".png"}
+                        height={"35rem"}
+                        width={"35rem"}
+                      />
                       {ability}
                     </div>
                   ))

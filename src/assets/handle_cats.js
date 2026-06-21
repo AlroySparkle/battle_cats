@@ -7,11 +7,40 @@ export const get_cats_list = async () => {
     if (!cats[cat_key]) {
       new_list[cat_key] = {};
     }
-    new_list[cat_key][current_cat.form] = current_cat;
-    new_list[cat_key][current_cat.form].against = get_cat_against(current_cat);
-    new_list[cat_key][current_cat.form].target = get_cat_targets(current_cat);
-    new_list[cat_key][current_cat.form].abilities =
-      get_cat_abilities(current_cat);
+    const catAgainst = get_cat_against(current_cat);
+    const catTargets = get_cat_targets(current_cat);
+    const catAbilities = get_cat_abilities(current_cat)
+      .filter(
+        (ability) =>
+          !catAgainst.includes(ability) && ability != "Multi-hit attack",
+      )
+      .map((ability) => ability.replace("-", " "));
+
+    const identifiedCat = {
+      ...current_cat,
+      against: catAgainst,
+      target: catTargets,
+      abilities: catAbilities,
+    };
+    if (!new_list[cat_key]["data"]) {
+      new_list[cat_key]["data"] = {
+        against: [],
+        target: [],
+        abilities: [],
+      };
+    }
+    new_list[cat_key]["data"] = {
+      against: [
+        ...new Set([...new_list[cat_key]["data"].against, ...catAgainst]),
+      ],
+      target: [
+        ...new Set([...new_list[cat_key]["data"].target, ...catTargets]),
+      ],
+      abilities: [
+        ...new Set([...new_list[cat_key]["data"].abilities, ...catAbilities]),
+      ],
+    };
+    new_list[cat_key][current_cat.form] = identifiedCat;
     return new_list;
   }, {});
   return serve_list_cats;
@@ -27,6 +56,10 @@ const get_cat_abilities = (cat) => {
       block_index < raw_abilities.length;
       block_index++
     ) {
+      if (raw_abilities[block_index].toLowerCase().includes("attacks only")) {
+        abilities.push("Attacks Only");
+        continue;
+      }
       const splited_abilities = raw_abilities[block_index].split("b1");
       for (
         let ability_index = 1;

@@ -20,7 +20,7 @@ function App() {
         .sort((a, b) => {
           return parseInt(a) - parseInt(b);
         })
-        .map((cat) => <CatCard cats={cats[cat]} />),
+        .map((cat, index) => <CatCard key={cat} cats={cats[cat]} />),
     );
   }, [cats]);
 
