@@ -4,43 +4,41 @@ export default function CatCard(params) {
   const cats = params.cats;
   const [cats_list, set_cat_lists] = useState([]);
   useEffect(() => {
-    console.log(cats);
     set_cat_lists(
       ["Normal", "Evolved", "True", "Ultra"]
         .filter((form) => cats[form])
         .map((form, index) => (
           <div
             key={form}
+            className="catCard"
             style={{
               display: "flex",
               flexDirection: "column",
-              border: "black solid 2px",
-              padding: "10px",
+              border: "silver solid 1px",
+              padding: "5px",
               borderRadius: "1rem",
               maxWidth: "30rem",
-              width: "90%",
+              width: "95%",
             }}
           >
-            <h3>{cats[form].name}</h3>
-            {cats[form].target.map((target) => (
-              <div
-                key={target}
-                className="target"
-                style={{
-                  padding: "5px 10px",
-                  borderRadius: "1rem",
-                  border: "1px solid black",
-                }}
-              >
+            <h3 style={{ fontSize: "1rem", fontFamily: "sans-serif" }}>
+              {cats[form].name} <br />{" "}
+              <div style={{ fontSize: ".8rem" }}>{cats[form].rarity}</div>
+            </h3>
+
+            <div style={{ display: "flex", gap: "10px" }}>
+              {cats[form].target.map((target) => (
                 <img
+                  key={target}
+                  alt={target}
+                  title={target}
                   src={"./src/icons/" + target + ".png"}
-                  width={"35rem"}
-                  height={"35rem"}
+                  width={"40rem"}
+                  height={"40rem"}
                 />
-                {target}
-              </div>
-            ))}
-            <hr style={{ width: "100%" }} />
+              ))}
+            </div>
+            <hr style={{ width: "100%", background: "silver" }} />
             <div
               style={{
                 display: "flex",
@@ -54,10 +52,10 @@ export default function CatCard(params) {
                       key={against}
                       style={{
                         background: TRAIT_COLORS[against]
-                          ? TRAIT_COLORS[against].bg
+                          ? TRAIT_COLORS[against].background
                           : "white",
                         color: TRAIT_COLORS[against]
-                          ? TRAIT_COLORS[against].text
+                          ? TRAIT_COLORS[against].color
                           : "black",
                         padding: "5px 10px",
                         borderRadius: "1rem",
@@ -74,27 +72,19 @@ export default function CatCard(params) {
               style={{
                 display: "flex",
                 flexWrap: "wrap",
-                gap: "5px",
+                gap: "10px",
               }}
             >
               {cats[form].abilities.length > 0
                 ? cats[form].abilities.map((ability) => (
-                    <div
+                    <img
                       key={ability}
-                      className="ability"
-                      style={{
-                        padding: "5px 10px",
-                        borderRadius: "1rem",
-                        border: "1px solid black",
-                      }}
-                    >
-                      <img
-                        src={"./src/icons/" + ability + ".png"}
-                        height={"35rem"}
-                        width={"35rem"}
-                      />
-                      {ability}
-                    </div>
+                      alt={ability}
+                      title={ability}
+                      src={"./src/icons/" + ability + ".png"}
+                      height={"40rem"}
+                      width={"40rem"}
+                    />
                   ))
                 : "none"}
             </div>
@@ -106,9 +96,9 @@ export default function CatCard(params) {
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: "25% 25% 25% 25%",
+        gridTemplateColumns: "repeat(4, 1fr)",
         gap: "1rem",
-        justifyContent: "center",
+        justifyItems: "center",
       }}
     >
       {cats_list}

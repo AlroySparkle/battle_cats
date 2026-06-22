@@ -1,3 +1,13 @@
+export const get_cats_filter_elements = async (cats, key) => {
+  const filter_list = [
+    ...new Set(Object.values(cats).map((cat) => cat["data"][key])),
+  ];
+  if (["array", "object"].includes(typeof filter_list[0])) {
+    return [...new Set(filter_list.flat())];
+  }
+  return filter_list;
+};
+
 export const get_cats_list = async () => {
   const raw_data = await fetch("./src/characters/allcats.json");
   const cats = await raw_data.json().then((cats) => cats.sampledata);
@@ -10,11 +20,8 @@ export const get_cats_list = async () => {
     const catAgainst = get_cat_against(current_cat);
     const catTargets = get_cat_targets(current_cat);
     const catAbilities = get_cat_abilities(current_cat)
-      .filter(
-        (ability) =>
-          !catAgainst.includes(ability) && ability != "Multi-hit attack",
-      )
-      .map((ability) => ability.replace("-", " "));
+      .filter((ability) => !catAgainst.includes(ability))
+      .map((ability) => ability.replace("-", " ").toLocaleLowerCase());
 
     const identifiedCat = {
       ...current_cat,
@@ -39,6 +46,7 @@ export const get_cats_list = async () => {
       abilities: [
         ...new Set([...new_list[cat_key]["data"].abilities, ...catAbilities]),
       ],
+      rarity: current_cat.rarity,
     };
     new_list[cat_key][current_cat.form] = identifiedCat;
     return new_list;
@@ -112,47 +120,60 @@ const get_cat_against = (cat) => {
 
 export const TRAIT_COLORS = {
   white: {
-    bg: "#CFCFCF",
-    text: "#000000", // light bg → black text
+    background: "linear-gradient(to bottom, #FFFFFF, #F5F5F5)",
+    hover: "linear-gradient(to bottom, #FFFFFF, #E8E8E8)",
+    color: "#000000",
   },
   red: {
-    bg: "#FF4B4B",
-    text: "#000000", // bright red → black text
+    background: "linear-gradient(to bottom, #FF4B4B, #FF7A7A)",
+    hover: "linear-gradient(to bottom, #FF5F5F, #FF8A8A)",
+    color: "#000000",
   },
   floating: {
-    bg: "#00FF7F",
-    text: "#000000", // bright green → black text
+    background: "linear-gradient(to bottom, #00FF7F, #66FFB2)",
+    hover: "linear-gradient(to bottom, #33FF99, #80FFC2)",
+    color: "#000000",
   },
   black: {
-    bg: "#000000",
-    text: "#FFFFFF", // black bg → white text
+    background: "linear-gradient(to bottom, #000000, #444444)",
+    hover: "linear-gradient(to bottom, #111111, #555555)",
+    color: "#FFFFFF",
   },
   metal: {
-    bg: "#A8A8A8",
-    text: "#000000", // light gray → black text
+    background: "linear-gradient(to bottom, #A8A8A8, #C8C8C8)",
+    hover: "linear-gradient(to bottom, #B5B5B5, #D5D5D5)",
+    color: "#000000",
   },
   angel: {
-    bg: "#FFFFFF",
-    text: "#000000", // white bg → black text
+    background:
+      "linear-gradient(to bottom, #FFFDF5 10%, #FFE766 15%, #FFFDF5 20%, #FFFDF5)",
+    hover:
+      "linear-gradient(to bottom, #FFFFFF 10%, #FFEFA0 15%, #FFFFFF 20%, #FFFFFF)",
+    color: "#000000",
   },
   alien: {
-    bg: "#00ddff",
-    text: "#000000", // bright blue → black text
+    background: "linear-gradient(to bottom, #00DDFF, #66ECFF)",
+    hover: "linear-gradient(to bottom, #22E6FF, #80F2FF)",
+    color: "#000000",
   },
   zombie: {
-    bg: "#a102b6",
-    text: "#FFFFFF", // strong purple → white text
+    background: "linear-gradient(to bottom, #A102B6, #C44AD1)",
+    hover: "linear-gradient(to bottom, #B312C6, #D05CDE)",
+    color: "#FFFFFF",
   },
   relic: {
-    bg: "#006400",
-    text: "#FFFFFF", // dark green → white text
+    background: "linear-gradient(to bottom, #006400, #228B22)",
+    hover: "linear-gradient(to bottom, #007000, #2FAF2F)",
+    color: "#FFFFFF",
   },
   aku: {
-    bg: "#00008B",
-    text: "#FFFFFF", // dark blue → white text
+    background: "linear-gradient(to bottom, #00008B, #3333A3)",
+    hover: "linear-gradient(to bottom, #000099, #4444B5)",
+    color: "#FFFFFF",
   },
   all: {
-    bg: "#f2ff00",
-    text: "#000000", // dark blue → white text
+    background: "linear-gradient(to bottom, #F2FF00, #FAFF66)",
+    hover: "linear-gradient(to bottom, #F7FF33, #FDFF80)",
+    color: "#000000",
   },
 };
