@@ -3,9 +3,9 @@ export const get_cats_filter_elements = async (cats, key) => {
     ...new Set(Object.values(cats).map((cat) => cat["data"][key])),
   ];
   if (["array", "object"].includes(typeof filter_list[0])) {
-    return [...new Set(filter_list.flat())];
+    return [...new Set(filter_list.flat())].sort((a, b) => a.localeCompare(b));
   }
-  return filter_list;
+  return filter_list.sort((a, b) => a.localeCompare(b));
 };
 
 export const get_cats_list = async () => {

@@ -88,6 +88,13 @@ function App() {
 
   const subHeader = { fontSize: "1.54rem", fontWeight: "bold" };
 
+  const grid_design = {
+    display: "grid",
+    gridTemplateColumns: "repeat(40, 1fr)",
+    gap: "5px",
+    justifyItems: "center",
+  };
+
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
       <div
@@ -149,7 +156,7 @@ function App() {
 
         <br />
         <div style={subHeader}>Target</div>
-        <div style={{ display: "flex", flexDirection: "row", gap: "10px" }}>
+        <div style={grid_design}>
           {targets.map((target) => (
             <img
               key={target}
@@ -179,14 +186,7 @@ function App() {
 
         <br />
         <div style={subHeader}>Abilities</div>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(30, 1fr)",
-            gap: "10px",
-            justifyItems: "center",
-          }}
-        >
+        <div style={grid_design}>
           {abilities.map((ability) => (
             <img
               style={{ cursor: "pointer" }}
