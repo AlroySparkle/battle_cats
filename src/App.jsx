@@ -1,26 +1,27 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import {
-  get_cats_filter_elements,
-  get_cats_list,
-  TRAIT_COLORS,
-} from "./assets/handle_cats";
+import { get_cats_filter_elements, get_cats_list } from "./assets/handle_cats";
 import CatCard from "./components/CatCard";
 
 function App() {
   const [cats, set_cats] = useState({});
+
+  const [searched_cat, set_search_cat] = useState("");
 
   const [rarity, set_rarity] = useState([]);
   const [selected_rarities, update_selected_rarities] = useState([]);
 
   const [abilities, set_abilities] = useState([]);
   const [selected_abilities, update_selected_abilities] = useState([]);
-
-  const [targets, set_targets] = useState([]);
-  const [selected_targets, update_selected_targets] = useState([]);
+  const [and_or_abilities, set_and_or_abilities] = useState("OR");
 
   const [against, set_against] = useState([]);
   const [selected_against, update_selected_against] = useState([]);
+  const [and_or_against, set_and_or_against] = useState("OR");
+
+  const [targets, set_targets] = useState([]);
+  const [selected_targets, update_selected_targets] = useState([]);
+  const [and_or_targets, set_and_or_targets] = useState("OR");
 
   const [filtered_cats, set_filtered_cats] = useState([]);
   useEffect(() => {
@@ -44,56 +45,146 @@ function App() {
     initiate_list();
   }, []);
 
-  const filter_list = (cat_data, search) => {
-    if (typeof search == "string") {
+  const filter_list = (cat_data, search, search_mode = "OR") => {
+    console.log("MODE:", search_mode);
+
+    if (typeof search === "string") {
       return cat_data.includes(search);
-    } else {
-      return search.filter((data) => cat_data.includes(data)).length > 0;
     }
+
+    if (search_mode === "AND") {
+      return search.every((data) => cat_data.includes(data));
+    }
+
+    return search.some((data) => cat_data.includes(data));
   };
 
   useEffect(() => {
-    set_filtered_cats(
-      Object.keys(cats)
-        .sort((a, b) => {
-          return parseInt(a) - parseInt(b);
-        })
-        .filter((cat) => {
-          const rarity_condition =
-            filter_list(selected_rarities, cats[cat].data.rarity) ||
-            selected_rarities.length == 0;
+    const build_cats = () => {
+      set_filtered_cats(
+        Object.keys(cats)
+          .sort((a, b) => {
+            return parseInt(a) - parseInt(b);
+          })
+          .filter((cat) => {
+            const name_condition =
+              cats[cat].data.names.filter((cat) =>
+                cat.toLowerCase().includes(searched_cat.toLocaleLowerCase()),
+              ).length >= 1;
+            const rarity_condition =
+              filter_list(selected_rarities, cats[cat].data.rarity) ||
+              selected_rarities.length == 0;
 
-          const ability_condition =
-            selected_abilities == 0 ||
-            filter_list(cats[cat].data.abilities, selected_abilities);
+            const ability_condition =
+              selected_abilities.length == 0 ||
+              (and_or_abilities == "AND"
+                ? Object.keys(cats[cat])
+                    .filter((form) => form != "data")
+                    .filter((form) =>
+                      filter_list(
+                        cats[cat][form].abilities,
+                        selected_abilities,
+                        and_or_abilities,
+                      ),
+                    ).length > 0
+                : filter_list(
+                    cats[cat].data.abilities,
+                    selected_abilities,
+                    and_or_abilities,
+                  ));
 
-          const against_condition =
-            selected_against.length == 0 ||
-            filter_list(cats[cat].data.against, selected_against) ||
-            cats[cat].data.against.includes("all");
-          const target_condition =
-            selected_targets.length == 0 ||
-            filter_list(cats[cat].data.target, selected_targets);
-          return (
-            rarity_condition &&
-            against_condition &&
-            ability_condition &&
-            target_condition
-          );
-        })
-        .map((cat, index) => (
-          <CatCard key={cat} cats={cats[cat]} cat_index={cat} />
-        )),
-    );
+            const against_condition =
+              selected_against.length === 0 ||
+              (and_or_against === "AND"
+                ? Object.keys(cats[cat])
+                    .filter((form) => form !== "data")
+                    .some((form) =>
+                      filter_list(
+                        cats[cat][form].against,
+                        selected_against,
+                        and_or_against,
+                      ),
+                    )
+                : filter_list(
+                    cats[cat].data.against,
+                    selected_against,
+                    and_or_against,
+                  ) || cats[cat].data.against.includes("all"));
+
+            const target_condition =
+              selected_targets.length === 0 ||
+              (and_or_targets === "AND"
+                ? Object.keys(cats[cat])
+                    .filter((form) => form !== "data")
+                    .some((form) =>
+                      filter_list(
+                        cats[cat][form].target,
+                        selected_targets,
+                        and_or_targets,
+                      ),
+                    )
+                : filter_list(
+                    cats[cat].data.target,
+                    selected_targets,
+                    and_or_targets,
+                  ));
+
+            return (
+              rarity_condition &&
+              against_condition &&
+              ability_condition &&
+              target_condition &&
+              name_condition
+            );
+          })
+          .map((cat) => <CatCard key={cat} cats={cats[cat]} cat_index={cat} />),
+      );
+    };
+    build_cats();
   }, [
     cats,
     selected_rarities,
     selected_abilities,
     selected_against,
     selected_targets,
+    searched_cat,
+    and_or_abilities,
+    and_or_against,
+    and_or_targets,
   ]);
 
   const subHeader = { fontSize: "1.54rem", fontWeight: "bold" };
+
+  const set_and_or = (value, setter) => {
+    const button_stripper = {
+      padding: "5px",
+      paddingBottom: "0px",
+      height: "fit-content",
+      border: "1px solid transparent",
+    };
+    return (
+      <div style={{ display: "flex" }}>
+        <div
+          style={button_stripper}
+          onClick={() => {
+            setter("OR");
+          }}
+          className={`button ${value == "OR" ? "selected" : "not-selected"}`}
+        >
+          OR
+        </div>
+        <div
+          style={button_stripper}
+          onClick={() => {
+            setter("AND");
+          }}
+          className={`button ${value == "AND" ? "selected" : "not-selected"}`}
+        >
+          AND
+        </div>
+      </div>
+    );
+  };
 
   const grid_design = {
     display: "grid",
@@ -129,6 +220,22 @@ function App() {
           border: "1px solid silver",
         }}
       >
+        <div style={subHeader}>Name</div>
+        <input
+          value={searched_cat}
+          style={{
+            width: "20rem",
+            height: "1.5rem",
+            fontSize: "1.5rem",
+            borderRadius: "10px",
+          }}
+          onChange={(e) => {
+            set_search_cat(e.target.value);
+          }}
+        />
+
+        <hr style={{ width: "100%", background: "silver" }} />
+
         <div style={subHeader}>Rarity</div>
         <div style={{ display: "flex", flexDirection: "row", gap: "10px" }}>
           {rarity.map((rarity) => (
@@ -151,9 +258,13 @@ function App() {
             </button>
           ))}
         </div>
-        <br />
-        <div style={subHeader}>Against</div>
 
+        <hr style={{ width: "100%", background: "silver" }} />
+
+        <div style={{ display: "flex", gap: "10px" }}>
+          <div style={subHeader}>Against</div>
+          {set_and_or(and_or_against, set_and_or_against)}
+        </div>
         <div style={{ display: "flex", flexDirection: "row", gap: "10px" }}>
           {against.map((against) => (
             <button
@@ -176,8 +287,12 @@ function App() {
           ))}
         </div>
 
-        <br />
-        <div style={subHeader}>Target</div>
+        <hr style={{ width: "100%", background: "silver" }} />
+
+        <div style={{ display: "flex", gap: "10px" }}>
+          <div style={subHeader}>Target</div>
+          {set_and_or(and_or_targets, set_and_or_targets)}
+        </div>
         <div style={grid_design}>
           {targets.map((target) => (
             <img
@@ -206,8 +321,12 @@ function App() {
           ))}
         </div>
 
-        <br />
-        <div style={subHeader}>Abilities</div>
+        <hr style={{ width: "100%", background: "silver" }} />
+
+        <div style={{ display: "flex", gap: "10px" }}>
+          <div style={subHeader}>Abilities</div>
+          {set_and_or(and_or_abilities, set_and_or_abilities)}
+        </div>
         <div style={grid_design}>
           {abilities.map((ability) => (
             <img

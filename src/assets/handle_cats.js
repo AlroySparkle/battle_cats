@@ -93,6 +93,7 @@ export const get_cats_list = async () => {
         against: [],
         target: [],
         abilities: [],
+        names: [],
       };
     }
     new_list[cat_key]["data"] = {
@@ -104,6 +105,9 @@ export const get_cats_list = async () => {
       ],
       abilities: [
         ...new Set([...new_list[cat_key]["data"].abilities, ...catAbilities]),
+      ],
+      names: [
+        ...new Set([...new_list[cat_key]["data"].names, current_cat.name]),
       ],
       rarity: current_cat.rarity,
     };

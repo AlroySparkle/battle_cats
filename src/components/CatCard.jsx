@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { catStat, get_type, TRAIT_COLORS } from "../assets/handle_cats";
 
 /**
