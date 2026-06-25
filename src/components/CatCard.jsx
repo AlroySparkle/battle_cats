@@ -1,27 +1,83 @@
-import { useEffect, useState } from "react";
-import { TRAIT_COLORS } from "../assets/handle_cats";
+import { useEffect, useMemo, useState } from "react";
+import { catStat, get_type, TRAIT_COLORS } from "../assets/handle_cats";
+
+/**
+ * @typedef {"BAHAMUT" | "CRAZED" | "BASIC" | "RARE" | "SUPER"} CURVE_TYPES
+ */
+
+/**
+ * @param {CURVE_TYPES} cat_scale_category
+ */
 
 function Card(params) {
-  function catStat(base, level, rarity = "uber") {
-    let milestone1 = 60;
-    if (rarity === "normal") milestone1 = 20;
-
-    let multiplier = 1.0;
-
-    for (let i = 2; i <= level; i++) {
-      if (i <= milestone1) {
-        multiplier += 0.2;
-      } else if (i <= 80) {
-        multiplier += 0.1;
-      } else {
-        multiplier += 0.05;
-      }
-    }
-    return Math.round(base * multiplier) + base;
-  }
-
   const cat = params.cat;
   const [level, setLevel] = useState(30);
+
+  const memoStats = useMemo(() => {
+    const damage = Math.round(catStat(cat.damage, level, get_type(cat)));
+    const health = Math.ceil(catStat(cat.health, level, get_type(cat)));
+    const dps = Math.ceil(
+      damage / (parseFloat(cat.anim) + parseFloat(cat.tba)),
+    );
+
+    return { damage, health, dps };
+  }, [cat, level]);
+
+  const stats = useMemo(
+    () => [
+      {
+        icon: "./src/icons/Sword.svg",
+        title: "Damage",
+        value: memoStats.damage,
+      },
+      {
+        icon: "./src/icons/Zap.svg",
+        title: "DPS",
+        value: memoStats.dps,
+      },
+      {
+        icon: "./src/icons/Heart (1).svg",
+        title: "Health",
+        value: memoStats.health,
+      },
+      {
+        icon: "./src/icons/Target Light.svg",
+        title: "Range",
+        value: cat.range,
+      },
+      {
+        icon: "./src/icons/Film Reel Light.svg",
+        title: "Animation Time",
+        value: cat.anim,
+      },
+      {
+        icon: "./src/icons/Hourglass Empty.svg",
+        title: "Time Between Attacks",
+        value: cat.tba,
+      },
+      {
+        icon: "./src/icons/coin.svg",
+        title: "Cost",
+        value: cat.cost,
+      },
+      {
+        icon: "./src/icons/Clock Hour.svg",
+        title: "Spawn Time",
+        value: cat.spawn,
+      },
+      {
+        icon: "./src/icons/Boot Fill.svg",
+        title: "Speed",
+        value: cat.speed,
+      },
+      {
+        icon: "./src/icons/Arrow Forward.svg",
+        title: "Knockback",
+        value: cat.kb,
+      },
+    ],
+    [memoStats, cat],
+  );
 
   return (
     <div
@@ -39,7 +95,27 @@ function Card(params) {
       <h3 style={{ fontSize: "1rem", fontFamily: "sans-serif" }}>
         {cat.name} <br /> <div style={{ fontSize: ".8rem" }}>{cat.rarity}</div>
       </h3>
-      {Math.round(catStat(cat.damage, level))}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(5, 1fr)",
+          gap: "10px",
+        }}
+      >
+        {stats.map((catStat, index) => (
+          <div
+            key={index}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <img src={catStat.icon} title={catStat.title} />
+            <div>{catStat.value}</div>
+          </div>
+        ))}
+      </div>
       <input
         value={level}
         type="number"

@@ -27,15 +27,20 @@ function App() {
     const initiate_list = async () => {
       const cats_list = await get_cats_list();
       set_cats(cats_list);
-      set_rarity(await get_cats_filter_elements(cats_list, "rarity"));
-      set_abilities(await get_cats_filter_elements(cats_list, "abilities"));
-      set_targets(await get_cats_filter_elements(cats_list, "target"));
-      const against_types = await get_cats_filter_elements(
-        cats_list,
-        "against",
-      );
-      set_against(against_types.filter((against) => against != "all"));
+
+      const [rarity, abilities, targets, against] = await Promise.all([
+        get_cats_filter_elements(cats_list, "rarity"),
+        get_cats_filter_elements(cats_list, "abilities"),
+        get_cats_filter_elements(cats_list, "target"),
+        get_cats_filter_elements(cats_list, "against"),
+      ]);
+
+      set_rarity(rarity);
+      set_abilities(abilities);
+      set_targets(targets);
+      set_against(against.filter((a) => a !== "all"));
     };
+
     initiate_list();
   }, []);
 
@@ -94,6 +99,21 @@ function App() {
     gap: "5px",
     justifyItems: "center",
   };
+
+  const [visibleCount, setVisibleCount] = useState(20);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (
+        window.innerHeight + window.scrollY >=
+        document.body.offsetHeight - 200
+      ) {
+        setVisibleCount((prev) => prev + 20);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
@@ -218,7 +238,7 @@ function App() {
           ))}
         </div>
       </div>
-      {filtered_cats}
+      {filtered_cats.slice(0, visibleCount)}
     </div>
   );
 }
