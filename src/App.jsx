@@ -81,7 +81,9 @@ function App() {
             target_condition
           );
         })
-        .map((cat, index) => <CatCard key={cat} cats={cats[cat]} />),
+        .map((cat, index) => (
+          <CatCard key={cat} cats={cats[cat]} cat_index={cat} />
+        )),
     );
   }, [
     cats,

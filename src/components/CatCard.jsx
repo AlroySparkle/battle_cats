@@ -11,8 +11,7 @@ import { catStat, get_type, TRAIT_COLORS } from "../assets/handle_cats";
 
 function Card(params) {
   const cat = params.cat;
-  const [level, setLevel] = useState(30);
-
+  const level = params.level;
   const memoStats = useMemo(() => {
     const damage = Math.round(catStat(cat.damage, level, get_type(cat)));
     const health = Math.ceil(catStat(cat.health, level, get_type(cat)));
@@ -90,11 +89,29 @@ function Card(params) {
         borderRadius: "1rem",
         maxWidth: "30rem",
         width: "95%",
+        background: "linear-gradient(to bottom,#e1e1e1,white,#e1e1e1)",
       }}
     >
-      <h3 style={{ fontSize: "1rem", fontFamily: "sans-serif" }}>
-        {cat.name} <br /> <div style={{ fontSize: ".8rem" }}>{cat.rarity}</div>
-      </h3>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <h3 style={{ fontSize: "1rem", fontFamily: "sans-serif" }}>
+          {cat.name}
+        </h3>
+        <h3 style={{ fontSize: "1rem", fontFamily: "sans-serif" }}>
+          {params.cat_index}-{params.form_index}
+        </h3>
+      </div>
+      <hr style={{ width: "100%", background: "silver" }} />
+      <div
+        style={{
+          fontSize: ".9rem",
+          fontFamily: "sans-serif",
+          textAlign: "center",
+          fontWeight: "bold",
+          marginBottom: "5px",
+        }}
+      >
+        stats
+      </div>
       <div
         style={{
           display: "grid",
@@ -116,14 +133,18 @@ function Card(params) {
           </div>
         ))}
       </div>
-      <input
-        value={level}
-        type="number"
-        min={1}
-        onChange={(e) => {
-          setLevel(e.target.value);
+      <hr style={{ width: "100%", background: "silver" }} />
+      <div
+        style={{
+          fontSize: ".9rem",
+          fontFamily: "sans-serif",
+          textAlign: "center",
+          fontWeight: "bold",
+          marginBottom: "5px",
         }}
-      />
+      >
+        attack type
+      </div>
       <div style={{ display: "flex", gap: "10px" }}>
         {cat.target.map((target) => (
           <img
@@ -137,6 +158,17 @@ function Card(params) {
         ))}
       </div>
       <hr style={{ width: "100%", background: "silver" }} />
+      <div
+        style={{
+          fontSize: ".9rem",
+          fontFamily: "sans-serif",
+          textAlign: "center",
+          fontWeight: "bold",
+          marginBottom: "5px",
+        }}
+      >
+        Against
+      </div>
       <div
         style={{
           display: "flex",
@@ -168,6 +200,17 @@ function Card(params) {
       <hr style={{ width: "100%" }} />
       <div
         style={{
+          fontSize: ".9rem",
+          fontFamily: "sans-serif",
+          textAlign: "center",
+          fontWeight: "bold",
+          marginBottom: "5px",
+        }}
+      >
+        Abilities
+      </div>
+      <div
+        style={{
           display: "flex",
           flexWrap: "wrap",
           gap: "10px",
@@ -190,26 +233,53 @@ function Card(params) {
   );
 }
 
-export default function CatCard(params) {
-  const cats = params.cats;
-  const [cats_list, set_cat_lists] = useState([]);
-  useEffect(() => {
-    set_cat_lists(
-      ["Normal", "Evolved", "True", "Ultra"]
-        .filter((form) => cats[form])
-        .map((form, index) => <Card cat={cats[form]} key={form} />),
-    );
-  }, []);
+export default function CatCard({ cats, cat_index }) {
+  const [level, setLevel] = useState(30);
+
+  const forms = ["Normal", "Evolved", "True", "Ultra"].filter(
+    (form) => cats[form],
+  );
+
   return (
     <div
       style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(4, 1fr)",
-        gap: "1rem",
-        justifyItems: "center",
+        borderRadius: "1rem",
+        border: "1px solid silver",
+        padding: "10px",
+        background: "linear-gradient(45deg,#ffbf00,#ffdc73)",
       }}
     >
-      {cats_list}
+      <div style={{ marginBottom: "10px", display: "flex" }}>
+        {cats.data.rarity}&nbsp;
+      </div>
+      <div style={{ marginBottom: "10px", display: "flex" }}>
+        <div style={{ fontWeight: "bold" }}>Level:&nbsp;</div>
+        <input
+          value={level}
+          type="number"
+          min={1}
+          onChange={(e) => setLevel(Number(e.target.value))}
+          style={{ width: "5ch" }}
+        />
+      </div>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(4, 1fr)",
+          gap: "1rem",
+          justifyItems: "center",
+        }}
+      >
+        {forms.map((form, unit_index) => (
+          <Card
+            key={form}
+            cat={cats[form]}
+            level={level}
+            cat_index={cat_index}
+            form_index={unit_index + 1}
+          />
+        ))}
+      </div>
     </div>
   );
 }
