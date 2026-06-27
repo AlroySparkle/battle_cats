@@ -87,6 +87,7 @@ export const get_cats_list = async () => {
       against: catAgainst,
       target: catTargets,
       abilities: catAbilities,
+      general_info: current_cat.ability,
     };
     if (!new_list[cat_key]["data"]) {
       new_list[cat_key]["data"] = {

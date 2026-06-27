@@ -46,8 +46,6 @@ function App() {
   }, []);
 
   const filter_list = (cat_data, search, search_mode = "OR") => {
-    console.log("MODE:", search_mode);
-
     if (typeof search === "string") {
       return cat_data.includes(search);
     }
@@ -186,11 +184,10 @@ function App() {
     );
   };
 
-  const grid_design = {
-    display: "grid",
-    gridTemplateColumns: "repeat(40, 1fr)",
+  const flex_design = {
+    display: "flex",
     gap: "5px",
-    justifyItems: "center",
+    flexWrap: "wrap",
   };
 
   const [visibleCount, setVisibleCount] = useState(20);
@@ -293,7 +290,7 @@ function App() {
           <div style={subHeader}>Target</div>
           {set_and_or(and_or_targets, set_and_or_targets)}
         </div>
-        <div style={grid_design}>
+        <div style={flex_design}>
           {targets.map((target) => (
             <img
               key={target}
@@ -327,7 +324,7 @@ function App() {
           <div style={subHeader}>Abilities</div>
           {set_and_or(and_or_abilities, set_and_or_abilities)}
         </div>
-        <div style={grid_design}>
+        <div style={flex_design}>
           {abilities.map((ability) => (
             <img
               style={{ cursor: "pointer" }}

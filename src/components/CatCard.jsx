@@ -15,9 +15,7 @@ function Card(params) {
   const memoStats = useMemo(() => {
     const damage = Math.round(catStat(cat.damage, level, get_type(cat)));
     const health = Math.ceil(catStat(cat.health, level, get_type(cat)));
-    const dps = Math.ceil(
-      damage / (parseFloat(cat.anim) + parseFloat(cat.tba)),
-    );
+    const dps = Math.ceil(damage / parseFloat(cat.tba));
 
     return { damage, health, dps };
   }, [cat, level]);
@@ -229,12 +227,20 @@ function Card(params) {
             ))
           : "none"}
       </div>
+      <div>
+        {cat.general_info
+          .replaceAll("u1", "\n\n")
+          .replaceAll("u2", "")
+          .replaceAll("b2", "")
+          .replaceAll("b1", "")}
+      </div>
     </div>
   );
 }
 
 export default function CatCard({ cats, cat_index }) {
   const [level, setLevel] = useState(30);
+  const [details, setDetails] = useState(false);
 
   const forms = ["Normal", "Evolved", "True", "Ultra"].filter(
     (form) => cats[form],
@@ -277,6 +283,7 @@ export default function CatCard({ cats, cat_index }) {
             level={level}
             cat_index={cat_index}
             form_index={unit_index + 1}
+            details={details}
           />
         ))}
       </div>
