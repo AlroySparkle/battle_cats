@@ -92,8 +92,13 @@ function Card(params) {
     >
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <h3 style={{ fontSize: "1rem", fontFamily: "sans-serif" }}>
-          {cat.name}
+          <div>{cat.name}</div>
+          <img
+            width={"70rem"}
+            src={"./src/characters/cats_display/" + cat.name + ".png"}
+          />
         </h3>
+
         <h3 style={{ fontSize: "1rem", fontFamily: "sans-serif" }}>
           {params.cat_index}-{params.form_index}
         </h3>
@@ -132,108 +137,139 @@ function Card(params) {
         ))}
       </div>
       <hr style={{ width: "100%", background: "silver" }} />
-      <div
-        style={{
-          fontSize: ".9rem",
-          fontFamily: "sans-serif",
-          textAlign: "center",
-          fontWeight: "bold",
-          marginBottom: "5px",
-        }}
-      >
-        attack type
-      </div>
-      <div style={{ display: "flex", gap: "10px" }}>
-        {cat.target.map((target) => (
-          <img
-            key={target}
-            alt={target}
-            title={target}
-            src={"./src/icons/" + target + ".png"}
-            width={"40rem"}
-            height={"40rem"}
-          />
-        ))}
-      </div>
-      <hr style={{ width: "100%", background: "silver" }} />
-      <div
-        style={{
-          fontSize: ".9rem",
-          fontFamily: "sans-serif",
-          textAlign: "center",
-          fontWeight: "bold",
-          marginBottom: "5px",
-        }}
-      >
-        Against
-      </div>
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "5px",
-        }}
-      >
-        {cat.against.length > 0
-          ? cat.against.map((against) => (
-              <div
-                key={against}
-                style={{
-                  background: TRAIT_COLORS[against]
-                    ? TRAIT_COLORS[against].background
-                    : "white",
-                  color: TRAIT_COLORS[against]
-                    ? TRAIT_COLORS[against].color
-                    : "black",
-                  padding: "5px 10px",
-                  borderRadius: "1rem",
-                  border: "1px solid black",
-                }}
-              >
-                {against}
-              </div>
-            ))
-          : "none"}
-      </div>
-      <hr style={{ width: "100%" }} />
-      <div
-        style={{
-          fontSize: ".9rem",
-          fontFamily: "sans-serif",
-          textAlign: "center",
-          fontWeight: "bold",
-          marginBottom: "5px",
-        }}
-      >
-        Abilities
-      </div>
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "10px",
-        }}
-      >
-        {cat.abilities.length > 0
-          ? cat.abilities.map((ability) => (
+
+      {params.details ? (
+        <div>
+          {cat.general_info.split("u1").map((block, block_index) => (
+            <div key={block_index}>
+              {block.split("u2:").map((item, item_index) => (
+                <div
+                  style={{
+                    fontWeight: item_index % 2 == 0 ? "bold" : "normal",
+                    fontSize: item_index % 2 == 0 ? "1.2rem" : "1rem",
+                    display: "flex",
+                    flexWrap: "wrap",
+                  }}
+                  index={item_index}
+                >
+                  {item_index % 2 == 0
+                    ? item
+                    : item.split("b2").map((ability, index) => (
+                        <div
+                          key={index}
+                          style={{
+                            fontWeight: index % 2 == 0 ? "bold" : "normal",
+                          }}
+                        >
+                          {ability.replace("b1", "")}&nbsp;
+                        </div>
+                      ))}
+                  <br />
+                  <br />
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      ) : (
+        <>
+          <div
+            style={{
+              fontSize: ".9rem",
+              fontFamily: "sans-serif",
+              textAlign: "center",
+              fontWeight: "bold",
+              marginBottom: "5px",
+            }}
+          >
+            attack type
+          </div>
+          <div style={{ display: "flex", gap: "10px" }}>
+            {cat.target.map((target) => (
               <img
-                key={ability}
-                alt={ability}
-                title={ability}
-                src={"./src/icons/" + ability + ".png"}
-                height={"40rem"}
+                key={target}
+                alt={target}
+                title={target}
+                src={"./src/icons/" + target + ".png"}
                 width={"40rem"}
+                height={"40rem"}
               />
-            ))
-          : "none"}
-      </div>
-      <div>
-        {cat.general_info
-          .replaceAll("u1", "\n\n")
-          .replaceAll("u2", "")
-          .replaceAll("b2", "")
-          .replaceAll("b1", "")}
-      </div>
+            ))}
+          </div>
+          <hr style={{ width: "100%", background: "silver" }} />
+          <div
+            style={{
+              fontSize: ".9rem",
+              fontFamily: "sans-serif",
+              textAlign: "center",
+              fontWeight: "bold",
+              marginBottom: "5px",
+            }}
+          >
+            Against
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "5px",
+            }}
+          >
+            {cat.against.length > 0
+              ? cat.against.map((against) => (
+                  <div
+                    key={against}
+                    style={{
+                      background: TRAIT_COLORS[against]
+                        ? TRAIT_COLORS[against].background
+                        : "white",
+                      color: TRAIT_COLORS[against]
+                        ? TRAIT_COLORS[against].color
+                        : "black",
+                      padding: "5px 10px",
+                      borderRadius: "1rem",
+                      border: "1px solid black",
+                    }}
+                  >
+                    {against}
+                  </div>
+                ))
+              : "none"}
+          </div>
+          <hr style={{ width: "100%" }} />
+          <div
+            style={{
+              fontSize: ".9rem",
+              fontFamily: "sans-serif",
+              textAlign: "center",
+              fontWeight: "bold",
+              marginBottom: "5px",
+            }}
+          >
+            Abilities
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "10px",
+            }}
+          >
+            {cat.abilities.length > 0
+              ? cat.abilities.map((ability) => (
+                  <img
+                    key={ability}
+                    alt={ability}
+                    title={ability}
+                    src={"./src/icons/" + ability + ".png"}
+                    height={"40rem"}
+                    width={"40rem"}
+                  />
+                ))
+              : "none"}
+          </div>
+        </>
+      )}
     </div>
   );
 }
@@ -267,6 +303,16 @@ export default function CatCard({ cats, cat_index }) {
           onChange={(e) => setLevel(Number(e.target.value))}
           style={{ width: "5ch" }}
         />
+      </div>
+      <div style={{ marginBottom: "10px", display: "flex" }}>
+        <div
+          style={{ fontWeight: "bold", color: details ? "#3399ff" : "black" }}
+          onClick={() => {
+            setDetails((prev) => !prev);
+          }}
+        >
+          Details
+        </div>
       </div>
       <div
         style={{
