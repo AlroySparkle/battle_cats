@@ -28,13 +28,13 @@ function App() {
     const initiate_list = async () => {
       const cats_list = await get_cats_list();
       set_cats(cats_list);
-
       const [rarity, abilities, targets, against] = await Promise.all([
         get_cats_filter_elements(cats_list, "rarity"),
         get_cats_filter_elements(cats_list, "abilities"),
         get_cats_filter_elements(cats_list, "target"),
         get_cats_filter_elements(cats_list, "against"),
       ]);
+      console.log(cats_list);
 
       set_rarity(rarity);
       set_abilities(abilities);
@@ -64,77 +64,77 @@ function App() {
           .sort((a, b) => {
             return parseInt(a) - parseInt(b);
           })
-          .filter((cat) => {
-            const name_condition =
-              cats[cat].data.names.filter((cat) =>
-                cat.toLowerCase().includes(searched_cat.toLocaleLowerCase()),
-              ).length >= 1;
-            const rarity_condition =
-              filter_list(selected_rarities, cats[cat].data.rarity) ||
-              selected_rarities.length == 0;
+          // .filter((cat) => {
+          //   const name_condition =
+          //     cats[cat].data.names.filter((cat) =>
+          //       cat.toLowerCase().includes(searched_cat.toLocaleLowerCase()),
+          //     ).length >= 1;
+          //   const rarity_condition =
+          //     filter_list(selected_rarities, cats[cat].data.rarity) ||
+          //     selected_rarities.length == 0;
 
-            const ability_condition =
-              selected_abilities.length == 0 ||
-              (and_or_abilities == "AND"
-                ? Object.keys(cats[cat])
-                    .filter((form) => form != "data")
-                    .filter((form) =>
-                      filter_list(
-                        cats[cat][form].abilities,
-                        selected_abilities,
-                        and_or_abilities,
-                      ),
-                    ).length > 0
-                : filter_list(
-                    cats[cat].data.abilities,
-                    selected_abilities,
-                    and_or_abilities,
-                  ));
+          //   const ability_condition =
+          //     selected_abilities.length == 0 ||
+          //     (and_or_abilities == "AND"
+          //       ? Object.keys(cats[cat])
+          //           .filter((form) => form != "data")
+          //           .filter((form) =>
+          //             filter_list(
+          //               cats[cat][form].abilities,
+          //               selected_abilities,
+          //               and_or_abilities,
+          //             ),
+          //           ).length > 0
+          //       : filter_list(
+          //           cats[cat].data.abilities,
+          //           selected_abilities,
+          //           and_or_abilities,
+          //         ));
 
-            const against_condition =
-              selected_against.length === 0 ||
-              (and_or_against === "AND"
-                ? Object.keys(cats[cat])
-                    .filter((form) => form !== "data")
-                    .some((form) =>
-                      filter_list(
-                        cats[cat][form].against,
-                        selected_against,
-                        and_or_against,
-                      ),
-                    )
-                : filter_list(
-                    cats[cat].data.against,
-                    selected_against,
-                    and_or_against,
-                  ) || cats[cat].data.against.includes("all"));
+          //   const against_condition =
+          //     selected_against.length === 0 ||
+          //     (and_or_against === "AND"
+          //       ? Object.keys(cats[cat])
+          //           .filter((form) => form !== "data")
+          //           .some((form) =>
+          //             filter_list(
+          //               cats[cat][form].against,
+          //               selected_against,
+          //               and_or_against,
+          //             ),
+          //           )
+          //       : filter_list(
+          //           cats[cat].data.against,
+          //           selected_against,
+          //           and_or_against,
+          //         ) || cats[cat].data.against.includes("all"));
 
-            const target_condition =
-              selected_targets.length === 0 ||
-              (and_or_targets === "AND"
-                ? Object.keys(cats[cat])
-                    .filter((form) => form !== "data")
-                    .some((form) =>
-                      filter_list(
-                        cats[cat][form].target,
-                        selected_targets,
-                        and_or_targets,
-                      ),
-                    )
-                : filter_list(
-                    cats[cat].data.target,
-                    selected_targets,
-                    and_or_targets,
-                  ));
+          //   const target_condition =
+          //     selected_targets.length === 0 ||
+          //     (and_or_targets === "AND"
+          //       ? Object.keys(cats[cat])
+          //           .filter((form) => form !== "data")
+          //           .some((form) =>
+          //             filter_list(
+          //               cats[cat][form].target,
+          //               selected_targets,
+          //               and_or_targets,
+          //             ),
+          //           )
+          //       : filter_list(
+          //           cats[cat].data.target,
+          //           selected_targets,
+          //           and_or_targets,
+          //         ));
 
-            return (
-              rarity_condition &&
-              against_condition &&
-              ability_condition &&
-              target_condition &&
-              name_condition
-            );
-          })
+          //   return (
+          //     rarity_condition &&
+          //     against_condition &&
+          //     ability_condition &&
+          //     target_condition &&
+          //     name_condition
+          //   );
+          // })
           .map((cat) => <CatCard key={cat} cats={cats[cat]} cat_index={cat} />),
       );
     };
@@ -263,9 +263,9 @@ function App() {
           {set_and_or(and_or_against, set_and_or_against)}
         </div>
         <div style={{ display: "flex", flexDirection: "row", gap: "10px" }}>
-          {against.map((against) => (
+          {against.map((against, index) => (
             <button
-              key={against}
+              key={index}
               className={`button ${
                 selected_against.includes(against) ? against : "not-selected"
               }`}
@@ -291,9 +291,9 @@ function App() {
           {set_and_or(and_or_targets, set_and_or_targets)}
         </div>
         <div style={flex_design}>
-          {targets.map((target) => (
+          {targets.map((target, index) => (
             <img
-              key={target}
+              key={index}
               title={target}
               alt={target}
               src={
@@ -325,7 +325,14 @@ function App() {
           {set_and_or(and_or_abilities, set_and_or_abilities)}
         </div>
         <div style={flex_design}>
-          {abilities.map((ability) => (
+          {[
+            ...new Set(
+              abilities
+                .filter((ability) => ability)
+                .map((ability) => Object.keys(ability))
+                .flat(),
+            ),
+          ].map((ability) => (
             <img
               style={{ cursor: "pointer" }}
               key={ability}

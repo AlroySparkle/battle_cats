@@ -58,128 +58,25 @@ export const get_type = (cat) => {
 };
 
 export const get_cats_filter_elements = async (cats, key) => {
-  const filter_list = [
-    ...new Set(Object.values(cats).map((cat) => cat["data"][key])),
-  ];
-  if (["array", "object"].includes(typeof filter_list[0])) {
-    return [...new Set(filter_list.flat())].sort((a, b) => a.localeCompare(b));
-  }
-  return filter_list.sort((a, b) => a.localeCompare(b));
+  const filtered_menu = Object.values(cats).flatMap((cat) => {
+    return cat[key] ?? Object.values(cat).map((cat_data) => cat_data[key]);
+  });
+
+  return [...new Set(filtered_menu.flat())];
 };
 
 export const get_cats_list = async () => {
   const raw_data = await fetch("./src/characters/allcats.json");
-  const cats = await raw_data.json().then((cats) => cats.sampledata);
-  const serve_list_cats = await cats.reduce((cats, current_cat) => {
-    const new_list = { ...cats };
-    const cat_key = current_cat.key.split("-")[0];
-    if (!cats[cat_key]) {
-      new_list[cat_key] = {};
-    }
-    const catAgainst = get_cat_against(current_cat);
-    const catTargets = get_cat_targets(current_cat);
-    const catAbilities = get_cat_abilities(current_cat)
-      .filter((ability) => !catAgainst.includes(ability))
-      .map((ability) => ability.replace("-", " ").toLocaleLowerCase());
+  const cats = await raw_data.json();
 
-    const identifiedCat = {
-      ...current_cat,
-      against: catAgainst,
-      target: catTargets,
-      abilities: catAbilities,
-      general_info: current_cat.ability,
-    };
-    if (!new_list[cat_key]["data"]) {
-      new_list[cat_key]["data"] = {
-        against: [],
-        target: [],
-        abilities: [],
-        names: [],
-      };
+  return Object.keys(cats).reduce((cats_list, cat) => {
+    let id = "" + cat;
+    while (id.length < 3) {
+      id = "0" + id;
     }
-    new_list[cat_key]["data"] = {
-      against: [
-        ...new Set([...new_list[cat_key]["data"].against, ...catAgainst]),
-      ],
-      target: [
-        ...new Set([...new_list[cat_key]["data"].target, ...catTargets]),
-      ],
-      abilities: [
-        ...new Set([...new_list[cat_key]["data"].abilities, ...catAbilities]),
-      ],
-      names: [
-        ...new Set([...new_list[cat_key]["data"].names, current_cat.name]),
-      ],
-      rarity: current_cat.rarity,
-    };
-    new_list[cat_key][current_cat.form] = identifiedCat;
-    return new_list;
+
+    return { ...cats_list, [id]: { ...cats[id], rarity: "foo" } };
   }, {});
-  return serve_list_cats;
-};
-
-const get_cat_abilities = (cat) => {
-  const abilities = [];
-  const raw_abilities = cat.ability.split("u2");
-
-  if (raw_abilities.length > 1) {
-    for (
-      let block_index = 1;
-      block_index < raw_abilities.length;
-      block_index++
-    ) {
-      if (raw_abilities[block_index].toLowerCase().includes("attacks only")) {
-        abilities.push("Attacks Only");
-        continue;
-      }
-      const splited_abilities = raw_abilities[block_index].split("b1");
-      for (
-        let ability_index = 1;
-        ability_index < splited_abilities.length;
-        ability_index++
-      ) {
-        const abilityName = splited_abilities[ability_index]
-          .split("b2")[0]
-          .trim();
-        const isImmunity =
-          raw_abilities[block_index - 1].includes("Not affected by");
-        abilities.push(abilityName + (isImmunity ? " immunity" : ""));
-      }
-    }
-  }
-
-  return abilities;
-};
-
-const get_cat_targets = (cat) => {
-  const target = [cat.target];
-  if (cat.ability && cat.ability.includes("Multi-hit")) {
-    target.push("Multi-hit");
-  }
-  if (cat.ability && cat.ability.includes("Long Distance")) {
-    target.push("Long Distance");
-  }
-  if (cat.ability && cat.ability.includes("Omni Strike")) {
-    target.push("Omni Strike");
-  }
-  return target;
-};
-
-const get_cat_against = (cat) => {
-  if (cat.ability && cat.ability.includes("Against")) {
-    const index = cat.ability.indexOf("Against");
-    const raw_ability = cat.ability.slice(
-      index + "Against".length,
-      cat.ability.length,
-    );
-    const end_against = raw_ability.indexOf("u2");
-    const block_against = raw_ability
-      .slice(1, end_against)
-      .split(" ")
-      .map((trait) => trait.replace(",", ""));
-    return block_against;
-  }
-  return [];
 };
 
 export const TRAIT_COLORS = {

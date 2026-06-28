@@ -13,9 +13,9 @@ function Card(params) {
   const cat = params.cat;
   const level = params.level;
   const memoStats = useMemo(() => {
-    const damage = Math.round(catStat(cat.damage, level, get_type(cat)));
-    const health = Math.ceil(catStat(cat.health, level, get_type(cat)));
-    const dps = Math.ceil(damage / parseFloat(cat.tba));
+    const damage = Math.round(catStat(cat.stats.att, level, get_type(cat)));
+    const health = Math.ceil(catStat(cat.stats.hp, level, get_type(cat)));
+    const dps = Math.ceil(damage / (parseInt(cat.stats.attCy) / 30));
 
     return { damage, health, dps };
   }, [cat, level]);
@@ -40,37 +40,37 @@ function Card(params) {
       {
         icon: "./src/icons/Target Light.svg",
         title: "Range",
-        value: cat.range,
+        value: cat.stats.range,
       },
       {
         icon: "./src/icons/Film Reel Light.svg",
         title: "Animation Time",
-        value: cat.anim,
+        value: (parseInt(cat.stats.fore) / 30).toFixed(2),
       },
       {
         icon: "./src/icons/Hourglass Empty.svg",
         title: "Time Between Attacks",
-        value: cat.tba,
+        value: (parseInt(cat.stats.attCy) / 30).toFixed(2),
       },
       {
         icon: "./src/icons/coin.svg",
         title: "Cost",
-        value: cat.cost,
+        value: cat.stats.cost,
       },
       {
         icon: "./src/icons/Clock Hour.svg",
         title: "Spawn Time",
-        value: cat.spawn,
+        value: cat.stats.recharge.split("~ ")[1].replace(" seconds", "s"),
       },
       {
         icon: "./src/icons/Boot Fill.svg",
         title: "Speed",
-        value: cat.speed,
+        value: cat.stats.speed,
       },
       {
         icon: "./src/icons/Arrow Forward.svg",
         title: "Knockback",
-        value: cat.kb,
+        value: cat.stats.kb,
       },
     ],
     [memoStats, cat],
@@ -185,16 +185,13 @@ function Card(params) {
             attack type
           </div>
           <div style={{ display: "flex", gap: "10px" }}>
-            {cat.target.map((target) => (
-              <img
-                key={target}
-                alt={target}
-                title={target}
-                src={"./src/icons/" + target + ".png"}
-                width={"40rem"}
-                height={"40rem"}
-              />
-            ))}
+            <img
+              alt={cat.stats["Attack Type"]}
+              title={cat.stats["Attack Type"]}
+              src={"./src/icons/" + cat.stats["Attack Type"] + ".png"}
+              width={"40rem"}
+              height={"40rem"}
+            />
           </div>
           <hr style={{ width: "100%", background: "silver" }} />
           <div
@@ -255,12 +252,13 @@ function Card(params) {
               gap: "10px",
             }}
           >
-            {cat.abilities.length > 0
-              ? cat.abilities.map((ability) => (
+            {console.log(cat.abilities)}
+            {Object.keys(cat.abilities).length > 0
+              ? Object.keys(cat.abilities).map((ability) => (
                   <img
                     key={ability}
                     alt={ability}
-                    title={ability}
+                    title={cat.abilities[ability]}
                     src={"./src/icons/" + ability + ".png"}
                     height={"40rem"}
                     width={"40rem"}
@@ -278,9 +276,7 @@ export default function CatCard({ cats, cat_index }) {
   const [level, setLevel] = useState(30);
   const [details, setDetails] = useState(false);
 
-  const forms = ["Normal", "Evolved", "True", "Ultra"].filter(
-    (form) => cats[form],
-  );
+  const forms = ["0", "1", "2", "3"].filter((form) => cats[form]);
 
   return (
     <div
@@ -292,7 +288,7 @@ export default function CatCard({ cats, cat_index }) {
       }}
     >
       <div style={{ marginBottom: "10px", display: "flex" }}>
-        {cats.data.rarity}&nbsp;
+        {cats.rarity}&nbsp;
       </div>
       <div style={{ marginBottom: "10px", display: "flex" }}>
         <div style={{ fontWeight: "bold" }}>Level:&nbsp;</div>
