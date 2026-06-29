@@ -57,75 +57,7 @@ export const get_type = (cat) => {
   return "BASIC";
 };
 
-export const get_cats_filter_elements = async (cats, key) => {
-  const filtered_menu = Object.values(cats).flatMap((cat) => {
-    return cat[key] ?? Object.values(cat).map((cat_data) => cat_data[key]);
-  });
-
-  return [...new Set(filtered_menu.flat())];
-};
-
 export const get_cats_list = async () => {
   const raw_data = await fetch("./src/characters/allcats.json");
   return await raw_data.json();
-};
-
-export const TRAIT_COLORS = {
-  white: {
-    background: "linear-gradient(to bottom, #FFFFFF, #F5F5F5)",
-    hover: "linear-gradient(to bottom, #FFFFFF, #E8E8E8)",
-    color: "#000000",
-  },
-  red: {
-    background: "linear-gradient(to bottom, #FF4B4B, #FF7A7A)",
-    hover: "linear-gradient(to bottom, #FF5F5F, #FF8A8A)",
-    color: "#000000",
-  },
-  floating: {
-    background: "linear-gradient(to bottom, #00FF7F, #66FFB2)",
-    hover: "linear-gradient(to bottom, #33FF99, #80FFC2)",
-    color: "#000000",
-  },
-  black: {
-    background: "linear-gradient(to bottom, #000000, #444444)",
-    hover: "linear-gradient(to bottom, #111111, #555555)",
-    color: "#FFFFFF",
-  },
-  metal: {
-    background: "linear-gradient(to bottom, #A8A8A8, #C8C8C8)",
-    hover: "linear-gradient(to bottom, #B5B5B5, #D5D5D5)",
-    color: "#000000",
-  },
-  angel: {
-    background:
-      "linear-gradient(to bottom, #FFFDF5 10%, #FFE766 15%, #FFFDF5 20%, #FFFDF5)",
-    hover:
-      "linear-gradient(to bottom, #FFFFFF 10%, #FFEFA0 15%, #FFFFFF 20%, #FFFFFF)",
-    color: "#000000",
-  },
-  alien: {
-    background: "linear-gradient(to bottom, #00DDFF, #66ECFF)",
-    hover: "linear-gradient(to bottom, #22E6FF, #80F2FF)",
-    color: "#000000",
-  },
-  zombie: {
-    background: "linear-gradient(to bottom, #A102B6, #C44AD1)",
-    hover: "linear-gradient(to bottom, #B312C6, #D05CDE)",
-    color: "#FFFFFF",
-  },
-  relic: {
-    background: "linear-gradient(to bottom, #006400, #228B22)",
-    hover: "linear-gradient(to bottom, #007000, #2FAF2F)",
-    color: "#FFFFFF",
-  },
-  aku: {
-    background: "linear-gradient(to bottom, #00008B, #3333A3)",
-    hover: "linear-gradient(to bottom, #000099, #4444B5)",
-    color: "#FFFFFF",
-  },
-  all: {
-    background: "linear-gradient(to bottom, #F2FF00, #FAFF66)",
-    hover: "linear-gradient(to bottom, #F7FF33, #FDFF80)",
-    color: "#000000",
-  },
 };

@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { catStat, get_type, TRAIT_COLORS } from "../assets/handle_cats";
+import { catStat, get_type } from "../assets/handle_cats";
 
 /**
  * @typedef {"BAHAMUT" | "CRAZED" | "BASIC" | "RARE" | "SUPER"} CURVE_TYPES
@@ -10,22 +10,27 @@ import { catStat, get_type, TRAIT_COLORS } from "../assets/handle_cats";
  */
 
 function Card(params) {
-  const cat = params.cat;
-  cat.name = cat.name.replace("&amp;", "&");
-  cat.stats = cat.stats || {
-    attCy: "0",
-    hp: "0",
-    att: "0",
-    fore: "0",
-    "Attack Type": "Single",
-    kb: "0",
-    range: "0",
-    speed: "0",
-    recharge: "0 ~ 0",
-    cost: "0",
-  };
-  cat.against = cat.against || ["no info"];
-  cat.abilities = cat.abilities || { "no info": "no info" };
+  const cat = useMemo(
+    () => ({
+      ...params.cat,
+      name: params.cat.name.replace("&amp;", "&"),
+      stats: params.cat.stats || {
+        attCy: "0",
+        hp: "0",
+        att: "0",
+        fore: "0",
+        "Attack Type": "Single",
+        kb: "0",
+        range: "0",
+        speed: "0",
+        recharge: "0 ~ 0",
+        cost: "0",
+      },
+      against: params.cat.against || ["no info"],
+      abilities: params.cat.abilities || { "no info": "no info" },
+    }),
+    [params.cat],
+  );
   const level = params.level;
   const memoStats = useMemo(() => {
     const damage = Math.round(

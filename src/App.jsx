@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { get_cats_filter_elements, get_cats_list } from "./assets/handle_cats";
+import { get_cats_list } from "./assets/handle_cats";
 import CatCard from "./components/CatCard";
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
   const [selected_against, update_selected_against] = useState([]);
   const [and_or_against, set_and_or_against] = useState("OR");
 
-  const [targets, set_targets] = useState([]);
+  const [targets /*, set_targets */] = useState([]);
   const [selected_targets, update_selected_targets] = useState([]);
   const [and_or_targets, set_and_or_targets] = useState("OR");
 
@@ -37,18 +37,6 @@ function App() {
     initiate_list();
   }, []);
 
-  const filter_list = (cat_data, search, search_mode = "OR") => {
-    if (typeof search === "string") {
-      return cat_data.includes(search);
-    }
-
-    if (search_mode === "AND") {
-      return search.every((data) => cat_data.includes(data));
-    }
-
-    return search.some((data) => cat_data.includes(data));
-  };
-
   useEffect(() => {
     const build_cats = () => {
       set_filtered_cats(
@@ -56,77 +44,70 @@ function App() {
           .sort((a, b) => {
             return parseInt(a) - parseInt(b);
           })
-          // .filter((cat) => {
-          //   const name_condition =
-          //     cats[cat].data.names.filter((cat) =>
-          //       cat.toLowerCase().includes(searched_cat.toLocaleLowerCase()),
-          //     ).length >= 1;
-          //   const rarity_condition =
-          //     filter_list(selected_rarities, cats[cat].data.rarity) ||
-          //     selected_rarities.length == 0;
+          .filter((cat) => {
+            const units_names = Object.values(cats[cat].units).map(
+              (unit, index) => ({
+                id: index,
+                name: unit.name.toLowerCase(),
+              }),
+            );
 
-          //   const ability_condition =
-          //     selected_abilities.length == 0 ||
-          //     (and_or_abilities == "AND"
-          //       ? Object.keys(cats[cat])
-          //           .filter((form) => form != "data")
-          //           .filter((form) =>
-          //             filter_list(
-          //               cats[cat][form].abilities,
-          //               selected_abilities,
-          //               and_or_abilities,
-          //             ),
-          //           ).length > 0
-          //       : filter_list(
-          //           cats[cat].data.abilities,
-          //           selected_abilities,
-          //           and_or_abilities,
-          //         ));
+            const name_condition = units_names
+              .filter((unit) => unit.name.includes(searched_cat.toLowerCase()))
+              .map((unit) => unit.id);
+            console.log(cats[cat]);
+            const rarity_condition =
+              selected_rarities.includes(cats[cat].general.rarity) ||
+              selected_rarities.length == 0;
 
-          //   const against_condition =
-          //     selected_against.length === 0 ||
-          //     (and_or_against === "AND"
-          //       ? Object.keys(cats[cat])
-          //           .filter((form) => form !== "data")
-          //           .some((form) =>
-          //             filter_list(
-          //               cats[cat][form].against,
-          //               selected_against,
-          //               and_or_against,
-          //             ),
-          //           )
-          //       : filter_list(
-          //           cats[cat].data.against,
-          //           selected_against,
-          //           and_or_against,
-          //         ) || cats[cat].data.against.includes("all"));
+            const units_abilities = Object.values(cats[cat].units).map(
+              (cat, index) => ({
+                id: index,
+                abilities: Object.keys(cat.abilities || {}),
+              }),
+            );
+            const ability_condition = units_abilities
+              .filter(
+                (cat_abilities) =>
+                  selected_abilities.length == 0 ||
+                  (and_or_abilities == "OR"
+                    ? selected_abilities.some((ability) =>
+                        cat_abilities.abilities.includes(ability),
+                      )
+                    : selected_abilities.every((ability) =>
+                        cat_abilities.abilities.includes(ability),
+                      )),
+              )
+              .map((cat) => cat.id);
 
-          //   const target_condition =
-          //     selected_targets.length === 0 ||
-          //     (and_or_targets === "AND"
-          //       ? Object.keys(cats[cat])
-          //           .filter((form) => form !== "data")
-          //           .some((form) =>
-          //             filter_list(
-          //               cats[cat][form].target,
-          //               selected_targets,
-          //               and_or_targets,
-          //             ),
-          //           )
-          //       : filter_list(
-          //           cats[cat].data.target,
-          //           selected_targets,
-          //           and_or_targets,
-          //         ));
+            const units_against = Object.values(cats[cat].units).map(
+              (unit, index) => ({
+                id: index,
+                against: unit.against || [],
+              }),
+            );
 
-          //   return (
-          //     rarity_condition &&
-          //     against_condition &&
-          //     ability_condition &&
-          //     target_condition &&
-          //     name_condition
-          //   );
-          // })
+            const against_condition = units_against
+              .filter(
+                (unit_against) =>
+                  selected_against.length === 0 ||
+                  (and_or_against === "OR"
+                    ? selected_against.some((a) =>
+                        unit_against.against.includes(a),
+                      )
+                    : selected_against.every((a) =>
+                        unit_against.against.includes(a),
+                      )),
+              )
+              .map((unit) => unit.id);
+
+            // const target_condition = true;
+            const conditions = ability_condition
+              .filter((id) => against_condition.includes(id))
+              .filter((id) => name_condition.includes(id));
+            //..filter((id) => target_condition.includes(id));
+            return rarity_condition && conditions.length > 0;
+          })
           .map((cat) => <CatCard key={cat} cats={cats[cat]} cat_index={cat} />),
       );
     };
