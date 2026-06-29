@@ -29,10 +29,14 @@ function Card(params) {
   const level = params.level;
   const memoStats = useMemo(() => {
     const damage = Math.round(
-      catStat(cat.stats?.att?.replace(",", "") || 0, level, get_type(cat)),
+      catStat(
+        cat.stats?.att?.replace(",", "") * 2.5 || 0,
+        level,
+        get_type(cat),
+      ),
     );
     const health = Math.ceil(
-      catStat(cat.stats?.hp?.replace(",", "") || 0, level, get_type(cat)),
+      catStat(cat.stats?.hp?.replace(",", "") * 2.5 || 0, level, get_type(cat)),
     );
     const dps = Math.ceil(damage / (parseInt(cat.stats.attCy) / 30));
 
@@ -42,52 +46,52 @@ function Card(params) {
   const stats = useMemo(
     () => [
       {
-        icon: "./src/icons/Sword.svg",
+        icon: "./src/icons/stats/Sword.svg",
         title: "Damage",
         value: memoStats.damage,
       },
       {
-        icon: "./src/icons/Zap.svg",
+        icon: "./src/icons/stats/Zap.svg",
         title: "DPS",
         value: memoStats.dps,
       },
       {
-        icon: "./src/icons/Heart (1).svg",
+        icon: "./src/icons/stats/Heart (1).svg",
         title: "Health",
         value: memoStats.health,
       },
       {
-        icon: "./src/icons/Target Light.svg",
+        icon: "./src/icons/stats/Target Light.svg",
         title: "Range",
         value: cat.stats.range,
       },
       {
-        icon: "./src/icons/Film Reel Light.svg",
+        icon: "./src/icons/stats/Film Reel Light.svg",
         title: "Animation Time",
         value: (parseInt(cat.stats.fore) / 30).toFixed(2),
       },
       {
-        icon: "./src/icons/Hourglass Empty.svg",
+        icon: "./src/icons/stats/Hourglass Empty.svg",
         title: "Time Between Attacks",
         value: (parseInt(cat.stats.attCy) / 30).toFixed(2),
       },
       {
-        icon: "./src/icons/coin.svg",
+        icon: "./src/icons/stats/coin.svg",
         title: "Cost",
         value: cat.stats.cost,
       },
       {
-        icon: "./src/icons/Clock Hour.svg",
+        icon: "./src/icons/stats/Clock Hour.svg",
         title: "Spawn Time",
         value: cat.stats.recharge.split("~ ")[1].replace(" seconds", "s"),
       },
       {
-        icon: "./src/icons/Boot Fill.svg",
+        icon: "./src/icons/stats/Boot Fill.svg",
         title: "Speed",
         value: cat.stats.speed,
       },
       {
-        icon: "./src/icons/Arrow Forward.svg",
+        icon: "./src/icons/stats/Arrow Forward.svg",
         title: "Knockback",
         value: cat.stats.kb,
       },
@@ -207,7 +211,7 @@ function Card(params) {
             <img
               alt={cat.stats["Attack Type"]}
               title={cat.stats["Attack Type"]}
-              src={"./src/icons/" + cat.stats["Attack Type"] + ".png"}
+              src={"./src/icons/abilities/" + cat.stats["Attack Type"] + ".png"}
               width={"40rem"}
               height={"40rem"}
             />
@@ -233,22 +237,13 @@ function Card(params) {
           >
             {cat.against.length > 0
               ? cat.against.map((against) => (
-                  <div
+                  <img
                     key={against}
-                    style={{
-                      background: TRAIT_COLORS[against]
-                        ? TRAIT_COLORS[against].background
-                        : "white",
-                      color: TRAIT_COLORS[against]
-                        ? TRAIT_COLORS[against].color
-                        : "black",
-                      padding: "5px 10px",
-                      borderRadius: "1rem",
-                      border: "1px solid black",
-                    }}
-                  >
-                    {against}
-                  </div>
+                    title={against}
+                    alt={against}
+                    src={"./src/icons/traits/" + against + ".png"}
+                    width={"40rem"}
+                  />
                 ))
               : "none"}
           </div>
@@ -277,7 +272,7 @@ function Card(params) {
                     key={ability}
                     alt={ability}
                     title={cat.abilities[ability]}
-                    src={"./src/icons/" + ability + ".png"}
+                    src={"./src/icons/abilities/" + ability + ".png"}
                     height={"40rem"}
                     width={"40rem"}
                   />

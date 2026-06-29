@@ -256,11 +256,20 @@ function App() {
         </div>
         <div style={{ display: "flex", flexDirection: "row", gap: "10px" }}>
           {against.map((against, index) => (
-            <button
+            <img
               key={index}
-              className={`button ${
-                selected_against.includes(against) ? against : "not-selected"
-              }`}
+              style={{
+                cursor: "pointer",
+                opacity: selected_against.includes(against) ? "1" : ".8",
+                height: "40px",
+                width: "40px",
+              }}
+              src={
+                "./src/icons/traits/" +
+                against +
+                (selected_against.includes(against) ? "" : "_BNW") +
+                ".png"
+              }
               onClick={() => {
                 if (selected_against.includes(against)) {
                   update_selected_against(
@@ -270,9 +279,7 @@ function App() {
                   update_selected_against([...selected_against, against]);
                 }
               }}
-            >
-              {against}
-            </button>
+            />
           ))}
         </div>
 
@@ -288,8 +295,12 @@ function App() {
               key={index}
               title={target}
               alt={target}
+              style={{
+                opacity: selected_targets.includes(target) ? "1" : ".8",
+                cursor: "pointer",
+              }}
               src={
-                "./src/icons/" +
+                "./src/icons/abilities" +
                 (selected_targets.includes(target) ? target : target + "_BNW") +
                 ".png"
               }
@@ -319,10 +330,13 @@ function App() {
         <div style={flex_design}>
           {abilities.map((ability) => (
             <img
-              style={{ cursor: "pointer" }}
               key={ability}
+              style={{
+                opacity: selected_abilities.includes(ability) ? "1" : ".8",
+                cursor: "pointer",
+              }}
               src={
-                "./src/icons/" +
+                "./src/icons/abilities/" +
                 (selected_abilities.includes(ability)
                   ? ability
                   : ability + "_BNW") +
