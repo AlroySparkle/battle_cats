@@ -67,16 +67,7 @@ export const get_cats_filter_elements = async (cats, key) => {
 
 export const get_cats_list = async () => {
   const raw_data = await fetch("./src/characters/allcats.json");
-  const cats = await raw_data.json();
-
-  return Object.keys(cats).reduce((cats_list, cat) => {
-    let id = "" + cat;
-    while (id.length < 3) {
-      id = "0" + id;
-    }
-
-    return { ...cats_list, [id]: { ...cats[id], rarity: "foo" } };
-  }, {});
+  return await raw_data.json();
 };
 
 export const TRAIT_COLORS = {

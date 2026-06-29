@@ -11,10 +11,29 @@ import { catStat, get_type, TRAIT_COLORS } from "../assets/handle_cats";
 
 function Card(params) {
   const cat = params.cat;
+  cat.name = cat.name.replace("&amp;", "&");
+  cat.stats = cat.stats || {
+    attCy: "0",
+    hp: "0",
+    att: "0",
+    fore: "0",
+    "Attack Type": "Single",
+    kb: "0",
+    range: "0",
+    speed: "0",
+    recharge: "0 ~ 0",
+    cost: "0",
+  };
+  cat.against = cat.against || ["no info"];
+  cat.abilities = cat.abilities || { "no info": "no info" };
   const level = params.level;
   const memoStats = useMemo(() => {
-    const damage = Math.round(catStat(cat.stats.att, level, get_type(cat)));
-    const health = Math.ceil(catStat(cat.stats.hp, level, get_type(cat)));
+    const damage = Math.round(
+      catStat(cat.stats?.att?.replace(",", "") || 0, level, get_type(cat)),
+    );
+    const health = Math.ceil(
+      catStat(cat.stats?.hp?.replace(",", "") || 0, level, get_type(cat)),
+    );
     const dps = Math.ceil(damage / (parseInt(cat.stats.attCy) / 30));
 
     return { damage, health, dps };
@@ -132,7 +151,7 @@ function Card(params) {
             }}
           >
             <img src={catStat.icon} title={catStat.title} />
-            <div>{catStat.value}</div>
+            <div>{catStat.value + ""}</div>
           </div>
         ))}
       </div>
@@ -252,7 +271,6 @@ function Card(params) {
               gap: "10px",
             }}
           >
-            {console.log(cat.abilities)}
             {Object.keys(cat.abilities).length > 0
               ? Object.keys(cat.abilities).map((ability) => (
                   <img
@@ -275,9 +293,7 @@ function Card(params) {
 export default function CatCard({ cats, cat_index }) {
   const [level, setLevel] = useState(30);
   const [details, setDetails] = useState(false);
-
-  const forms = ["0", "1", "2", "3"].filter((form) => cats[form]);
-
+  const forms = Object.values(cats.units);
   return (
     <div
       style={{
@@ -288,7 +304,7 @@ export default function CatCard({ cats, cat_index }) {
       }}
     >
       <div style={{ marginBottom: "10px", display: "flex" }}>
-        {cats.rarity}&nbsp;
+        {cats.general.rarity}&nbsp;
       </div>
       <div style={{ marginBottom: "10px", display: "flex" }}>
         <div style={{ fontWeight: "bold" }}>Level:&nbsp;</div>
@@ -320,8 +336,8 @@ export default function CatCard({ cats, cat_index }) {
       >
         {forms.map((form, unit_index) => (
           <Card
-            key={form}
-            cat={cats[form]}
+            key={form.name}
+            cat={form}
             level={level}
             cat_index={cat_index}
             form_index={unit_index + 1}

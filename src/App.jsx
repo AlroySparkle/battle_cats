@@ -27,19 +27,11 @@ function App() {
   useEffect(() => {
     const initiate_list = async () => {
       const cats_list = await get_cats_list();
-      set_cats(cats_list);
-      const [rarity, abilities, targets, against] = await Promise.all([
-        get_cats_filter_elements(cats_list, "rarity"),
-        get_cats_filter_elements(cats_list, "abilities"),
-        get_cats_filter_elements(cats_list, "target"),
-        get_cats_filter_elements(cats_list, "against"),
-      ]);
-      console.log(cats_list);
+      set_cats(cats_list.cats);
 
-      set_rarity(rarity);
-      set_abilities(abilities);
-      set_targets(targets);
-      set_against(against.filter((a) => a !== "all"));
+      set_rarity(cats_list.collections.rarities);
+      set_abilities(cats_list.collections.abilities);
+      set_against(cats_list.collections.against);
     };
 
     initiate_list();
@@ -325,14 +317,7 @@ function App() {
           {set_and_or(and_or_abilities, set_and_or_abilities)}
         </div>
         <div style={flex_design}>
-          {[
-            ...new Set(
-              abilities
-                .filter((ability) => ability)
-                .map((ability) => Object.keys(ability))
-                .flat(),
-            ),
-          ].map((ability) => (
+          {abilities.map((ability) => (
             <img
               style={{ cursor: "pointer" }}
               key={ability}
