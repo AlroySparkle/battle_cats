@@ -23,7 +23,22 @@ function App() {
   const [selected_targets, update_selected_targets] = useState([]);
   const [and_or_targets, set_and_or_targets] = useState("OR");
 
+  const [damageFilter, setDamageFilter] = useState({ min: 0, max: 0 });
+  const [dpsFilter, setDpsFilter] = useState({ min: 0, max: 0 });
+  const [healthFilter, setHealthFilter] = useState({ min: 0, max: 0 });
+  const [rangeFilter, setRangeFilter] = useState({ min: 0, max: 0 });
+  const [animationTimeFilter, setAnimationTimeFilter] = useState({
+    min: 0,
+    max: 0,
+  });
+  const [tbaFilter, setTbaFilter] = useState({ min: 0, max: 0 });
+  const [costFilter, setCostFilter] = useState({ min: 0, max: 0 });
+  const [spawnTimeFilter, setSpawnTimeFilter] = useState({ min: 0, max: 0 });
+  const [speedFilter, setSpeedFilter] = useState({ min: 0, max: 0 });
+  const [knockbackFilter, setKnockbackFilter] = useState({ min: 0, max: 0 });
+
   const [filtered_cats, set_filtered_cats] = useState([]);
+
   useEffect(() => {
     const initiate_list = async () => {
       const cats_list = await get_cats_list();
@@ -41,9 +56,7 @@ function App() {
     const build_cats = () => {
       set_filtered_cats(
         Object.keys(cats)
-          .sort((a, b) => {
-            return parseInt(a) - parseInt(b);
-          })
+          .sort((a, b) => parseInt(a) - parseInt(b))
           .filter((cat) => {
             const units_names = Object.values(cats[cat].units).map(
               (unit, index) => ({
@@ -55,15 +68,15 @@ function App() {
             const name_condition = units_names
               .filter((unit) => unit.name.includes(searched_cat.toLowerCase()))
               .map((unit) => unit.id);
-            console.log(cats[cat]);
+
             const rarity_condition =
               selected_rarities.includes(cats[cat].general.rarity) ||
               selected_rarities.length == 0;
 
             const units_abilities = Object.values(cats[cat].units).map(
-              (cat, index) => ({
+              (catUnit, index) => ({
                 id: index,
-                abilities: Object.keys(cat.abilities || {}),
+                abilities: Object.keys(catUnit.abilities || {}),
               }),
             );
             const ability_condition = units_abilities
@@ -78,7 +91,7 @@ function App() {
                         cat_abilities.abilities.includes(ability),
                       )),
               )
-              .map((cat) => cat.id);
+              .map((catUnit) => catUnit.id);
 
             const units_against = Object.values(cats[cat].units).map(
               (unit, index) => ({
@@ -101,11 +114,85 @@ function App() {
               )
               .map((unit) => unit.id);
 
-            // const target_condition = true;
+            // ==========================================
+            // EXACT-MATCH DATA STATS RANGE CONDITION
+            // ==========================================
+            if (cats[cat].units[0].name == "Actress Cat") {
+              console.log(cats[cat].units[0]);
+            }
+            const stats_condition = Object.values(cats[cat].units)
+              .map((unit, index) => {
+                const stats = unit.stats || {};
+
+                // Clean strings containing formatting commas (e.g., "4,050" -> 4050)
+                const cleanNum = (val) => {
+                  if (!val) return 0;
+                  return parseFloat(String(val).replace(/,/g, "")) || 0;
+                };
+
+                // Updated helper function checking for dual-zero defaults
+                const checkBounds = (numValue, filter) => {
+                  const minFilterVal = parseFloat(filter.min) || 0;
+                  const maxFilterVal = parseFloat(filter.max) || 0;
+
+                  // Rule: If both min and max are 0, consider it active/true (no constraint applied)
+                  if (minFilterVal === 0 && maxFilterVal === 0) return true;
+
+                  // Otherwise, evaluate boundaries mathematically
+                  const minMatch = numValue >= minFilterVal;
+                  const maxMatch =
+                    maxFilterVal === 0 || numValue <= maxFilterVal;
+
+                  return minMatch && maxMatch;
+                };
+
+                // Parse base stats exactly matching your raw keys
+                const rawDamage = cleanNum(stats.att) * 2.5;
+                const rawHealth = cleanNum(stats.hp) * 2.5;
+                const rawRange = cleanNum(stats.range);
+                const rawSpeed = cleanNum(stats.speed);
+                const rawKb = cleanNum(stats.kb);
+                const rawCost = cleanNum(stats.cost);
+
+                // Convert frame strings ("301", "5") into clean mathematical seconds
+                const rawAttCy = cleanNum(stats.attCy);
+                const parsedAnimationTime = cleanNum(stats.fore) / 30;
+                const parsedTba = rawAttCy / 30;
+
+                // Derived calculation for accurate Battle Cats DPS filtering
+                const calculatedDps =
+                  rawAttCy > 0 ? rawDamage / (rawAttCy / 30) : 0;
+
+                // Handle formatting for "100 ~ 91.2 seconds" string layout
+                let parsedSpawnTime = 0;
+                if (stats.recharge) {
+                  const parts = stats.recharge.split("~ ");
+                  parsedSpawnTime = cleanNum(parts[1] ? parts[1] : parts[0]);
+                }
+
+                const matchesAllStats =
+                  checkBounds(rawDamage, damageFilter) &&
+                  checkBounds(calculatedDps, dpsFilter) &&
+                  checkBounds(rawHealth, healthFilter) &&
+                  checkBounds(rawRange, rangeFilter) &&
+                  checkBounds(parsedAnimationTime, animationTimeFilter) &&
+                  checkBounds(parsedTba, tbaFilter) &&
+                  checkBounds(rawCost, costFilter) &&
+                  checkBounds(parsedSpawnTime, spawnTimeFilter) &&
+                  checkBounds(rawSpeed, speedFilter) &&
+                  checkBounds(rawKb, knockbackFilter);
+
+                return { id: index, valid: matchesAllStats };
+              })
+              .filter((unit) => unit.valid)
+              .map((unit) => unit.id);
+
+            // Intersect the stats condition mapping with the existing structural arrays
             const conditions = ability_condition
               .filter((id) => against_condition.includes(id))
-              .filter((id) => name_condition.includes(id));
-            //..filter((id) => target_condition.includes(id));
+              .filter((id) => name_condition.includes(id))
+              .filter((id) => stats_condition.includes(id));
+
             return rarity_condition && conditions.length > 0;
           })
           .map((cat) => <CatCard key={cat} cats={cats[cat]} cat_index={cat} />),
@@ -122,6 +209,18 @@ function App() {
     and_or_abilities,
     and_or_against,
     and_or_targets,
+
+    // --- New Stat Filters ---
+    damageFilter,
+    dpsFilter,
+    healthFilter,
+    rangeFilter,
+    animationTimeFilter,
+    tbaFilter,
+    costFilter,
+    spawnTimeFilter,
+    speedFilter,
+    knockbackFilter,
   ]);
 
   const subHeader = { fontSize: "1.54rem", fontWeight: "bold" };
@@ -341,6 +440,163 @@ function App() {
               }}
             />
           ))}
+        </div>
+        <hr style={{ width: "100%", background: "silver" }} />
+
+        <div style={{ display: "flex", gap: "10px" }}>
+          <div style={subHeader}>stats</div>
+        </div>
+        <div style={flex_design}>
+          <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+            {[
+              {
+                icon: "./src/icons/stats/Sword.svg",
+                title: "Damage",
+                state: damageFilter,
+                setState: setDamageFilter,
+              },
+              {
+                icon: "./src/icons/stats/Zap.svg",
+                title: "DPS",
+                state: dpsFilter,
+                setState: setDpsFilter,
+              },
+              {
+                icon: "./src/icons/stats/Heart (1).svg",
+                title: "Health",
+                state: healthFilter,
+                setState: setHealthFilter,
+              },
+              {
+                icon: "./src/icons/stats/Target Light.svg",
+                title: "Range",
+                state: rangeFilter,
+                setState: setRangeFilter,
+              },
+              {
+                icon: "./src/icons/stats/Film Reel Light.svg",
+                title: "Animation Time",
+                state: animationTimeFilter,
+                setState: setAnimationTimeFilter,
+              },
+              {
+                icon: "./src/icons/stats/Hourglass Empty.svg",
+                title: "Time Between Attacks",
+                state: tbaFilter,
+                setState: setTbaFilter,
+              },
+              {
+                icon: "./src/icons/stats/coin.svg",
+                title: "Cost",
+                state: costFilter,
+                setState: setCostFilter,
+              },
+              {
+                icon: "./src/icons/stats/Clock Hour.svg",
+                title: "Spawn Time",
+                state: spawnTimeFilter,
+                setState: setSpawnTimeFilter,
+              },
+              {
+                icon: "./src/icons/stats/Boot Fill.svg",
+                title: "Speed",
+                state: speedFilter,
+                setState: setSpeedFilter,
+              },
+              {
+                icon: "./src/icons/stats/Arrow Forward.svg",
+                title: "Knockback",
+                state: knockbackFilter,
+                setState: setKnockbackFilter,
+              },
+            ].map((stat, index) => (
+              <div
+                key={index}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  gap: "6px",
+                  margin: "10px",
+                }}
+              >
+                {/* Icon */}
+                <img
+                  src={stat.icon}
+                  alt={stat.title}
+                  title={stat.title}
+                  style={{ width: "28px", height: "28px" }}
+                />
+
+                {/* Min / Max Inputs with Text Indicators */}
+                <div style={{ display: "flex", gap: "8px" }}>
+                  {/* Min Column */}
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontSize: "10px",
+                        color: "#888",
+                        marginBottom: "2px",
+                      }}
+                    >
+                      Min
+                    </span>
+                    <input
+                      className="filter min-filter"
+                      type="number"
+                      min={0}
+                      value={stat.state.min}
+                      onChange={(e) =>
+                        stat.setState((prev) => ({
+                          ...prev,
+                          min: e.target.value,
+                        }))
+                      }
+                      style={{ width: "60px" }}
+                    />
+                  </div>
+
+                  {/* Max Column */}
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontSize: "10px",
+                        color: "#888",
+                        marginBottom: "2px",
+                      }}
+                    >
+                      Max
+                    </span>
+                    <input
+                      className="filter max-filter"
+                      type="number"
+                      min={0}
+                      value={stat.state.max}
+                      onChange={(e) =>
+                        stat.setState((prev) => ({
+                          ...prev,
+                          max: e.target.value,
+                        }))
+                      }
+                      style={{ width: "60px" }}
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
       {filtered_cats.slice(0, visibleCount)}
