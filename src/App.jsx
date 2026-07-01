@@ -39,6 +39,31 @@ function App() {
 
   const [filtered_cats, set_filtered_cats] = useState([]);
 
+  const handleResetAll = () => {
+    // Strings and Arrays
+    set_search_cat("");
+    update_selected_rarities([]);
+    update_selected_abilities([]);
+    set_and_or_abilities("OR");
+    update_selected_against([]);
+    set_and_or_against("OR");
+    update_selected_targets([]);
+    set_and_or_targets("OR");
+
+    // Numeric Object Filters
+    const defaultMinMax = { min: 0, max: 0 };
+    setDamageFilter(defaultMinMax);
+    setDpsFilter(defaultMinMax);
+    setHealthFilter(defaultMinMax);
+    setRangeFilter(defaultMinMax);
+    setAnimationTimeFilter(defaultMinMax);
+    setTbaFilter(defaultMinMax);
+    setCostFilter(defaultMinMax);
+    setSpawnTimeFilter(defaultMinMax);
+    setSpeedFilter(defaultMinMax);
+    setKnockbackFilter(defaultMinMax);
+  };
+
   useEffect(() => {
     const initiate_list = async () => {
       const cats_list = await get_cats_list();
@@ -117,9 +142,7 @@ function App() {
             // ==========================================
             // EXACT-MATCH DATA STATS RANGE CONDITION
             // ==========================================
-            if (cats[cat].units[0].name == "Actress Cat") {
-              console.log(cats[cat].units[0]);
-            }
+
             const stats_condition = Object.values(cats[cat].units)
               .map((unit, index) => {
                 const stats = unit.stats || {};
@@ -597,6 +620,25 @@ function App() {
               </div>
             ))}
           </div>
+        </div>
+        <hr style={{ width: "100%", background: "silver" }} />
+        <div style={{ display: "flex", gap: "10px" }}>
+          <button
+            onClick={handleResetAll}
+            style={{
+              ...subHeader, // Copies your existing subHeader styles
+              cursor: "pointer", // Makes it look clickable
+              background: "#3399ff", // Removes default HTML button background (adjust if needed)
+              font: "inherit", // Inherits typography from your subHeader style
+              userSelect: "none", // Prevents text highlighting on double clicks
+              borderRadius: "10px",
+              border: "1px solid #2288EE",
+              padding: "10px",
+              color: "white",
+            }}
+          >
+            Reset
+          </button>
         </div>
       </div>
       {filtered_cats.slice(0, visibleCount)}

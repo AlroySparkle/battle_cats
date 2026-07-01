@@ -294,6 +294,7 @@ export default function CatCard({ cats, cat_index }) {
   const [level, setLevel] = useState(30);
   const [details, setDetails] = useState(false);
   const forms = Object.values(cats.units);
+  const general = cats.general;
   return (
     <div
       style={{
@@ -319,9 +320,6 @@ export default function CatCard({ cats, cat_index }) {
       <div style={{ marginBottom: "10px", display: "flex" }}>
         <div
           style={{ fontWeight: "bold", color: details ? "#3399ff" : "black" }}
-          onClick={() => {
-            setDetails((prev) => !prev);
-          }}
         >
           Details
         </div>
@@ -345,6 +343,94 @@ export default function CatCard({ cats, cat_index }) {
           />
         ))}
       </div>
+      <div style={{ marginTop: "20px", display: "flex" }}>
+        {general.evolve_data.length > 0 && (
+          <div
+            style={{
+              fontWeight: "bold",
+              fontSize: "1.5rem",
+              fontWeight: "bold",
+            }}
+          >
+            Evolution Requirements
+          </div>
+        )}
+      </div>
+      {general.evolve_data.length > 0 && (
+        <div
+          style={{
+            display: "grid",
+            gap: "10px",
+            height: "10rem",
+            gridTemplateColumns: "repeat(2, 1fr)",
+            marginTop: "10px",
+            borderRadius: "1rem",
+            padding: "10px",
+          }}
+        >
+          <div style={{ fontSize: "1.2rem", fontWeight: "bold" }}>
+            True Evolution
+          </div>
+          <div style={{ fontSize: "1.2rem", fontWeight: "bold" }}>
+            Ultra Evolution
+          </div>
+
+          {general.evolve_data.map(
+            (evolve_items, index) =>
+              Object.keys(evolve_items).length > 0 && (
+                <div
+                  key={index}
+                  style={{
+                    display: "grid",
+                    borderRadius: "1rem",
+                    background: "#d0d0d0",
+                    border: "1px solid silver",
+                    gridTemplateColumns: "repeat(5, 1fr)",
+                    justifyItems: "center",
+                    padding: "10px",
+                  }}
+                >
+                  {Object.keys(evolve_items).map((evolve_item, index) => (
+                    <div
+                      key={index}
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        gap: "10px",
+                        border: "silver solid 1px",
+                        padding: "10px",
+                        borderRadius: "1rem",
+                        width: "8rem",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        background: "#c5c5c5",
+                      }}
+                    >
+                      <div>
+                        {evolve_item == "undefined" ? (
+                          ""
+                        ) : (
+                          <img
+                            width={"70px"}
+                            height={"70px"}
+                            src={
+                              "./src/icons/evolve_items/" + evolve_item + ".png"
+                            }
+                          />
+                        )}
+                      </div>
+                      <div style={{ fontSize: "2rem", fontWeight: "bold" }}>
+                        {evolve_item == "undefined"
+                          ? ""
+                          : evolve_items[evolve_item]}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ),
+          )}
+        </div>
+      )}
     </div>
   );
 }
