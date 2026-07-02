@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import "./App.css";
 import { get_cats_list } from "./assets/handle_cats";
 import CatCard from "./components/CatCard";
 
 function App() {
   const [cats, set_cats] = useState({});
+  const [cats_owned, set_cats_owned] = useState({});
 
   const [searched_cat, set_search_cat] = useState("");
 
@@ -37,7 +38,23 @@ function App() {
   const [speedFilter, setSpeedFilter] = useState({ min: 0, max: 0 });
   const [knockbackFilter, setKnockbackFilter] = useState({ min: 0, max: 0 });
 
-  const [filtered_cats, set_filtered_cats] = useState([]);
+  const download_cats = () => {
+    const fileName = "exported_cats";
+    const json = JSON.stringify(cats_owned, null, 2);
+    const blob = new Blob([json], { type: "application/json" });
+    const href = URL.createObjectURL(blob);
+
+    // create "a" HTLM element with href to file
+    const link = document.createElement("a");
+    link.href = href;
+    link.download = fileName + ".json";
+    document.body.appendChild(link);
+    link.click();
+
+    // clean up "a" element & remove ObjectURL
+    document.body.removeChild(link);
+    URL.revokeObjectURL(href);
+  };
 
   const handleResetAll = () => {
     // Strings and Arrays
@@ -77,153 +94,154 @@ function App() {
     initiate_list();
   }, []);
 
-  useEffect(() => {
-    const build_cats = () => {
-      set_filtered_cats(
-        Object.keys(cats)
-          .sort((a, b) => parseInt(a) - parseInt(b))
-          .filter((cat) => {
-            const units_names = Object.values(cats[cat].units).map(
-              (unit, index) => ({
-                id: index,
-                name: unit.name.toLowerCase(),
-              }),
-            );
+  const filtered_cats = useMemo(() => {
+    return Object.keys(cats)
+      .sort((a, b) => parseInt(a) - parseInt(b))
+      .filter((cat) => {
+        const units_names = Object.values(cats[cat].units).map(
+          (unit, index) => ({
+            id: index,
+            name: unit.name.toLowerCase(),
+          }),
+        );
 
-            const name_condition = units_names
-              .filter((unit) => unit.name.includes(searched_cat.toLowerCase()))
-              .map((unit) => unit.id);
+        const name_condition = units_names
+          .filter((unit) => unit.name.includes(searched_cat.toLowerCase()))
+          .map((unit) => unit.id);
 
-            const rarity_condition =
-              selected_rarities.includes(cats[cat].general.rarity) ||
-              selected_rarities.length == 0;
+        const rarity_condition =
+          selected_rarities.includes(cats[cat].general.rarity) ||
+          selected_rarities.length == 0;
 
-            const units_abilities = Object.values(cats[cat].units).map(
-              (catUnit, index) => ({
-                id: index,
-                abilities: Object.keys(catUnit.abilities || {}),
-              }),
-            );
-            const ability_condition = units_abilities
-              .filter(
-                (cat_abilities) =>
-                  selected_abilities.length == 0 ||
-                  (and_or_abilities == "OR"
-                    ? selected_abilities.some((ability) =>
-                        cat_abilities.abilities.includes(ability),
-                      )
-                    : selected_abilities.every((ability) =>
-                        cat_abilities.abilities.includes(ability),
-                      )),
-              )
-              .map((catUnit) => catUnit.id);
+        const units_abilities = Object.values(cats[cat].units).map(
+          (catUnit, index) => ({
+            id: index,
+            abilities: Object.keys(catUnit.abilities || {}),
+          }),
+        );
+        const ability_condition = units_abilities
+          .filter(
+            (cat_abilities) =>
+              selected_abilities.length == 0 ||
+              (and_or_abilities == "OR"
+                ? selected_abilities.some((ability) =>
+                    cat_abilities.abilities.includes(ability),
+                  )
+                : selected_abilities.every((ability) =>
+                    cat_abilities.abilities.includes(ability),
+                  )),
+          )
+          .map((catUnit) => catUnit.id);
 
-            const units_against = Object.values(cats[cat].units).map(
-              (unit, index) => ({
-                id: index,
-                against: unit.against || [],
-              }),
-            );
+        const units_against = Object.values(cats[cat].units).map(
+          (unit, index) => ({
+            id: index,
+            against: unit.against || [],
+          }),
+        );
 
-            const against_condition = units_against
-              .filter(
-                (unit_against) =>
-                  selected_against.length === 0 ||
-                  (and_or_against === "OR"
-                    ? selected_against.some((a) =>
-                        unit_against.against.includes(a),
-                      )
-                    : selected_against.every((a) =>
-                        unit_against.against.includes(a),
-                      )),
-              )
-              .map((unit) => unit.id);
+        const against_condition = units_against
+          .filter(
+            (unit_against) =>
+              selected_against.length === 0 ||
+              (and_or_against === "OR"
+                ? selected_against.some((a) => unit_against.against.includes(a))
+                : selected_against.every((a) =>
+                    unit_against.against.includes(a),
+                  )),
+          )
+          .map((unit) => unit.id);
 
-            // ==========================================
-            // EXACT-MATCH DATA STATS RANGE CONDITION
-            // ==========================================
+        // ==========================================
+        // EXACT-MATCH DATA STATS RANGE CONDITION
+        // ==========================================
 
-            const stats_condition = Object.values(cats[cat].units)
-              .map((unit, index) => {
-                const stats = unit.stats || {};
+        const stats_condition = Object.values(cats[cat].units)
+          .map((unit, index) => {
+            const stats = unit.stats || {};
 
-                // Clean strings containing formatting commas (e.g., "4,050" -> 4050)
-                const cleanNum = (val) => {
-                  if (!val) return 0;
-                  return parseFloat(String(val).replace(/,/g, "")) || 0;
-                };
+            // Clean strings containing formatting commas (e.g., "4,050" -> 4050)
+            const cleanNum = (val) => {
+              if (!val) return 0;
+              return parseFloat(String(val).replace(/,/g, "")) || 0;
+            };
 
-                // Updated helper function checking for dual-zero defaults
-                const checkBounds = (numValue, filter) => {
-                  const minFilterVal = parseFloat(filter.min) || 0;
-                  const maxFilterVal = parseFloat(filter.max) || 0;
+            // Updated helper function checking for dual-zero defaults
+            const checkBounds = (numValue, filter) => {
+              const minFilterVal = parseFloat(filter.min) || 0;
+              const maxFilterVal = parseFloat(filter.max) || 0;
 
-                  // Rule: If both min and max are 0, consider it active/true (no constraint applied)
-                  if (minFilterVal === 0 && maxFilterVal === 0) return true;
+              // Rule: If both min and max are 0, consider it active/true (no constraint applied)
+              if (minFilterVal === 0 && maxFilterVal === 0) return true;
 
-                  // Otherwise, evaluate boundaries mathematically
-                  const minMatch = numValue >= minFilterVal;
-                  const maxMatch =
-                    maxFilterVal === 0 || numValue <= maxFilterVal;
+              // Otherwise, evaluate boundaries mathematically
+              const minMatch = numValue >= minFilterVal;
+              const maxMatch = maxFilterVal === 0 || numValue <= maxFilterVal;
 
-                  return minMatch && maxMatch;
-                };
+              return minMatch && maxMatch;
+            };
 
-                // Parse base stats exactly matching your raw keys
-                const rawDamage = cleanNum(stats.att) * 2.5;
-                const rawHealth = cleanNum(stats.hp) * 2.5;
-                const rawRange = cleanNum(stats.range);
-                const rawSpeed = cleanNum(stats.speed);
-                const rawKb = cleanNum(stats.kb);
-                const rawCost = cleanNum(stats.cost);
+            // Parse base stats exactly matching your raw keys
+            const rawDamage = cleanNum(stats.att) * 2.5;
+            const rawHealth = cleanNum(stats.hp) * 2.5;
+            const rawRange = cleanNum(stats.range);
+            const rawSpeed = cleanNum(stats.speed);
+            const rawKb = cleanNum(stats.kb);
+            const rawCost = cleanNum(stats.cost);
 
-                // Convert frame strings ("301", "5") into clean mathematical seconds
-                const rawAttCy = cleanNum(stats.attCy);
-                const parsedAnimationTime = cleanNum(stats.fore) / 30;
-                const parsedTba = rawAttCy / 30;
+            // Convert frame strings ("301", "5") into clean mathematical seconds
+            const rawAttCy = cleanNum(stats.attCy);
+            const parsedAnimationTime = cleanNum(stats.fore) / 30;
+            const parsedTba = rawAttCy / 30;
 
-                // Derived calculation for accurate Battle Cats DPS filtering
-                const calculatedDps =
-                  rawAttCy > 0 ? rawDamage / (rawAttCy / 30) : 0;
+            // Derived calculation for accurate Battle Cats DPS filtering
+            const calculatedDps =
+              rawAttCy > 0 ? rawDamage / (rawAttCy / 30) : 0;
 
-                // Handle formatting for "100 ~ 91.2 seconds" string layout
-                let parsedSpawnTime = 0;
-                if (stats.recharge) {
-                  const parts = stats.recharge.split("~ ");
-                  parsedSpawnTime = cleanNum(parts[1] ? parts[1] : parts[0]);
-                }
+            // Handle formatting for "100 ~ 91.2 seconds" string layout
+            let parsedSpawnTime = 0;
+            if (stats.recharge) {
+              const parts = stats.recharge.split("~ ");
+              parsedSpawnTime = cleanNum(parts[1] ? parts[1] : parts[0]);
+            }
 
-                const matchesAllStats =
-                  checkBounds(rawDamage, damageFilter) &&
-                  checkBounds(calculatedDps, dpsFilter) &&
-                  checkBounds(rawHealth, healthFilter) &&
-                  checkBounds(rawRange, rangeFilter) &&
-                  checkBounds(parsedAnimationTime, animationTimeFilter) &&
-                  checkBounds(parsedTba, tbaFilter) &&
-                  checkBounds(rawCost, costFilter) &&
-                  checkBounds(parsedSpawnTime, spawnTimeFilter) &&
-                  checkBounds(rawSpeed, speedFilter) &&
-                  checkBounds(rawKb, knockbackFilter);
+            const matchesAllStats =
+              checkBounds(rawDamage, damageFilter) &&
+              checkBounds(calculatedDps, dpsFilter) &&
+              checkBounds(rawHealth, healthFilter) &&
+              checkBounds(rawRange, rangeFilter) &&
+              checkBounds(parsedAnimationTime, animationTimeFilter) &&
+              checkBounds(parsedTba, tbaFilter) &&
+              checkBounds(rawCost, costFilter) &&
+              checkBounds(parsedSpawnTime, spawnTimeFilter) &&
+              checkBounds(rawSpeed, speedFilter) &&
+              checkBounds(rawKb, knockbackFilter);
 
-                return { id: index, valid: matchesAllStats };
-              })
-              .filter((unit) => unit.valid)
-              .map((unit) => unit.id);
-
-            // Intersect the stats condition mapping with the existing structural arrays
-            const conditions = ability_condition
-              .filter((id) => against_condition.includes(id))
-              .filter((id) => name_condition.includes(id))
-              .filter((id) => stats_condition.includes(id));
-
-            return rarity_condition && conditions.length > 0;
+            return { id: index, valid: matchesAllStats };
           })
-          .map((cat) => <CatCard key={cat} cats={cats[cat]} cat_index={cat} />),
-      );
-    };
-    build_cats();
+          .filter((unit) => unit.valid)
+          .map((unit) => unit.id);
+
+        // Intersect the stats condition mapping with the existing structural arrays
+        const conditions = ability_condition
+          .filter((id) => against_condition.includes(id))
+          .filter((id) => name_condition.includes(id))
+          .filter((id) => stats_condition.includes(id));
+
+        return rarity_condition && conditions.length > 0;
+      })
+      .map((cat) => (
+        <CatCard
+          key={cat}
+          set_owned={set_cats_owned}
+          owned={cats_owned}
+          cats={cats[cat]}
+          cat_index={cat}
+        />
+      ));
   }, [
     cats,
+    cats_owned,
     selected_rarities,
     selected_abilities,
     selected_against,
@@ -232,8 +250,6 @@ function App() {
     and_or_abilities,
     and_or_against,
     and_or_targets,
-
-    // --- New Stat Filters ---
     damageFilter,
     dpsFilter,
     healthFilter,
@@ -286,6 +302,11 @@ function App() {
   };
 
   const [visibleCount, setVisibleCount] = useState(20);
+
+  useEffect(() => {
+    setVisibleCount(20);
+  }, [filtered_cats]);
+
   useEffect(() => {
     const handleScroll = () => {
       if (
@@ -639,6 +660,62 @@ function App() {
           >
             Reset
           </button>
+          <button
+            onClick={download_cats}
+            style={{
+              ...subHeader, // Copies your existing subHeader styles
+              cursor: "pointer", // Makes it look clickable
+              background: "#3399ff", // Removes default HTML button background (adjust if needed)
+              font: "inherit", // Inherits typography from your subHeader style
+              userSelect: "none", // Prevents text highlighting on double clicks
+              borderRadius: "10px",
+              border: "1px solid #2288EE",
+              padding: "10px",
+              color: "white",
+            }}
+          >
+            export owned cats
+          </button>
+          <label
+            style={{
+              ...subHeader, // Copies your existing subHeader styles
+              cursor: "pointer", // Makes it look clickable
+              background: "#3399ff", // Removes default HTML button background (adjust if needed)
+              font: "inherit", // Inherits typography from your subHeader style
+              userSelect: "none", // Prevents text highlighting on double clicks
+              borderRadius: "10px",
+              border: "1px solid #2288EE",
+              padding: "10px",
+              color: "white",
+            }}
+          >
+            import cats
+            <input
+              type="file"
+              onChange={(e) => {
+                const file = e.target.files[0];
+                if (!file) {
+                  return;
+                }
+                const reader = new FileReader();
+
+                // This event fires when the file reading is completely finished
+                reader.onload = (event) => {
+                  try {
+                    // event.target.result contains the raw file text string
+                    const parsedData = JSON.parse(event.target.result);
+                    set_cats_owned(parsedData);
+                  } catch (err) {
+                    setError("Failed to parse JSON. File might be corrupted.");
+                  }
+                };
+
+                // Start reading the file as plain text
+                reader.readAsText(file);
+              }}
+              style={{ display: "none" }}
+            />
+          </label>
         </div>
       </div>
       {filtered_cats.slice(0, visibleCount)}

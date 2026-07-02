@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { catStat, get_type } from "../assets/handle_cats";
 
 /**
@@ -290,8 +290,15 @@ function Card(params) {
   );
 }
 
-export default function CatCard({ cats, cat_index }) {
+export default function CatCard({ cats, cat_index, owned, set_owned }) {
   const [level, setLevel] = useState(30);
+
+  useEffect(() => {
+    if (owned[cat_index] && owned[cat_index] != level) {
+      setLevel(owned[cat_index]);
+    }
+  }, [owned]);
+
   const [details, setDetails] = useState(false);
   const forms = Object.values(cats.units);
   const general = cats.general;
@@ -304,6 +311,35 @@ export default function CatCard({ cats, cat_index }) {
         background: "linear-gradient(45deg,#ffbf00,#ffdc73)",
       }}
     >
+      <div
+        style={{
+          marginBottom: "10px",
+          display: "flex",
+          width: "fit-content",
+          background: Object.keys(owned).includes(cat_index)
+            ? undefined
+            : "#ffbf00",
+        }}
+        className={
+          (Object.keys(owned).includes(cat_index)
+            ? "selected"
+            : "not_selected") + " button"
+        }
+        onClick={() => {
+          set_owned((prev) => {
+            const new_owned = { ...prev };
+            if (cat_index in new_owned) {
+              delete new_owned[cat_index];
+            } else {
+              new_owned[cat_index] = level;
+            }
+            return new_owned;
+          });
+        }}
+      >
+        {Object.keys(owned).includes(cat_index) ? "owned" : "not owned"}
+      </div>
+
       <div style={{ marginBottom: "10px", display: "flex" }}>
         {cats.general.rarity}&nbsp;
       </div>

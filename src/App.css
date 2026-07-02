@@ -16,23 +16,25 @@
   -o-border-radius: 10px;
 }
 
-.button.selected {
+.not_selected {
   background: white;
   color: #3399ff;
   border: #3399ff solid 1px;
 }
 
-.button.selected:hover {
+.not_selected:hover {
   background: #c5eaff;
 }
 
-.button.not-selected {
-  background: white;
-  color: black;
+/* 🟢 Perfectly reversed: Blue background, white text */
+.selected {
+  background: #3399ff;
+  color: white;
+  border: #3399ff solid 1px; /* Keeps the card size identical so it doesn't jump */
 }
 
-.button.not-selected:hover {
-  background: rgb(231, 231, 231);
+.selected:hover {
+  background: #1a8cff; /* A slightly darker blue for the hover effect */
 }
 
 input {
