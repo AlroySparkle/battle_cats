@@ -303,14 +303,7 @@ export default function CatCard({ cats, cat_index, owned, set_owned }) {
   const forms = Object.values(cats.units);
   const general = cats.general;
   return (
-    <div
-      style={{
-        borderRadius: "1rem",
-        border: "1px solid silver",
-        padding: "10px",
-        background: "linear-gradient(45deg,#ffbf00,#ffdc73)",
-      }}
-    >
+    <div className="card-container">
       <div
         style={{
           marginBottom: "10px",

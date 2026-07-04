@@ -1,3 +1,10 @@
+.card-container {
+  border-radius: 1rem;
+  border: 1px solid silver;
+  padding: 10px;
+  background: linear-gradient(45deg, #ffbf00, #ffdc73);
+}
+
 .button {
   font-size: 1rem;
   border-radius: 10px;
