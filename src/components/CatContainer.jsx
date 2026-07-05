@@ -337,7 +337,7 @@ function CatContainer() {
           }}
         />
 
-        <hr style={{ width: "100%", background: "silver" }} />
+        <hr style={{ width: "100%" }} />
 
         <div style={subHeader}>Rarity</div>
         <div style={{ display: "flex", flexDirection: "row", gap: "10px" }}>

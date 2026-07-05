@@ -12,6 +12,7 @@ export default function ComboCard(params) {
         flexDirection: "column",
         border: "silver solid 1px",
         padding: "5px",
+        flex: "1 0 auto",
         borderRadius: "1rem",
         background: "linear-gradient(to bottom,#e1e1e1,white,#e1e1e1)",
         maxWidth: "30rem",
