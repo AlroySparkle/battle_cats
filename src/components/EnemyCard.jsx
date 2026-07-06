@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 export default function EnemyCard(params) {
   const enemy = params.enemy;
   const [percentage, set_percentage] = useState(100);
-
   // Guard against initial loading state
   if (!enemy) return null;
 
@@ -61,7 +60,7 @@ export default function EnemyCard(params) {
     {
       icon: "./src/icons/stats/coin.svg",
       title: "Drop",
-      value: enemy?.drop?.toLocaleString() || enemy?.drop,
+      value: enemy?.drop?.toLocaleString().split(" ~ ")[1] || enemy?.drop,
     },
     {
       icon: "./src/icons/stats/Boot Fill.svg",
@@ -84,7 +83,7 @@ export default function EnemyCard(params) {
         border: "silver solid 1px",
         padding: "5px",
         borderRadius: "1rem",
-        maxWidth: "30rem",
+        maxWidth: "25rem",
         width: "95%",
         background: "linear-gradient(to bottom,#e1e1e1,white,#e1e1e1)",
       }}
@@ -94,41 +93,22 @@ export default function EnemyCard(params) {
         style={{
           display: "flex",
           justifyContent: "space-between",
-          alignItems: "center",
         }}
       >
-        <h3 style={{ fontSize: "1rem", fontFamily: "sans-serif", margin: 0 }}>
+        <h3 style={{ fontSize: "1rem", fontFamily: "sans-serif" }}>
           <div>{enemy.name}</div>
         </h3>
 
-        {/* Strength controller placed cleanly next to the title */}
-        <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-          <span
-            style={{
-              color: "gray",
-              fontSize: "0.75rem",
-              fontFamily: "sans-serif",
-              fontWeight: "bold",
-            }}
-          >
-            strength:
-          </span>
-          <input
-            type="number"
-            value={percentage}
-            onChange={(e) => set_percentage(Number(e.target.value) || 0)}
-            style={{
-              width: "5rem",
-              textAlign: "right",
-              borderRadius: "3px",
-              border: "1px solid silver",
-              padding: "1px",
-            }}
-          />
-          <span style={{ fontSize: "0.8rem", fontFamily: "sans-serif" }}>
-            %
-          </span>
-        </div>
+        <img
+          width={"50rem"}
+          title={enemy.name}
+          alt={enemy.name}
+          src={
+            "./src/characters/enemies_display/" +
+            enemy.name.replace(/[/\\?%*:|"<>]/g, "") +
+            ".png"
+          }
+        />
       </div>
 
       <hr style={{ width: "100%", background: "silver" }} />
@@ -200,6 +180,120 @@ export default function EnemyCard(params) {
         ))}
       </div>
       <hr style={{ width: "100%", background: "silver" }} />
+      <h3 style={{ fontSize: "1rem", fontFamily: "sans-serif", margin: 0 }}>
+        <div
+          style={{
+            fontSize: ".9rem",
+            fontFamily: "sans-serif",
+            textAlign: "center",
+            fontWeight: "bold",
+            marginBottom: "5px",
+          }}
+        >
+          traits
+        </div>
+      </h3>
+      <div
+        style={{
+          display: "flex",
+          gap: "10px",
+          minHeight: "40px",
+          flexWrap: "wrap",
+        }}
+      >
+        {enemy.traits.map((trait) => (
+          <img
+            key={trait}
+            src={"./src/icons/traits/" + trait + ".png"}
+            alt={trait}
+            title={trait}
+            width={"40rem"}
+          />
+        ))}
+      </div>
+
+      <hr style={{ width: "100%", background: "silver" }} />
+      <h3 style={{ fontSize: "1rem", fontFamily: "sans-serif", margin: 0 }}>
+        <div
+          style={{
+            fontSize: ".9rem",
+            fontFamily: "sans-serif",
+            textAlign: "center",
+            fontWeight: "bold",
+            marginBottom: "5px",
+          }}
+        >
+          Abilities
+        </div>
+      </h3>
+      <div
+        style={{
+          display: "flex",
+          gap: "10px",
+          minHeight: "40px",
+          flexWrap: "wrap",
+        }}
+      >
+        {Object.keys(enemy.special_abilities).map((ability) => (
+          <img
+            key={ability}
+            src={"./src/icons/abilities/" + ability + ".png"}
+            alt={ability}
+            title={enemy.special_abilities[ability]}
+            width={"40rem"}
+          />
+        ))}
+      </div>
+
+      <hr style={{ width: "100%", background: "silver" }} />
+      <div
+        style={{
+          fontSize: ".9rem",
+          fontFamily: "sans-serif",
+          textAlign: "center",
+          fontWeight: "bold",
+          marginBottom: "5px",
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
+        <div>Strength</div>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "4px",
+            alignSelf: "center",
+            marginBottom: "10px",
+          }}
+        >
+          <span
+            style={{
+              color: "gray",
+              fontSize: "0.75rem",
+              fontFamily: "sans-serif",
+              fontWeight: "bold",
+            }}
+          >
+            strength:
+          </span>
+          <input
+            type="number"
+            value={percentage}
+            onChange={(e) => set_percentage(Number(e.target.value) || 0)}
+            style={{
+              width: "5rem",
+              textAlign: "right",
+              borderRadius: "3px",
+              border: "1px solid silver",
+              padding: "1px",
+            }}
+          />
+          <span style={{ fontSize: "0.8rem", fontFamily: "sans-serif" }}>
+            %
+          </span>
+        </div>
+      </div>
     </div>
   );
 }

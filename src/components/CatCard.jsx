@@ -123,7 +123,11 @@ function Card(params) {
           <div>{cat.name}</div>
           <img
             width={"70rem"}
-            src={"./src/characters/cats_display/" + cat.name + ".png"}
+            src={
+              "./src/characters/cats_display/" +
+              cat.name.replace(/[/\\?%*:|"<>]/g, "") +
+              ".png"
+            }
           />
         </h3>
 
