@@ -32,7 +32,7 @@ function App() {
             key={page.title}
             style={{
               fontWeight: "bold",
-              fontSize: "1.5rem",
+              fontSize: "1.3rem",
               flex: "1 0 auto",
               background:
                 page.title == selected_page

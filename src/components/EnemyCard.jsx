@@ -92,13 +92,9 @@ export default function EnemyCard(params) {
       <div
         style={{
           display: "flex",
-          justifyContent: "space-between",
+          flexDirection: "column",
         }}
       >
-        <h3 style={{ fontSize: "1rem", fontFamily: "sans-serif" }}>
-          <div>{enemy.name}</div>
-        </h3>
-
         <img
           width={"50rem"}
           title={enemy.name}
@@ -109,6 +105,9 @@ export default function EnemyCard(params) {
             ".png"
           }
         />
+        <h3 style={{ fontSize: "1rem", fontFamily: "sans-serif" }}>
+          <div>{enemy.name}</div>
+        </h3>
       </div>
 
       <hr style={{ width: "100%", background: "silver" }} />
@@ -130,7 +129,7 @@ export default function EnemyCard(params) {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(5, 1fr)",
+          gridTemplateColumns: "repeat(3, 1fr)",
           gap: "10px",
         }}
       >

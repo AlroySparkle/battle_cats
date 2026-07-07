@@ -13,7 +13,7 @@ function Card(params) {
   const cat = useMemo(
     () => ({
       ...params.cat,
-      name: params.cat.name.replace("&amp;", "&"),
+      name: params.cat.name.replace("&amp;", "&").toUpperCase(),
       stats: params.cat.stats || {
         attCy: "0",
         hp: "0",
@@ -113,62 +113,135 @@ function Card(params) {
         border: "silver solid 1px",
         padding: "5px",
         borderRadius: "1rem",
-        maxWidth: "30rem",
-        width: "95%",
         background: "linear-gradient(to bottom,#e1e1e1,white,#e1e1e1)",
+        gap: "10px",
+        width: "100%",
       }}
     >
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <h3 style={{ fontSize: "1rem", fontFamily: "sans-serif" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          gap: "10px",
+        }}
+      >
+        <h3
+          style={{
+            fontSize: "1.3rem",
+            fontFamily: "sans-serif",
+            flex: "5 0 auto",
+            padding: "10px",
+            borderRadius: "10px",
+            border: "1px solid silver",
+            margin: 0,
+          }}
+        >
           <div>{cat.name}</div>
+        </h3>
+
+        <h3
+          style={{
+            fontSize: "1.3rem",
+            fontFamily: "sans-serif",
+            flex: "1 0 auto",
+            padding: "10px",
+            borderRadius: "10px",
+            border: "1px solid silver",
+            margin: 0,
+            textAlign: "center",
+          }}
+        >
+          <div>
+            {params.cat_index}-{params.form_index}
+          </div>
+        </h3>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          border: "1px solid silver",
+          borderRadius: "10px",
+          padding: "5px",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+          }}
+        >
           <img
-            width={"70rem"}
+            width={"100rem"}
             src={
               "./src/characters/cats_display/" +
               cat.name.replace(/[/\\?%*:|"<>]/g, "") +
               ".png"
             }
           />
-        </h3>
-
-        <h3 style={{ fontSize: "1rem", fontFamily: "sans-serif" }}>
-          {params.cat_index}-{params.form_index}
-        </h3>
-      </div>
-      <hr style={{ width: "100%", background: "silver" }} />
-      <div
-        style={{
-          fontSize: ".9rem",
-          fontFamily: "sans-serif",
-          textAlign: "center",
-          fontWeight: "bold",
-          marginBottom: "5px",
-        }}
-      >
-        stats
-      </div>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(5, 1fr)",
-          gap: "10px",
-        }}
-      >
-        {stats.map((catStat, index) => (
           <div
-            key={index}
             style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
+              whiteSpace: "pre-line",
+              marginLeft: "1rem",
+              display: "-webkit-box",
+              WebkitLineClamp: 3,
+              WebkitBoxOrient: "vertical",
+              overflow: "hidden",
             }}
           >
-            <img src={catStat.icon} title={catStat.title} />
-            <div>{catStat.value + ""}</div>
+            <a href={cat.desc_link} target="_blank" style={{ color: "black" }}>
+              {cat.desc}
+            </a>
           </div>
-        ))}
+        </div>
       </div>
-      <hr style={{ width: "100%", background: "silver" }} />
+      <div
+        style={{
+          display: "flex",
+          gap: "10px",
+          border: "1px solid silver",
+          padding: "5px",
+          borderRadius: "10px",
+          flexDirection: "column",
+        }}
+      >
+        <div
+          style={{
+            fontSize: ".9rem",
+            fontFamily: "sans-serif",
+            textAlign: "center",
+            fontWeight: "bold",
+            marginBottom: "5px",
+          }}
+        >
+          Stats
+        </div>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(5, 1fr)",
+            placeContent: "center",
+            flex: "1 0 auto",
+            gap: "10px",
+          }}
+        >
+          {stats.map((catStat, index) => (
+            <div
+              key={index}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
+              <img src={catStat.icon} title={catStat.title} />
+              <div>{catStat.value + ""}</div>
+            </div>
+          ))}
+        </div>
+      </div>
 
       {params.details ? (
         <div>
@@ -176,6 +249,7 @@ function Card(params) {
             <div key={block_index}>
               {block.split("u2:").map((item, item_index) => (
                 <div
+                  key={item_index}
                   style={{
                     fontWeight: item_index % 2 == 0 ? "bold" : "normal",
                     fontSize: item_index % 2 == 0 ? "1.2rem" : "1rem",
@@ -205,88 +279,118 @@ function Card(params) {
         </div>
       ) : (
         <>
-          <div
-            style={{
-              fontSize: ".9rem",
-              fontFamily: "sans-serif",
-              textAlign: "center",
-              fontWeight: "bold",
-              marginBottom: "5px",
-            }}
-          >
-            attack type
-          </div>
           <div style={{ display: "flex", gap: "10px" }}>
-            <img
-              alt={cat.stats["Attack Type"]}
-              title={cat.stats["Attack Type"]}
-              src={"./src/icons/abilities/" + cat.stats["Attack Type"] + ".png"}
-              width={"40rem"}
-              height={"40rem"}
-            />
-          </div>
-          <hr style={{ width: "100%", background: "silver" }} />
-          <div
-            style={{
-              fontSize: ".9rem",
-              fontFamily: "sans-serif",
-              textAlign: "center",
-              fontWeight: "bold",
-              marginBottom: "5px",
-            }}
-          >
-            Against
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "5px",
-            }}
-          >
-            {cat.against.length > 0
-              ? cat.against.map((against) => (
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                border: "1px solid silver",
+                borderRadius: "10px",
+                padding: "10px",
+              }}
+            >
+              <div
+                style={{
+                  fontSize: ".9rem",
+                  fontFamily: "sans-serif",
+                  textAlign: "center",
+                  fontWeight: "bold",
+                  marginBottom: "5px",
+                }}
+              >
+                TARGET
+              </div>
+              <div style={{ display: "flex", gap: "10px" }}>
+                <img
+                  alt={cat.stats["Attack Type"]}
+                  title={cat.stats["Attack Type"]}
+                  src={
+                    "./src/icons/abilities/" + cat.stats["Attack Type"] + ".png"
+                  }
+                  width={"40rem"}
+                  height={"40rem"}
+                />
+              </div>
+            </div>
+            <div
+              style={{
+                flexGrow: 1,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                border: "1px solid silver",
+                borderRadius: "10px",
+                padding: "10px",
+              }}
+            >
+              <div
+                style={{
+                  fontSize: ".9rem",
+                  fontFamily: "sans-serif",
+                  textAlign: "center",
+                  fontWeight: "bold",
+                  marginBottom: "5px",
+                }}
+              >
+                Against
+              </div>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(10, 1fr)",
+                  gap: "3px",
+                }}
+              >
+                {cat.against.map((against) => (
                   <img
                     key={against}
                     title={against}
                     alt={against}
                     src={"./src/icons/traits/" + against + ".png"}
-                    width={"40rem"}
+                    width={"100%"}
                   />
-                ))
-              : "none"}
-          </div>
-          <hr style={{ width: "100%" }} />
-          <div
-            style={{
-              fontSize: ".9rem",
-              fontFamily: "sans-serif",
-              textAlign: "center",
-              fontWeight: "bold",
-              marginBottom: "5px",
-            }}
-          >
-            Abilities
+                ))}
+              </div>
+            </div>
           </div>
           <div
             style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "10px",
+              border: "1px solid silver",
+              borderRadius: "10px",
+              padding: "10px",
             }}
           >
-            {Object.keys(cat.abilities).length > 0
-              ? Object.keys(cat.abilities).map((ability) => (
-                  <img
-                    key={ability}
-                    alt={ability}
-                    title={cat.abilities[ability]}
-                    src={"./src/icons/abilities/" + ability + ".png"}
-                    height={"40rem"}
-                    width={"40rem"}
-                  />
-                ))
-              : "none"}
+            <div
+              style={{
+                fontSize: ".9rem",
+                fontFamily: "sans-serif",
+                textAlign: "center",
+                fontWeight: "bold",
+                marginBottom: "5px",
+              }}
+            >
+              Abilities
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                minHeight: "50px",
+                gap: "10px",
+              }}
+            >
+              {Object.keys(cat.abilities).map((ability) => (
+                <img
+                  key={ability}
+                  alt={ability}
+                  title={cat.abilities[ability]}
+                  src={"./src/icons/abilities/" + ability + ".png"}
+                  height={"40rem"}
+                  width={"40rem"}
+                />
+              ))}
+            </div>
           </div>
         </>
       )}
