@@ -43,7 +43,9 @@ function Card(params) {
     const health = Math.ceil(
       catStat(cat.stats?.hp?.replace(",", "") * 2.5 || 0, level, get_type(cat)),
     );
-    const dps = Math.ceil(damage / (parseInt(cat.stats.attCy) / 30));
+    const dps = Math.ceil(
+      damage / (parseInt(cat.stats.attCy.replaceAll(",", "")) / 30),
+    );
 
     return { damage, health, dps };
   }, [cat, level]);
@@ -73,12 +75,12 @@ function Card(params) {
       {
         icon: "./src/icons/stats/Film Reel Light.svg",
         title: "Animation Time",
-        value: (parseInt(cat.stats.fore) / 30).toFixed(2),
+        value: (parseInt(cat.stats.fore.replaceAll(",", "")) / 30).toFixed(2),
       },
       {
         icon: "./src/icons/stats/Hourglass Empty.svg",
         title: "Time Between Attacks",
-        value: (parseInt(cat.stats.attCy) / 30).toFixed(2),
+        value: (parseInt(cat.stats.attCy.replaceAll(",", "")) / 30).toFixed(2),
       },
       {
         icon: "./src/icons/stats/coin.svg",
@@ -110,12 +112,13 @@ function Card(params) {
       style={{
         display: "flex",
         flexDirection: "column",
-        border: "silver solid 1px",
+        border: "silver solid 3px",
         padding: "5px",
         borderRadius: "1rem",
-        background: "linear-gradient(to bottom,#e1e1e1,white,#e1e1e1)",
+        background: "#e1e1e1",
         gap: "10px",
         width: "100%",
+        boxSizing: "border-box",
       }}
     >
       <div
@@ -134,6 +137,11 @@ function Card(params) {
             borderRadius: "10px",
             border: "1px solid silver",
             margin: 0,
+            background: "#F5F5F5",
+            display: "block",
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
           }}
         >
           <div>{cat.name}</div>
@@ -149,6 +157,7 @@ function Card(params) {
             border: "1px solid silver",
             margin: 0,
             textAlign: "center",
+            background: "#F5F5F5",
           }}
         >
           <div>
@@ -164,6 +173,7 @@ function Card(params) {
           border: "1px solid silver",
           borderRadius: "10px",
           padding: "5px",
+          background: "#F5F5F5",
         }}
       >
         <div
@@ -171,6 +181,7 @@ function Card(params) {
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
+            width: "100%",
           }}
         >
           <img
@@ -205,6 +216,7 @@ function Card(params) {
           padding: "5px",
           borderRadius: "10px",
           flexDirection: "column",
+          background: "#F5F5F5",
         }}
       >
         <div
@@ -237,163 +249,128 @@ function Card(params) {
               }}
             >
               <img src={catStat.icon} title={catStat.title} />
-              <div>{catStat.value + ""}</div>
+              <div>
+                {(catStat.value + "").replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+              </div>
             </div>
           ))}
         </div>
       </div>
 
-      {params.details ? (
-        <div>
-          {cat.general_info.split("u1").map((block, block_index) => (
-            <div key={block_index}>
-              {block.split("u2:").map((item, item_index) => (
-                <div
-                  key={item_index}
-                  style={{
-                    fontWeight: item_index % 2 == 0 ? "bold" : "normal",
-                    fontSize: item_index % 2 == 0 ? "1.2rem" : "1rem",
-                    display: "flex",
-                    flexWrap: "wrap",
-                  }}
-                  index={item_index}
-                >
-                  {item_index % 2 == 0
-                    ? item
-                    : item.split("b2").map((ability, index) => (
-                        <div
-                          key={index}
-                          style={{
-                            fontWeight: index % 2 == 0 ? "bold" : "normal",
-                          }}
-                        >
-                          {ability.replace("b1", "")}&nbsp;
-                        </div>
-                      ))}
-                  <br />
-                  <br />
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
-      ) : (
-        <>
+      <div style={{ display: "flex", gap: "10px" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            border: "1px solid silver",
+            borderRadius: "10px",
+            padding: "10px",
+            background: "#F5F5F5",
+          }}
+        >
+          <div
+            style={{
+              fontSize: ".9rem",
+              fontFamily: "sans-serif",
+              textAlign: "center",
+              fontWeight: "bold",
+              marginBottom: "5px",
+            }}
+          >
+            TARGET
+          </div>
           <div style={{ display: "flex", gap: "10px" }}>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                border: "1px solid silver",
-                borderRadius: "10px",
-                padding: "10px",
-              }}
-            >
-              <div
-                style={{
-                  fontSize: ".9rem",
-                  fontFamily: "sans-serif",
-                  textAlign: "center",
-                  fontWeight: "bold",
-                  marginBottom: "5px",
-                }}
-              >
-                TARGET
-              </div>
-              <div style={{ display: "flex", gap: "10px" }}>
-                <img
-                  alt={cat.stats["Attack Type"]}
-                  title={cat.stats["Attack Type"]}
-                  src={
-                    "./src/icons/abilities/" + cat.stats["Attack Type"] + ".png"
-                  }
-                  width={"40rem"}
-                  height={"40rem"}
-                />
-              </div>
-            </div>
-            <div
-              style={{
-                flexGrow: 1,
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                border: "1px solid silver",
-                borderRadius: "10px",
-                padding: "10px",
-              }}
-            >
-              <div
-                style={{
-                  fontSize: ".9rem",
-                  fontFamily: "sans-serif",
-                  textAlign: "center",
-                  fontWeight: "bold",
-                  marginBottom: "5px",
-                }}
-              >
-                Against
-              </div>
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(10, 1fr)",
-                  gap: "3px",
-                }}
-              >
-                {cat.against.map((against) => (
-                  <img
-                    key={against}
-                    title={against}
-                    alt={against}
-                    src={"./src/icons/traits/" + against + ".png"}
-                    width={"100%"}
-                  />
-                ))}
-              </div>
-            </div>
+            <img
+              alt={cat.stats["Attack Type"]}
+              title={cat.stats["Attack Type"]}
+              src={"./src/icons/abilities/" + cat.stats["Attack Type"] + ".png"}
+              width={"30rem"}
+              height={"30rem"}
+            />
+          </div>
+        </div>
+        <div
+          style={{
+            flexGrow: 1,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            border: "1px solid silver",
+            borderRadius: "10px",
+            padding: "10px",
+            background: "#F5F5F5",
+          }}
+        >
+          <div
+            style={{
+              fontSize: ".9rem",
+              fontFamily: "sans-serif",
+              textAlign: "center",
+              fontWeight: "bold",
+              marginBottom: "5px",
+            }}
+          >
+            Against
           </div>
           <div
             style={{
-              border: "1px solid silver",
-              borderRadius: "10px",
-              padding: "10px",
+              display: "grid",
+              gridTemplateColumns: "repeat(10, 1fr)",
+              gap: "3px",
             }}
           >
-            <div
-              style={{
-                fontSize: ".9rem",
-                fontFamily: "sans-serif",
-                textAlign: "center",
-                fontWeight: "bold",
-                marginBottom: "5px",
-              }}
-            >
-              Abilities
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                minHeight: "50px",
-                gap: "10px",
-              }}
-            >
-              {Object.keys(cat.abilities).map((ability) => (
-                <img
-                  key={ability}
-                  alt={ability}
-                  title={cat.abilities[ability]}
-                  src={"./src/icons/abilities/" + ability + ".png"}
-                  height={"40rem"}
-                  width={"40rem"}
-                />
-              ))}
-            </div>
+            {cat.against.map((against) => (
+              <img
+                key={against}
+                title={against}
+                alt={against}
+                src={"./src/icons/traits/" + against + ".png"}
+                width={"100%"}
+              />
+            ))}
           </div>
-        </>
-      )}
+        </div>
+      </div>
+      <div
+        style={{
+          border: "1px solid silver",
+          borderRadius: "10px",
+          padding: "10px",
+          background: "#F5F5F5",
+        }}
+      >
+        <div
+          style={{
+            fontSize: ".9rem",
+            fontFamily: "sans-serif",
+            textAlign: "center",
+            fontWeight: "bold",
+            marginBottom: "5px",
+          }}
+        >
+          Abilities
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            minHeight: "50px",
+            gap: "10px",
+          }}
+        >
+          {Object.keys(cat.abilities).map((ability) => (
+            <img
+              key={ability}
+              alt={ability}
+              title={cat.abilities[ability]}
+              src={"./src/icons/abilities/" + ability + ".png"}
+              height={"30rem"}
+              width={"30rem"}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
@@ -407,59 +384,35 @@ export default function CatCard({ cats, cat_index, owned, set_owned }) {
     }
   }, [owned]);
 
-  const [details, setDetails] = useState(false);
   const forms = Object.values(cats.units);
   const general = cats.general;
   return (
-    <div className="card-container">
+    <div
+      className="card-container"
+      style={{ gap: "10px", display: "flex", flexDirection: "column" }}
+    >
       <div
         style={{
-          marginBottom: "10px",
           display: "flex",
+          padding: "10px",
+          border: "solid silver 1px",
           width: "fit-content",
-          background: Object.keys(owned).includes(cat_index)
-            ? undefined
-            : "#ffbf00",
-        }}
-        className={
-          (Object.keys(owned).includes(cat_index)
-            ? "selected"
-            : "not_selected") + " button"
-        }
-        onClick={() => {
-          set_owned((prev) => {
-            const new_owned = { ...prev };
-            if (cat_index in new_owned) {
-              delete new_owned[cat_index];
-            } else {
-              new_owned[cat_index] = level;
-            }
-            return new_owned;
-          });
+          borderRadius: "5px",
+          background: "#f5f5f5",
+          fontWeight: "bold",
         }}
       >
-        {Object.keys(owned).includes(cat_index) ? "owned" : "not owned"}
+        {cats.general.rarity.toUpperCase()}
       </div>
-
-      <div style={{ marginBottom: "10px", display: "flex" }}>
-        {cats.general.rarity}&nbsp;
-      </div>
-      <div style={{ marginBottom: "10px", display: "flex" }}>
+      <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
         <div style={{ fontWeight: "bold" }}>Level:&nbsp;</div>
         <input
           value={level}
           type="number"
           min={1}
           onChange={(e) => setLevel(Number(e.target.value))}
-          style={{ width: "5ch" }}
+          style={{ width: "5ch", height: "1.5rem", fontSize: "1rem" }}
         />
-      </div>
-      <div style={{ marginBottom: "10px", display: "flex" }}>
-        <div
-          style={{ fontWeight: "bold", color: details ? "#3399ff" : "black" }}
-        >
-          Details
-        </div>
       </div>
       <div
         style={{
@@ -476,23 +429,25 @@ export default function CatCard({ cats, cat_index, owned, set_owned }) {
             level={level}
             cat_index={cat_index}
             form_index={unit_index + 1}
-            details={details}
           />
         ))}
+        {Array(4 - forms.length)
+          .fill(0)
+          .map((_, index) => (
+            <div
+              key={index}
+              style={{
+                width: "100%",
+                height: "100%",
+                background: "#e1e1e1",
+                borderRadius: "10px",
+                border: "3px solid silver",
+                boxSizing: "border-box",
+              }}
+            ></div>
+          ))}
       </div>
-      <div style={{ marginTop: "20px", display: "flex" }}>
-        {general.evolve_data.length > 0 && (
-          <div
-            style={{
-              fontWeight: "bold",
-              fontSize: "1.5rem",
-              fontWeight: "bold",
-            }}
-          >
-            Evolution Requirements
-          </div>
-        )}
-      </div>
+
       {general.evolve_data.length > 0 && (
         <div
           style={{
@@ -568,6 +523,32 @@ export default function CatCard({ cats, cat_index, owned, set_owned }) {
           )}
         </div>
       )}
+      <div
+        style={{
+          fontWeight: "bold",
+          display: "flex",
+          width: "fit-content",
+          background: Object.keys(owned).includes(cat_index) ? "" : "#f5f5f5",
+        }}
+        className={
+          (Object.keys(owned).includes(cat_index)
+            ? "selected"
+            : "not_selected") + " button"
+        }
+        onClick={() => {
+          set_owned((prev) => {
+            const new_owned = { ...prev };
+            if (cat_index in new_owned) {
+              delete new_owned[cat_index];
+            } else {
+              new_owned[cat_index] = level;
+            }
+            return new_owned;
+          });
+        }}
+      >
+        {Object.keys(owned).includes(cat_index) ? "OWNED" : "NOT OWNED"}
+      </div>
     </div>
   );
 }

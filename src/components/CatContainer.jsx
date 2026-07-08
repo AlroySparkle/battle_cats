@@ -19,7 +19,7 @@ function CatContainer() {
   const [selected_against, update_selected_against] = useState([]);
   const [and_or_against, set_and_or_against] = useState("OR");
 
-  const [targets /*, set_targets */] = useState([]);
+  const [targets, set_targets] = useState([]);
   const [selected_targets, update_selected_targets] = useState([]);
   const [and_or_targets, set_and_or_targets] = useState("OR");
 
@@ -88,6 +88,7 @@ function CatContainer() {
       set_rarity(cats_list.collections.rarities);
       set_abilities(cats_list.collections.abilities);
       set_against(cats_list.collections.against);
+      set_targets(cats_list.collections.targets);
     };
 
     initiate_list();
@@ -95,7 +96,21 @@ function CatContainer() {
 
   const filtered_cats = useMemo(() => {
     return Object.keys(cats)
-      .sort((a, b) => parseInt(a) - parseInt(b))
+      .sort((a, b) => {
+        const rarity = {
+          "Normal Cat": 1,
+          "Special Cat": 2,
+          "Special CatMythic": 3,
+          "Rare Cat": 4,
+          "Super Rare Cat": 5,
+          "Uber Rare Cat": 6,
+          "Legend Rare Cat": 7,
+        };
+        return (
+          rarity[cats[a].general.rarity] - rarity[cats[b].general.rarity] ||
+          parseInt(a) - parseInt(b)
+        );
+      })
       .filter((cat) => {
         const units_names = Object.values(cats[cat].units).map(
           (unit, index) => ({
@@ -148,6 +163,20 @@ function CatContainer() {
                 : selected_against.every((a) =>
                     unit_against.against.includes(a),
                   )),
+          )
+          .map((unit) => unit.id);
+        const target_units = Object.values(cats[cat].units).map(
+          (unit, index) => ({
+            id: index,
+            target: unit.stats ? unit.stats["Attack Type"] : "Single",
+          }),
+        );
+
+        const target_condition = target_units
+          .filter(
+            (unit_target) =>
+              selected_targets.length === 0 ||
+              selected_targets.includes(unit_target.target),
           )
           .map((unit) => unit.id);
 
@@ -225,7 +254,8 @@ function CatContainer() {
         const conditions = ability_condition
           .filter((id) => against_condition.includes(id))
           .filter((id) => name_condition.includes(id))
-          .filter((id) => stats_condition.includes(id));
+          .filter((id) => stats_condition.includes(id))
+          .filter((id) => target_condition.includes(id));
 
         return rarity_condition && conditions.length > 0;
       })
@@ -414,7 +444,7 @@ function CatContainer() {
                 cursor: "pointer",
               }}
               src={
-                "./src/icons/abilities" +
+                "./src/icons/abilities/" +
                 (selected_targets.includes(target) ? target : target + "_BNW") +
                 ".png"
               }
