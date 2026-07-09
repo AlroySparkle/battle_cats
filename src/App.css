@@ -4,19 +4,30 @@
   text-align: center;
   background: linear-gradient(to bottom, #e1e1e1, white, #e1e1e1);
   padding: 10px;
+  border-right: 1px solid silver;
   white-space: nowrap;
+  z-index: 1;
+  box-sizing: border-box;
+  cursor: pointer;
+  user-select: none;
 }
 
-.menu-header:hover {
-  border-right: 1px solid black;
-  z-index: 1;
+.menu-header:focus {
+  background: linear-gradient(
+    rgb(51, 153, 255),
+    rgb(26, 140, 255),
+    rgb(51, 153, 255)
+  );
 }
 
 .menu-header > .menu-item {
   display: none;
+  border: 2px solid silver;
+  cursor: auto;
 }
 
-.menu-header:hover > .menu-item {
+.menu-header:hover > .menu-item,
+.menu-header:focus > .menu-item {
   display: block;
   position: absolute;
   left: 50%;

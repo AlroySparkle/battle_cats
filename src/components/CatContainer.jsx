@@ -367,22 +367,111 @@ function CatContainer() {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
       <div
-        className="card-container"
+        style={{
+          display: "flex",
+          gap: "10px",
+          textWrap: "nowrap",
+          marginTop: "10px",
+        }}
+      >
+        <button
+          onClick={handleResetAll}
+          style={{
+            ...subHeader, // Copies your existing subHeader styles
+            cursor: "pointer", // Makes it look clickable
+            background: "#3399ff", // Removes default HTML button background (adjust if needed)
+            font: "inherit", // Inherits typography from your subHeader style
+            userSelect: "none", // Prevents text highlighting on double clicks
+            borderRadius: "10px",
+            border: "1px solid #2288EE",
+            padding: "10px",
+            color: "white",
+          }}
+        >
+          Reset
+        </button>
+        <button
+          onClick={download_cats}
+          style={{
+            ...subHeader, // Copies your existing subHeader styles
+            cursor: "pointer", // Makes it look clickable
+            background: "#3399ff", // Removes default HTML button background (adjust if needed)
+            font: "inherit", // Inherits typography from your subHeader style
+            userSelect: "none", // Prevents text highlighting on double clicks
+            borderRadius: "10px",
+            border: "1px solid #2288EE",
+            padding: "10px",
+            color: "white",
+          }}
+        >
+          export owned cats
+        </button>
+        <label
+          style={{
+            ...subHeader, // Copies your existing subHeader styles
+            cursor: "pointer", // Makes it look clickable
+            background: "#3399ff", // Removes default HTML button background (adjust if needed)
+            font: "inherit", // Inherits typography from your subHeader style
+            userSelect: "none", // Prevents text highlighting on double clicks
+            borderRadius: "10px",
+            border: "1px solid #2288EE",
+            padding: "10px",
+            color: "white",
+          }}
+        >
+          import cats
+          <input
+            type="file"
+            onChange={(e) => {
+              const file = e.target.files[0];
+              if (!file) {
+                return;
+              }
+              const reader = new FileReader();
+
+              // This event fires when the file reading is completely finished
+              reader.onload = (event) => {
+                try {
+                  // event.target.result contains the raw file text string
+                  const parsedData = JSON.parse(event.target.result);
+                  set_cats_owned(parsedData);
+                } catch (err) {
+                  setError("Failed to parse JSON. File might be corrupted.");
+                }
+              };
+
+              // Start reading the file as plain text
+              reader.readAsText(file);
+            }}
+            style={{ display: "none" }}
+          />
+        </label>
+      </div>
+      <div
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(6,1fr)",
           alignItems: "center",
           justifyItems: "center",
-          paddingTop: "0",
+          padding: "0",
           position: "sticky",
           top: "10px",
+          border: "2px solid silver",
+          borderRadius: "10px",
         }}
       >
         <div
-          style={{ ...subHeader, borderRadius: "10px 0 0 0" }}
+          style={{
+            ...subHeader,
+            borderRadius: "10px 0 0 10px",
+            background:
+              searched_cat.length > 0
+                ? "linear-gradient( rgb(26, 140, 255),rgb(51, 153, 255), rgb(26, 140, 255)"
+                : undefined,
+          }}
           className="menu-header"
         >
-          Name
+          {searched_cat || "name"}
           <div className="menu-item card-container">
             <input
               value={searched_cat}
@@ -399,8 +488,18 @@ function CatContainer() {
           </div>
         </div>
 
-        <div style={subHeader} className="menu-header">
+        <div
+          style={{
+            ...subHeader,
+            background:
+              selected_rarities.length > 0
+                ? "linear-gradient( rgb(26, 140, 255),rgb(51, 153, 255), rgb(26, 140, 255)"
+                : undefined,
+          }}
+          className="menu-header"
+        >
           Rarity
+          {selected_rarities.length > 0 && ` (${selected_rarities.length})`}
           <div className="menu-item card-container">
             <div style={{ display: "flex", flexDirection: "row", gap: "10px" }}>
               {rarity.map((rarity) => (
@@ -426,8 +525,19 @@ function CatContainer() {
           </div>
         </div>
 
-        <div style={subHeader} className="menu-header">
+        <div
+          style={{
+            ...subHeader,
+            background:
+              selected_against.length > 0
+                ? "linear-gradient( rgb(26, 140, 255),rgb(51, 153, 255), rgb(26, 140, 255)"
+                : undefined,
+          }}
+          className="menu-header"
+        >
           Against
+          {selected_against.length > 0 &&
+            ` (${and_or_against === "OR" ? "Any" : "All"}: ${selected_against.length})`}
           <div className="menu-item card-container">
             {set_and_or(and_or_against, set_and_or_against)}
 
@@ -464,8 +574,17 @@ function CatContainer() {
           </div>
         </div>
 
-        <div style={subHeader} className="menu-header">
-          Target
+        <div
+          style={{
+            ...subHeader,
+            background:
+              selected_targets.length > 0
+                ? "linear-gradient( rgb(26, 140, 255),rgb(51, 153, 255), rgb(26, 140, 255)"
+                : undefined,
+          }}
+          className="menu-header"
+        >
+          {selected_targets.join(", ") || "Target"}
           <div className="card-container menu-item">
             <div style={flex_design}>
               {targets.map((target, index) => (
@@ -503,8 +622,19 @@ function CatContainer() {
           </div>
         </div>
 
-        <div style={subHeader} className="menu-header">
+        <div
+          style={{
+            ...subHeader,
+            background:
+              selected_abilities.length > 0
+                ? "linear-gradient( rgb(26, 140, 255),rgb(51, 153, 255), rgb(26, 140, 255)"
+                : undefined,
+          }}
+          className="menu-header"
+        >
           Abilities
+          {selected_abilities.length > 0 &&
+            ` (${and_or_abilities === "OR" ? "Any" : "All"}: ${selected_abilities.length})`}
           <div className="card-container menu-item">
             {set_and_or(and_or_abilities, set_and_or_abilities)}
             <div
@@ -550,10 +680,64 @@ function CatContainer() {
         </div>
 
         <div
-          style={{ ...subHeader, borderRadius: "0 10px 0 0" }}
+          style={{
+            ...subHeader,
+            borderRadius: "0 10px 10px 0",
+            border: "0 solid silver",
+            background:
+              speed_filter.min +
+                speed_filter.max +
+                knockback_filter.min +
+                knockback_filter.max +
+                damage_filter.min +
+                damage_filter.max +
+                dps_filter.min +
+                dps_filter.max +
+                health_filter.min +
+                health_filter.max +
+                range_filter.min +
+                range_filter.max +
+                animation_time_filter.min +
+                animation_time_filter.max +
+                tba_filter.min +
+                tba_filter.max +
+                cost_filter.min +
+                cost_filter.max +
+                spawn_time_filter.min +
+                spawn_time_filter.max >
+              0
+                ? "linear-gradient( rgb(26, 140, 255),rgb(51, 153, 255), rgb(26, 140, 255)"
+                : undefined,
+          }}
           className="menu-header"
         >
           stats
+          {[
+            speed_filter,
+            knockback_filter,
+            damage_filter,
+            dps_filter,
+            health_filter,
+            range_filter,
+            animation_time_filter,
+            tba_filter,
+            cost_filter,
+            spawn_time_filter,
+          ].filter((f) => f.min + f.max > 0).length > 0 &&
+            ` (${
+              [
+                speed_filter,
+                knockback_filter,
+                damage_filter,
+                dps_filter,
+                health_filter,
+                range_filter,
+                animation_time_filter,
+                tba_filter,
+                cost_filter,
+                spawn_time_filter,
+              ].filter((f) => f.min + f.max > 0).length
+            })`}
           <div className="card-container menu-item">
             <div
               style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)" }}
@@ -710,87 +894,7 @@ function CatContainer() {
           </div>
         </div>
       </div>
-      <div
-        style={{
-          display: "flex",
-          gap: "10px",
-          textWrap: "nowrap",
-          marginTop: "10px",
-        }}
-      >
-        <button
-          onClick={handleResetAll}
-          style={{
-            ...subHeader, // Copies your existing subHeader styles
-            cursor: "pointer", // Makes it look clickable
-            background: "#3399ff", // Removes default HTML button background (adjust if needed)
-            font: "inherit", // Inherits typography from your subHeader style
-            userSelect: "none", // Prevents text highlighting on double clicks
-            borderRadius: "10px",
-            border: "1px solid #2288EE",
-            padding: "10px",
-            color: "white",
-          }}
-        >
-          Reset
-        </button>
-        <button
-          onClick={download_cats}
-          style={{
-            ...subHeader, // Copies your existing subHeader styles
-            cursor: "pointer", // Makes it look clickable
-            background: "#3399ff", // Removes default HTML button background (adjust if needed)
-            font: "inherit", // Inherits typography from your subHeader style
-            userSelect: "none", // Prevents text highlighting on double clicks
-            borderRadius: "10px",
-            border: "1px solid #2288EE",
-            padding: "10px",
-            color: "white",
-          }}
-        >
-          export owned cats
-        </button>
-        <label
-          style={{
-            ...subHeader, // Copies your existing subHeader styles
-            cursor: "pointer", // Makes it look clickable
-            background: "#3399ff", // Removes default HTML button background (adjust if needed)
-            font: "inherit", // Inherits typography from your subHeader style
-            userSelect: "none", // Prevents text highlighting on double clicks
-            borderRadius: "10px",
-            border: "1px solid #2288EE",
-            padding: "10px",
-            color: "white",
-          }}
-        >
-          import cats
-          <input
-            type="file"
-            onChange={(e) => {
-              const file = e.target.files[0];
-              if (!file) {
-                return;
-              }
-              const reader = new FileReader();
 
-              // This event fires when the file reading is completely finished
-              reader.onload = (event) => {
-                try {
-                  // event.target.result contains the raw file text string
-                  const parsedData = JSON.parse(event.target.result);
-                  set_cats_owned(parsedData);
-                } catch (err) {
-                  setError("Failed to parse JSON. File might be corrupted.");
-                }
-              };
-
-              // Start reading the file as plain text
-              reader.readAsText(file);
-            }}
-            style={{ display: "none" }}
-          />
-        </label>
-      </div>
       {filtered_cats.slice(0, visibleCount)}
     </div>
   );
