@@ -391,28 +391,36 @@ export default function CatCard({ cats, cat_index, owned, set_owned }) {
       className="card-container"
       style={{ gap: "10px", display: "flex", flexDirection: "column" }}
     >
-      <div
-        style={{
-          display: "flex",
-          padding: "10px",
-          border: "solid silver 1px",
-          width: "fit-content",
-          borderRadius: "5px",
-          background: "#f5f5f5",
-          fontWeight: "bold",
-        }}
-      >
-        {cats.general.rarity.toUpperCase()}
-      </div>
       <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-        <div style={{ fontWeight: "bold" }}>Level:&nbsp;</div>
-        <input
-          value={level}
-          type="number"
-          min={1}
-          onChange={(e) => setLevel(Number(e.target.value))}
-          style={{ width: "5ch", height: "1.5rem", fontSize: "1rem" }}
-        />
+        <div
+          style={{
+            display: "flex",
+            padding: "10px",
+            border: "solid silver 1px",
+            width: "fit-content",
+            borderRadius: "5px",
+            background: "#f5f5f5",
+            fontWeight: "bold",
+          }}
+        >
+          {cats.general.rarity.toUpperCase()}
+        </div>
+        <div
+          style={{
+            display: "flex",
+            gap: "10px",
+            alignItems: "center",
+          }}
+        >
+          <div style={{ fontWeight: "bold" }}>Level:&nbsp;</div>
+          <input
+            value={level}
+            type="number"
+            min={1}
+            onChange={(e) => setLevel(Number(e.target.value))}
+            style={{ width: "5ch", height: "1.5rem", fontSize: "1rem" }}
+          />
+        </div>
       </div>
       <div
         style={{
