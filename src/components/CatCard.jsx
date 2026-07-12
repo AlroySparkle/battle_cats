@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { memo, useEffect, useMemo, useState } from "react";
 import { catStat, get_type } from "../assets/handle_cats";
 
 /**
@@ -9,7 +9,7 @@ import { catStat, get_type } from "../assets/handle_cats";
  * @param {CURVE_TYPES} cat_scale_category
  */
 
-function Card(params) {
+const Card = memo(function Card(params) {
   const cat = useMemo(
     () => ({
       ...params.cat,
@@ -373,9 +373,9 @@ function Card(params) {
       </div>
     </div>
   );
-}
+});
 
-export default function CatCard({ cats, cat_index, owned, set_owned }) {
+const CatCard = memo(function CatCard({ cats, cat_index, owned, set_owned }) {
   const [level, setLevel] = useState(30);
 
   useEffect(() => {
@@ -555,8 +555,10 @@ export default function CatCard({ cats, cat_index, owned, set_owned }) {
           });
         }}
       >
-        {Object.keys(owned).includes(cat_index) ? "OWNED" : "NOT OWNED"}
+        {cat_index in owned ? "OWNED" : "NOT OWNED"}
       </div>
     </div>
   );
-}
+});
+
+export default CatCard;

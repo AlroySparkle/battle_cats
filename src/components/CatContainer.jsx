@@ -101,44 +101,59 @@ function CatContainer() {
   }, []);
 
   const filtered_cats = useMemo(() => {
+    const RARITY_WEIGHT = {
+      "Normal Cat": 1,
+      "Special Cat": 2,
+      "Special CatMythic": 3,
+      "Rare Cat": 4,
+      "Super Rare Cat": 5,
+      "Uber Rare Cat": 6,
+      "Legend Rare Cat": 7,
+    };
+
+    const cleanNum = (val) => {
+      if (!val) return 0;
+      return parseFloat(String(val).replace(/,/g, "")) || 0;
+    };
+
+    const checkBounds = (numValue, filter) => {
+      const min_filterVal = parseFloat(filter.min) || 0;
+      const max_filterVal = parseFloat(filter.max) || 0;
+
+      if (min_filterVal === 0 && max_filterVal === 0) return true;
+
+      const minMatch = numValue >= min_filterVal;
+      const maxMatch = max_filterVal === 0 || numValue <= max_filterVal;
+
+      return minMatch && maxMatch;
+    };
+
     return Object.keys(cats)
       .sort((a, b) => {
-        const rarity = {
-          "Normal Cat": 1,
-          "Special Cat": 2,
-          "Special CatMythic": 3,
-          "Rare Cat": 4,
-          "Super Rare Cat": 5,
-          "Uber Rare Cat": 6,
-          "Legend Rare Cat": 7,
-        };
         return (
-          rarity[cats[a].general.rarity] - rarity[cats[b].general.rarity] ||
-          parseInt(a) - parseInt(b)
+          RARITY_WEIGHT[cats[a].general.rarity] -
+            RARITY_WEIGHT[cats[b].general.rarity] || parseInt(a) - parseInt(b)
         );
       })
       .filter((cat) => {
-        const units_names = Object.values(cats[cat].units).map(
-          (unit, index) => ({
-            id: index,
-            name: unit.name.toLowerCase(),
-          }),
-        );
+        const current_units = Object.values(cats[cat].units);
+        const units_names = current_units.map((unit, index) => ({
+          id: index,
+          name: unit.name.toLowerCase(),
+        }));
 
         const name_condition = units_names
           .filter((unit) => unit.name.includes(searched_cat.toLowerCase()))
           .map((unit) => unit.id);
-
+        if (name_condition.length == 0) return false;
         const rarity_condition =
           selected_rarities.includes(cats[cat].general.rarity) ||
           selected_rarities.length == 0;
 
-        const units_abilities = Object.values(cats[cat].units).map(
-          (catUnit, index) => ({
-            id: index,
-            abilities: Object.keys(catUnit.abilities || {}),
-          }),
-        );
+        const units_abilities = current_units.map((catUnit, index) => ({
+          id: index,
+          abilities: Object.keys(catUnit.abilities || {}),
+        }));
         const ability_condition = units_abilities
           .filter(
             (cat_abilities) =>
@@ -153,12 +168,12 @@ function CatContainer() {
           )
           .map((catUnit) => catUnit.id);
 
-        const units_against = Object.values(cats[cat].units).map(
-          (unit, index) => ({
-            id: index,
-            against: unit.against || [],
-          }),
-        );
+        if (ability_condition.length == 0) return false;
+
+        const units_against = current_units.map((unit, index) => ({
+          id: index,
+          against: unit.against || [],
+        }));
 
         const against_condition = units_against
           .filter(
@@ -171,12 +186,13 @@ function CatContainer() {
                   )),
           )
           .map((unit) => unit.id);
-        const target_units = Object.values(cats[cat].units).map(
-          (unit, index) => ({
-            id: index,
-            target: unit.stats ? unit.stats["Attack Type"] : "Single",
-          }),
-        );
+
+        if (against_condition.length == 0) return false;
+
+        const target_units = current_units.map((unit, index) => ({
+          id: index,
+          target: unit.stats ? unit.stats["Attack Type"] : "Single",
+        }));
 
         const target_condition = target_units
           .filter(
@@ -186,34 +202,15 @@ function CatContainer() {
           )
           .map((unit) => unit.id);
 
+        if (target_condition.length == 0) return false;
+
         // ==========================================
         // EXACT-MATCH DATA STATS RANGE CONDITION
         // ==========================================
 
-        const stats_condition = Object.values(cats[cat].units)
+        const stats_condition = current_units
           .map((unit, index) => {
             const stats = unit.stats || {};
-
-            // Clean strings containing formatting commas (e.g., "4,050" -> 4050)
-            const cleanNum = (val) => {
-              if (!val) return 0;
-              return parseFloat(String(val).replace(/,/g, "")) || 0;
-            };
-
-            // Updated helper function checking for dual-zero defaults
-            const checkBounds = (numValue, filter) => {
-              const min_filterVal = parseFloat(filter.min) || 0;
-              const max_filterVal = parseFloat(filter.max) || 0;
-
-              // Rule: If both min and max are 0, consider it active/true (no constraint applied)
-              if (min_filterVal === 0 && max_filterVal === 0) return true;
-
-              // Otherwise, evaluate boundaries mathematically
-              const minMatch = numValue >= min_filterVal;
-              const maxMatch = max_filterVal === 0 || numValue <= max_filterVal;
-
-              return minMatch && maxMatch;
-            };
 
             // Parse base stats exactly matching your raw keys
             const rawDamage = catStat(
@@ -272,16 +269,7 @@ function CatContainer() {
           .filter((id) => target_condition.includes(id));
 
         return rarity_condition && conditions.length > 0;
-      })
-      .map((cat) => (
-        <CatCard
-          key={cat}
-          set_owned={set_cats_owned}
-          owned={cats_owned}
-          cats={cats[cat]}
-          cat_index={cat}
-        />
-      ));
+      });
   }, [
     cats,
     cats_owned,
@@ -895,7 +883,15 @@ function CatContainer() {
         </div>
       </div>
 
-      {filtered_cats.slice(0, visibleCount)}
+      {filtered_cats.slice(0, visibleCount).map((cat) => (
+        <CatCard
+          key={cat}
+          set_owned={set_cats_owned}
+          owned={cats_owned}
+          cats={cats[cat]}
+          cat_index={cat}
+        />
+      ))}
     </div>
   );
 }
