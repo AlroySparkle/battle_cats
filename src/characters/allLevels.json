@@ -1,0 +1,8470 @@
+{
+  "Earthshaker": {
+    "enemies": [
+      [
+        "Doge",
+        "200%"
+      ],
+      [
+        "Snache",
+        "200%"
+      ],
+      [
+        "Those Guys",
+        "200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Return of Terror": {
+    "enemies": [
+      [
+        "Those Guys",
+        "400%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Metal Hippoe",
+        "100%"
+      ]
+    ]
+  },
+  "Sunset Blues": {
+    "enemies": [
+      [
+        "Doge",
+        "400%"
+      ],
+      [
+        "Snache",
+        "400%"
+      ],
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "Croco",
+        "400%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Melancholy Damp": {
+    "enemies": [
+      [
+        "Baa Baa",
+        "400%"
+      ],
+      [
+        "Those Guys",
+        "400%"
+      ]
+    ],
+    "bosses": [
+      [
+        "St. Pigge the 2nd",
+        "100%"
+      ]
+    ]
+  },
+  "Bouncy Park": {
+    "enemies": [
+      [
+        "Doge",
+        "400%"
+      ],
+      [
+        "Snache",
+        "400%"
+      ],
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "Jackie Peng",
+        "400%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Gentle Smile": {
+    "enemies": [
+      [
+        "Doge",
+        "400%"
+      ],
+      [
+        "Snache",
+        "400%"
+      ],
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "Gory",
+        "400%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Gory",
+        "500%"
+      ]
+    ]
+  },
+  "Guardian of the Ranch": {
+    "enemies": [
+      [
+        "Doge",
+        "400%"
+      ],
+      [
+        "Snache",
+        "400%"
+      ],
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "Le'boin",
+        "300%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Sleeping Lion": {
+    "enemies": [
+      [
+        "Doge",
+        "400%"
+      ],
+      [
+        "Snache",
+        "400%"
+      ],
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "Gory",
+        "400%"
+      ],
+      [
+        "Hippoe",
+        "400%"
+      ],
+      [
+        "Doge Dark",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Squire Rel",
+        "100%"
+      ]
+    ]
+  },
+  "Nyandalucia": {
+    "enemies": [
+      [
+        "Doge",
+        "400%"
+      ],
+      [
+        "Snache",
+        "400%"
+      ],
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "Metal Hippoe",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Paella Field": {
+    "enemies": [
+      [
+        "Doge",
+        "400%"
+      ],
+      [
+        "Snache",
+        "400%"
+      ],
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "Gory",
+        "400%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Flamenco Hole": {
+    "enemies": [
+      [
+        "Doge",
+        "400%"
+      ],
+      [
+        "Snache",
+        "400%"
+      ],
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "Doge Dark",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Mooth",
+        "400%"
+      ]
+    ]
+  },
+  "Sangria River": {
+    "enemies": [
+      [
+        "Doge",
+        "400%"
+      ],
+      [
+        "Snache",
+        "400%"
+      ],
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "Baa Baa",
+        "400%"
+      ],
+      [
+        "Metal Hippoe",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "St. Pigge the 2nd",
+        "100%"
+      ]
+    ]
+  },
+  "Gazpacho Highland": {
+    "enemies": [
+      [
+        "Doge",
+        "400%"
+      ],
+      [
+        "Snache",
+        "400%"
+      ],
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "Sir Seal",
+        "400%"
+      ],
+      [
+        "Pigge",
+        "400%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Churros Night": {
+    "enemies": [
+      [
+        "Doge",
+        "400%"
+      ],
+      [
+        "Snache",
+        "400%"
+      ],
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "Hippoe",
+        "400%"
+      ],
+      [
+        "Jackie Peng",
+        "400%"
+      ],
+      [
+        "Kang Roo",
+        "400%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Squire Rel",
+        "400%"
+      ]
+    ]
+  },
+  "Bone Dry Gardens": {
+    "enemies": [
+      [
+        "Doge",
+        "400%"
+      ],
+      [
+        "Snache",
+        "400%"
+      ],
+      [
+        "Those Guys",
+        "100%"
+      ],
+      [
+        "Doge Dark",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Tapas Desert": {
+    "enemies": [
+      [
+        "Doge",
+        "400%"
+      ],
+      [
+        "Snache",
+        "400%"
+      ],
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "Croco",
+        "400%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Master A.",
+        "100%"
+      ]
+    ]
+  },
+  "Chondroitin Sandhill": {
+    "enemies": [
+      [
+        "Doge",
+        "400%"
+      ],
+      [
+        "Snache",
+        "400%"
+      ],
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "Hippoe",
+        "400%"
+      ],
+      [
+        "Jackie Peng",
+        "400%"
+      ],
+      [
+        "Pigge",
+        "400%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Sesamin Ruins": {
+    "enemies": [
+      [
+        "Doge",
+        "400%"
+      ],
+      [
+        "Snache",
+        "400%"
+      ],
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "St. Pigge the 2nd",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Isoflavone Cave": {
+    "enemies": [
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "Gory",
+        "400%"
+      ],
+      [
+        "Baa Baa",
+        "400%"
+      ],
+      [
+        "Doge Dark",
+        "100%"
+      ],
+      [
+        "Celeboodle",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Catechin Hill": {
+    "enemies": [
+      [
+        "Doge",
+        "400%"
+      ],
+      [
+        "Snache",
+        "400%"
+      ],
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "Baa Baa",
+        "400%"
+      ],
+      [
+        "Pigge",
+        "400%"
+      ],
+      [
+        "B.B.Bunny",
+        "400%"
+      ],
+      [
+        "Gory",
+        "400%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Lycopene Sunset": {
+    "enemies": [
+      [
+        "Doge",
+        "400%"
+      ],
+      [
+        "Snache",
+        "400%"
+      ],
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "Baa Baa",
+        "400%"
+      ],
+      [
+        "Le'boin",
+        "400%"
+      ],
+      [
+        "Hippoe",
+        "400%"
+      ],
+      [
+        "Gory",
+        "400%"
+      ],
+      [
+        "Jackie Peng",
+        "400%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Propolis Oasis": {
+    "enemies": [
+      [
+        "Snache",
+        "400%"
+      ],
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "Jackie Peng",
+        "400%"
+      ],
+      [
+        "Celeboodle",
+        "100%"
+      ],
+      [
+        "Master A.",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Peptide Snowfield": {
+    "enemies": [
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "Pigge",
+        "400%"
+      ],
+      [
+        "Sir Seal",
+        "400%"
+      ],
+      [
+        "Metal Hippoe",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Hyaluronan Mountain": {
+    "enemies": [
+      [
+        "Doge Dark",
+        "100%"
+      ],
+      [
+        "Dagshund",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Squire Rel",
+        "100%"
+      ]
+    ]
+  },
+  "Premature Launch": {
+    "enemies": [
+      [
+        "Doge",
+        "400%"
+      ],
+      [
+        "Snache",
+        "400%"
+      ],
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "Hippoe",
+        "400%"
+      ],
+      [
+        "Squire Rel",
+        "400%"
+      ],
+      [
+        "Master A.",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Deep Ocean Blue": {
+    "enemies": [
+      [
+        "Croco",
+        "400%"
+      ],
+      [
+        "Celeboodle",
+        "100%"
+      ],
+      [
+        "Sir Seal",
+        "400%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Mermaid Cove": {
+    "enemies": [
+      [
+        "Doge",
+        "400%"
+      ],
+      [
+        "Snache",
+        "400%"
+      ],
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "Croco",
+        "400%"
+      ],
+      [
+        "Baa Baa",
+        "400%"
+      ],
+      [
+        "Gory",
+        "400%"
+      ],
+      [
+        "Sir Seal",
+        "400%"
+      ],
+      [
+        "Le'boin",
+        "400%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Chaos Lagoon": {
+    "enemies": [
+      [
+        "Doge",
+        "400%"
+      ],
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "Croco",
+        "400%"
+      ],
+      [
+        "Duche",
+        "100%"
+      ],
+      [
+        "Metal Hippoe",
+        "100%"
+      ],
+      [
+        "Doge Dark",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "St. Pigge the 2nd",
+        "100%"
+      ]
+    ]
+  },
+  "Playing Pirates": {
+    "enemies": [
+      [
+        "Doge",
+        "400%"
+      ],
+      [
+        "Snache",
+        "400%"
+      ],
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "One Horn",
+        "400%"
+      ],
+      [
+        "B.B.Bunny",
+        "400%"
+      ],
+      [
+        "Pigge",
+        "400%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Squire Rel",
+        "400%"
+      ]
+    ]
+  },
+  "Fisherman's Dilemma": {
+    "enemies": [
+      [
+        "Doge",
+        "400%"
+      ],
+      [
+        "Snache",
+        "400%"
+      ],
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "Gory",
+        "400%"
+      ],
+      [
+        "Sir Seal",
+        "400%"
+      ],
+      [
+        "Dagshund",
+        "100%"
+      ],
+      [
+        "Master A.",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Seaweed Shallows": {
+    "enemies": [
+      [
+        "Doge",
+        "400%"
+      ],
+      [
+        "Snache",
+        "400%"
+      ],
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "Teacher Bear",
+        "400%"
+      ],
+      [
+        "B.B.Bunny",
+        "400%"
+      ],
+      [
+        "Doge Dark",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Salty is Seawater": {
+    "enemies": [
+      [
+        "Celeboodle",
+        "100%"
+      ],
+      [
+        "Doge Dark",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "THE SLOTH",
+        "100%"
+      ]
+    ]
+  },
+  "Lovely Minerals": {
+    "enemies": [
+      [
+        "Croco",
+        "400%"
+      ],
+      [
+        "Snache",
+        "400%"
+      ],
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "Gory",
+        "400%"
+      ],
+      [
+        "Master A.",
+        "100%"
+      ],
+      [
+        "Dagshund",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Shapely Caverns": {
+    "enemies": [
+      [
+        "Doge",
+        "400%"
+      ],
+      [
+        "Snache",
+        "400%"
+      ],
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "Master A.",
+        "100%"
+      ],
+      [
+        "Duche",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Enticing Tunnels": {
+    "enemies": [
+      [
+        "Doge",
+        "400%"
+      ],
+      [
+        "Snache",
+        "400%"
+      ],
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "Jackie Peng",
+        "100%"
+      ],
+      [
+        "St. Pigge the 2nd",
+        "100%"
+      ],
+      [
+        "Celeboodle",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "THE SLOTH",
+        "100%"
+      ]
+    ]
+  },
+  "Squishy Hollows": {
+    "enemies": [
+      [
+        "Doge",
+        "400%"
+      ],
+      [
+        "Snache",
+        "400%"
+      ],
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "Duche",
+        "100%"
+      ],
+      [
+        "Dagshund",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Twin Peaks": {
+    "enemies": [
+      [
+        "Doge",
+        "400%"
+      ],
+      [
+        "Doge Dark",
+        "100%"
+      ],
+      [
+        "Squire Rel",
+        "100%"
+      ],
+      [
+        "Mooth",
+        "400%"
+      ],
+      [
+        "Shy Boy",
+        "400%"
+      ]
+    ],
+    "bosses": [
+      [
+        "The Face",
+        "400%"
+      ]
+    ]
+  },
+  "Thriller Bridge": {
+    "enemies": [
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "Master A.",
+        "100%"
+      ],
+      [
+        "Celeboodle",
+        "100%"
+      ],
+      [
+        "Otta-smack-u",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "THE SLOTH",
+        "100%"
+      ]
+    ]
+  },
+  "Gunman's Dawn": {
+    "enemies": [
+      [
+        "Doge",
+        "800%"
+      ],
+      [
+        "Snache",
+        "800%"
+      ],
+      [
+        "Jackie Peng",
+        "800%"
+      ],
+      [
+        "Pigge",
+        "800%"
+      ],
+      [
+        "Celeboodle",
+        "100%"
+      ],
+      [
+        "Mooth",
+        "800%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Cowboy Haven": {
+    "enemies": [
+      [
+        "St. Pigge the 2nd",
+        "100%"
+      ],
+      [
+        "Duche",
+        "100%"
+      ],
+      [
+        "St. Pigge the 2nd",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Squire Rel",
+        "100%"
+      ]
+    ]
+  },
+  "Wanted Night": {
+    "enemies": [
+      [
+        "Those Guys",
+        "800%"
+      ],
+      [
+        "Shy Boy",
+        "100%"
+      ],
+      [
+        "Doge Dark",
+        "200%"
+      ],
+      [
+        "Shy Boy",
+        "400%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Squire Rel",
+        "400%"
+      ]
+    ]
+  },
+  "Macaroni Town": {
+    "enemies": [
+      [
+        "Doge",
+        "800%"
+      ],
+      [
+        "Snache",
+        "800%"
+      ],
+      [
+        "Baa Baa",
+        "800%"
+      ],
+      [
+        "Metal Hippoe",
+        "200%"
+      ],
+      [
+        "Gory",
+        "800%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Wandering Traveler": {
+    "enemies": [
+      [
+        "Doge",
+        "800%"
+      ],
+      [
+        "Snache",
+        "800%"
+      ],
+      [
+        "Le'boin",
+        "1,600%"
+      ],
+      [
+        "Hippoe",
+        "800%"
+      ],
+      [
+        "Jackie Peng",
+        "800%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Disappointed Guard": {
+    "enemies": [
+      [
+        "Master A.",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "One Horn",
+        "1,600%"
+      ]
+    ]
+  },
+  "Cowboy Mountain": {
+    "enemies": [
+      [
+        "Doge",
+        "800%"
+      ],
+      [
+        "Snache",
+        "800%"
+      ],
+      [
+        "Dagshund",
+        "100%"
+      ],
+      [
+        "Celeboodle",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Rodeo Night": {
+    "enemies": [
+      [
+        "Those Guys",
+        "800%"
+      ],
+      [
+        "Pigge",
+        "800%"
+      ],
+      [
+        "One Horn",
+        "800%"
+      ]
+    ],
+    "bosses": [
+      [
+        "J.K Bun Bun",
+        "100%"
+      ]
+    ]
+  },
+  "Red Tuna Coast": {
+    "enemies": [
+      [
+        "Doge",
+        "800%"
+      ],
+      [
+        "Snache",
+        "800%"
+      ],
+      [
+        "Doge Dark",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Dark Emperor Nyandam",
+        "400%"
+      ]
+    ]
+  },
+  "Fresh Wharf": {
+    "enemies": [
+      [
+        "Those Guys",
+        "800%"
+      ],
+      [
+        "Hippoe",
+        "800%"
+      ],
+      [
+        "Master A.",
+        "200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Blue Ocean": {
+    "enemies": [
+      [
+        "Otta-smack-u",
+        "100%"
+      ],
+      [
+        "Kang Roo",
+        "800%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Carapaccio Waters": {
+    "enemies": [
+      [
+        "Those Guys",
+        "800%"
+      ],
+      [
+        "Snache",
+        "800%"
+      ],
+      [
+        "Hippoe",
+        "800%"
+      ],
+      [
+        "Gory",
+        "800%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Bore",
+        "100%"
+      ]
+    ]
+  },
+  "Economic Sea": {
+    "enemies": [
+      [
+        "Metal Hippoe",
+        "100%"
+      ],
+      [
+        "Dagshund",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Tactical War Tuna": {
+    "enemies": [
+      [
+        "Doge",
+        "800%"
+      ],
+      [
+        "Snache",
+        "800%"
+      ],
+      [
+        "Those Guys",
+        "800%"
+      ],
+      [
+        "Jackie Peng",
+        "800%"
+      ],
+      [
+        "Doge Dark",
+        "200%"
+      ],
+      [
+        "THE SLOTH",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Frozen Tuna Front": {
+    "enemies": [
+      [
+        "Those Guys",
+        "800%"
+      ],
+      [
+        "Duche",
+        "100%"
+      ],
+      [
+        "Dagshund",
+        "100%"
+      ],
+      [
+        "Celeboodle",
+        "100%"
+      ],
+      [
+        "Doge Dark",
+        "200%"
+      ],
+      [
+        "Metal Hippoe",
+        "100%"
+      ],
+      [
+        "St. Pigge the 2nd",
+        "200%"
+      ],
+      [
+        "Master A.",
+        "200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Cave Fillet": {
+    "enemies": [
+      [
+        "Those Guys",
+        "800%"
+      ],
+      [
+        "Pigge",
+        "800%"
+      ],
+      [
+        "One Horn",
+        "800%"
+      ],
+      [
+        "Dark Emperor Nyandam",
+        "600%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Teacher Bun Bun",
+        "600%"
+      ]
+    ]
+  },
+  "Prickly Field": {
+    "enemies": [
+      [
+        "Those Guys",
+        "800%"
+      ],
+      [
+        "Snache",
+        "800%"
+      ],
+      [
+        "Hippoe",
+        "800%"
+      ],
+      [
+        "Gory",
+        "800%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Bore",
+        "100%"
+      ]
+    ]
+  },
+  "Bamboo Coast": {
+    "enemies": [
+      [
+        "Croco",
+        "1,600%"
+      ],
+      [
+        "Sir Seal",
+        "1,600%"
+      ],
+      [
+        "Master A.",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "One Horn",
+        "1,600%"
+      ]
+    ]
+  },
+  "Serial Killer Jungle": {
+    "enemies": [
+      [
+        "Doge",
+        "800%"
+      ],
+      [
+        "Snache",
+        "800%"
+      ],
+      [
+        "Those Guys",
+        "800%"
+      ],
+      [
+        "Otta-smack-u",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Disgusting Swamp": {
+    "enemies": [
+      [
+        "Doge",
+        "1,600%"
+      ],
+      [
+        "Snache",
+        "1,600%"
+      ],
+      [
+        "Those Guys",
+        "1,600%"
+      ],
+      [
+        "Metal Hippoe",
+        "100%"
+      ],
+      [
+        "Duche",
+        "100%"
+      ],
+      [
+        "Shadow Boxer K",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Metal Hippoe",
+        "100%"
+      ]
+    ]
+  },
+  "Dumpy Cave": {
+    "enemies": [
+      [
+        "Doge",
+        "800%"
+      ],
+      [
+        "Snache",
+        "800%"
+      ],
+      [
+        "Those Guys",
+        "800%"
+      ],
+      [
+        "Gory",
+        "800%"
+      ],
+      [
+        "Doge Dark",
+        "200%"
+      ],
+      [
+        "THE SLOTH",
+        "200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Stardust Street": {
+    "enemies": [
+      [
+        "Doge",
+        "800%"
+      ],
+      [
+        "Snache",
+        "800%"
+      ],
+      [
+        "Those Guys",
+        "800%"
+      ],
+      [
+        "Celeboodle",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Bore",
+        "100%"
+      ]
+    ]
+  },
+  "Mushroom Cliff": {
+    "enemies": [
+      [
+        "Doge Dark",
+        "100%"
+      ],
+      [
+        "Dagshund",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Squire Rel",
+        "100%"
+      ]
+    ]
+  },
+  "Frontier Spirit": {
+    "enemies": [
+      [
+        "Doge",
+        "800%"
+      ],
+      [
+        "Snache",
+        "800%"
+      ],
+      [
+        "Those Guys",
+        "800%"
+      ],
+      [
+        "Rain D.",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Rain D.",
+        "100%"
+      ],
+      [
+        "Squire Rel",
+        "100%"
+      ]
+    ]
+  },
+  "Milky Tunnel": {
+    "enemies": [
+      [
+        "Doge Dark",
+        "100%"
+      ],
+      [
+        "Gory Dark",
+        "100%"
+      ],
+      [
+        "Shadow Boxer K",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Fluffy Dark Weapon": {
+    "enemies": [
+      [
+        "Doge",
+        "800%"
+      ],
+      [
+        "Doge Dark",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Shy Boy",
+        "1,200%"
+      ]
+    ]
+  },
+  "Mural of the Devil": {
+    "enemies": [
+      [
+        "Squire Rel",
+        "800%"
+      ],
+      [
+        "Mooth",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "J.K Bun Bun",
+        "100%"
+      ]
+    ]
+  },
+  "The Wind Blows": {
+    "enemies": [
+      [
+        "Doge",
+        "800%"
+      ],
+      [
+        "Snache",
+        "800%"
+      ],
+      [
+        "Those Guys",
+        "800%"
+      ],
+      [
+        "Baa Baa",
+        "800%"
+      ],
+      [
+        "Owlbrow",
+        "100%"
+      ],
+      [
+        "Gory Dark",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Juvenile Killer": {
+    "enemies": [
+      [
+        "Doge",
+        "800%"
+      ],
+      [
+        "Snache",
+        "800%"
+      ],
+      [
+        "Those Guys",
+        "800%"
+      ],
+      [
+        "Master A.",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Upset Rock": {
+    "enemies": [
+      [
+        "Doge",
+        "800%"
+      ],
+      [
+        "Snache",
+        "800%"
+      ],
+      [
+        "Those Guys",
+        "800%"
+      ],
+      [
+        "Hippoe",
+        "800%"
+      ],
+      [
+        "Croco",
+        "800%"
+      ],
+      [
+        "Mooth",
+        "800%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Sir Seal",
+        "10,000%"
+      ]
+    ]
+  },
+  "Flooded Cave": {
+    "enemies": [
+      [
+        "Doge Dark",
+        "100%"
+      ],
+      [
+        "Gory Dark",
+        "100%"
+      ],
+      [
+        "Shadow Boxer K",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Squire Rel",
+        "100%"
+      ]
+    ]
+  },
+  "Chubby B. Goode": {
+    "enemies": [
+      [
+        "Those Guys",
+        "800%"
+      ],
+      [
+        "Squire Rel",
+        "800%"
+      ],
+      [
+        "Hippoe",
+        "400%"
+      ],
+      [
+        "Jackie Peng",
+        "400%"
+      ],
+      [
+        "Baa Baa",
+        "400%"
+      ],
+      [
+        "Otta-smack-u",
+        "100%"
+      ],
+      [
+        "Metal Hippoe",
+        "100%"
+      ],
+      [
+        "Assassin Bear",
+        "800%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Camelle",
+        "100%"
+      ],
+      [
+        "Assassin Bear",
+        "800%"
+      ]
+    ]
+  },
+  "Hot Bath Rock": {
+    "enemies": [
+      [
+        "Hippoe",
+        "800%"
+      ],
+      [
+        "Pigge",
+        "800%"
+      ],
+      [
+        "Jackie Peng",
+        "800%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Camelle",
+        "100%"
+      ]
+    ]
+  },
+  "Gentle Geyser": {
+    "enemies": [
+      [
+        "Mooth",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "J.K Bun Bun",
+        "100%"
+      ]
+    ]
+  },
+  "Thick Magma": {
+    "enemies": [
+      [
+        "Owlbrow",
+        "100%"
+      ],
+      [
+        "Otta-smack-u",
+        "100%"
+      ],
+      [
+        "Duche",
+        "100%"
+      ],
+      [
+        "Rain D.",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Fire Cage": {
+    "enemies": [
+      [
+        "Jackie Peng",
+        "800%"
+      ],
+      [
+        "Sir Seal",
+        "800%"
+      ],
+      [
+        "Bore",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "B.B.Bunny",
+        "100%"
+      ]
+    ]
+  },
+  "Volcanic Defender": {
+    "enemies": [
+      [
+        "Shy Boy",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Teacher Bun Bun",
+        "600%"
+      ]
+    ]
+  },
+  "Flame Caldera": {
+    "enemies": [
+      [
+        "Doge",
+        "800%"
+      ],
+      [
+        "Snache",
+        "800%"
+      ],
+      [
+        "Those Guys",
+        "800%"
+      ],
+      [
+        "Doge Dark",
+        "100%"
+      ],
+      [
+        "B.B.Bunny",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Kory",
+        "200%"
+      ]
+    ]
+  },
+  "Potential Road": {
+    "enemies": [
+      [
+        "Doge",
+        "1,200%"
+      ],
+      [
+        "Snache",
+        "1,200%"
+      ],
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Metal Hippoe",
+        "200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Gloomy Tree": {
+    "enemies": [
+      [
+        "Doge",
+        "1,200%"
+      ],
+      [
+        "Snache",
+        "1,200%"
+      ],
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Gory",
+        "1,200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "A Song in the Wind": {
+    "enemies": [
+      [
+        "Doge",
+        "1,200%"
+      ],
+      [
+        "Snache",
+        "1,200%"
+      ],
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Doge Dark",
+        "400%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Mooth",
+        "1,200%"
+      ]
+    ]
+  },
+  "Philosophy Road": {
+    "enemies": [
+      [
+        "Doge",
+        "1,200%"
+      ],
+      [
+        "Snache",
+        "1,200%"
+      ],
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Baa Baa",
+        "1,200%"
+      ],
+      [
+        "Metal Hippoe",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "St. Pigge the 2nd",
+        "200%"
+      ]
+    ]
+  },
+  "Frontier Bell": {
+    "enemies": [
+      [
+        "Doge",
+        "1,200%"
+      ],
+      [
+        "Snache",
+        "1,200%"
+      ],
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Sir Seal",
+        "1,200%"
+      ],
+      [
+        "Pigge",
+        "1,200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "River of Tears": {
+    "enemies": [
+      [
+        "Doge",
+        "1,200%"
+      ],
+      [
+        "Snache",
+        "1,200%"
+      ],
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Hippoe",
+        "1,200%"
+      ],
+      [
+        "Jackie Peng",
+        "1,200%"
+      ],
+      [
+        "Kang Roo",
+        "1,200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Squire Rel",
+        "1,200%"
+      ]
+    ]
+  },
+  "Shining Road": {
+    "enemies": [
+      [
+        "Doge",
+        "1,200%"
+      ],
+      [
+        "Snache",
+        "1,200%"
+      ],
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Doge Dark",
+        "400%"
+      ]
+    ],
+    "bosses": []
+  },
+  "The Trial Deep": {
+    "enemies": [
+      [
+        "Doge",
+        "1,200%"
+      ],
+      [
+        "Snache",
+        "1,200%"
+      ],
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Croco",
+        "1,200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Master A.",
+        "200%"
+      ]
+    ]
+  },
+  "The Sea Whispers": {
+    "enemies": [
+      [
+        "Doge",
+        "1,200%"
+      ],
+      [
+        "Snache",
+        "1,200%"
+      ],
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Hippoe",
+        "1,200%"
+      ],
+      [
+        "Jackie Peng",
+        "1,200%"
+      ],
+      [
+        "Pigge",
+        "1,200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Ripples Island": {
+    "enemies": [
+      [
+        "Doge",
+        "1,200%"
+      ],
+      [
+        "Snache",
+        "1,200%"
+      ],
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "St. Pigge the 2nd",
+        "200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Octopus Sea": {
+    "enemies": [
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Gory",
+        "1,200%"
+      ],
+      [
+        "Baa Baa",
+        "1,200%"
+      ],
+      [
+        "Doge Dark",
+        "400%"
+      ],
+      [
+        "Celeboodle",
+        "200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Poseidon Rest": {
+    "enemies": [
+      [
+        "Doge",
+        "1,200%"
+      ],
+      [
+        "Snache",
+        "1,200%"
+      ],
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Baa Baa",
+        "1,200%"
+      ],
+      [
+        "Pigge",
+        "1,200%"
+      ],
+      [
+        "B.B.Bunny",
+        "1,200%"
+      ],
+      [
+        "Gory",
+        "1,200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Moonlight Beach": {
+    "enemies": [
+      [
+        "Doge",
+        "1,200%"
+      ],
+      [
+        "Snache",
+        "1,200%"
+      ],
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Baa Baa",
+        "1,200%"
+      ],
+      [
+        "Le'boin",
+        "1,200%"
+      ],
+      [
+        "Hippoe",
+        "1,200%"
+      ],
+      [
+        "Gory",
+        "1,200%"
+      ],
+      [
+        "Jackie Peng",
+        "1,200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Coral Coral Reef": {
+    "enemies": [
+      [
+        "Snache",
+        "1,200%"
+      ],
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Jackie Peng",
+        "1,200%"
+      ],
+      [
+        "Celeboodle",
+        "200%"
+      ],
+      [
+        "Master A.",
+        "200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Ark of the Month": {
+    "enemies": [
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Pigge",
+        "1,200%"
+      ],
+      [
+        "Sir Seal",
+        "1,200%"
+      ],
+      [
+        "Metal Hippoe",
+        "200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Killer Sardines": {
+    "enemies": [
+      [
+        "Doge Dark",
+        "400%"
+      ],
+      [
+        "Dagshund",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Squire Rel",
+        "100%"
+      ]
+    ]
+  },
+  "Tuna Field": {
+    "enemies": [
+      [
+        "Doge",
+        "1,200%"
+      ],
+      [
+        "Snache",
+        "1,200%"
+      ],
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Hippoe",
+        "1,200%"
+      ],
+      [
+        "Squire Rel",
+        "1,200%"
+      ],
+      [
+        "Master A.",
+        "200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Crab Field": {
+    "enemies": [
+      [
+        "Croco",
+        "1,200%"
+      ],
+      [
+        "Celeboodle",
+        "200%"
+      ],
+      [
+        "Sir Seal",
+        "1,200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Salmon Cave": {
+    "enemies": [
+      [
+        "Doge",
+        "1,200%"
+      ],
+      [
+        "Snache",
+        "1,200%"
+      ],
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Croco",
+        "1,200%"
+      ],
+      [
+        "Baa Baa",
+        "1,200%"
+      ],
+      [
+        "Gory",
+        "1,200%"
+      ],
+      [
+        "Sir Seal",
+        "1,200%"
+      ],
+      [
+        "Le'boin",
+        "1,200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Sea Urchin Cave": {
+    "enemies": [
+      [
+        "Doge",
+        "1,200%"
+      ],
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Croco",
+        "1,200%"
+      ],
+      [
+        "Duche",
+        "200%"
+      ],
+      [
+        "Metal Hippoe",
+        "200%"
+      ],
+      [
+        "Doge Dark",
+        "400%"
+      ]
+    ],
+    "bosses": [
+      [
+        "St. Pigge the 2nd",
+        "200%"
+      ]
+    ]
+  },
+  "Caviar Woods": {
+    "enemies": [
+      [
+        "Doge",
+        "1,200%"
+      ],
+      [
+        "Snache",
+        "1,200%"
+      ],
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "One Horn",
+        "1,200%"
+      ],
+      [
+        "B.B.Bunny",
+        "1,200%"
+      ],
+      [
+        "Pigge",
+        "1,200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Squire Rel",
+        "1,200%"
+      ]
+    ]
+  },
+  "Natto Bay": {
+    "enemies": [
+      [
+        "Doge",
+        "1,200%"
+      ],
+      [
+        "Snache",
+        "1,200%"
+      ],
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Gory",
+        "1,200%"
+      ],
+      [
+        "Sir Seal",
+        "1,200%"
+      ],
+      [
+        "Dagshund",
+        "200%"
+      ],
+      [
+        "Master A.",
+        "200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Halibut Forest": {
+    "enemies": [
+      [
+        "Doge",
+        "1,200%"
+      ],
+      [
+        "Snache",
+        "1,200%"
+      ],
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Teacher Bear",
+        "1,200%"
+      ],
+      [
+        "B.B.Bunny",
+        "1,200%"
+      ],
+      [
+        "Doge Dark",
+        "400%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Shrimp Frontier": {
+    "enemies": [
+      [
+        "Squire Rel",
+        "1,200%"
+      ],
+      [
+        "Doge Dark",
+        "400%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Director Kurosawah",
+        "100%"
+      ]
+    ]
+  },
+  "Cardboard Corridor": {
+    "enemies": [
+      [
+        "Croco",
+        "1,200%"
+      ],
+      [
+        "Snache",
+        "1,200%"
+      ],
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Gory",
+        "1,200%"
+      ],
+      [
+        "Master A.",
+        "200%"
+      ],
+      [
+        "Dagshund",
+        "200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Catnip Dream": {
+    "enemies": [
+      [
+        "Doge",
+        "1,200%"
+      ],
+      [
+        "Snache",
+        "1,200%"
+      ],
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Master A.",
+        "200%"
+      ],
+      [
+        "Duche",
+        "200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Crunchy Wall": {
+    "enemies": [
+      [
+        "Doge",
+        "1,200%"
+      ],
+      [
+        "Snache",
+        "1,200%"
+      ],
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Jackie Peng",
+        "200%"
+      ],
+      [
+        "St. Pigge the 2nd",
+        "200%"
+      ],
+      [
+        "Celeboodle",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "THE SLOTH",
+        "200%"
+      ]
+    ]
+  },
+  "Wading Woodchips": {
+    "enemies": [
+      [
+        "Doge",
+        "1,200%"
+      ],
+      [
+        "Snache",
+        "1,200%"
+      ],
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Duche",
+        "200%"
+      ],
+      [
+        "Dagshund",
+        "200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Crunchy Pillar": {
+    "enemies": [
+      [
+        "Doge",
+        "1,200%"
+      ],
+      [
+        "Doge Dark",
+        "400%"
+      ],
+      [
+        "Squire Rel",
+        "200%"
+      ],
+      [
+        "Mooth",
+        "1,200%"
+      ],
+      [
+        "Shy Boy",
+        "1,200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "The Face",
+        "1,200%"
+      ]
+    ]
+  },
+  "Disapproving Giant": {
+    "enemies": [
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Master A.",
+        "200%"
+      ],
+      [
+        "Celeboodle",
+        "200%"
+      ],
+      [
+        "Otta-smack-u",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "THE SLOTH",
+        "200%"
+      ]
+    ]
+  },
+  "Altar of Zeus": {
+    "enemies": [
+      [
+        "Doge",
+        "1,200%"
+      ],
+      [
+        "Snache",
+        "1,200%"
+      ],
+      [
+        "Jackie Peng",
+        "1,200%"
+      ],
+      [
+        "Pigge",
+        "1,200%"
+      ],
+      [
+        "Celeboodle",
+        "200%"
+      ],
+      [
+        "Mooth",
+        "1,200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Sword of Achilles": {
+    "enemies": [
+      [
+        "St. Pigge the 2nd",
+        "200%"
+      ],
+      [
+        "Duche",
+        "200%"
+      ],
+      [
+        "St. Pigge the 2nd",
+        "400%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Squire Rel",
+        "100%"
+      ]
+    ]
+  },
+  "Road of Eros": {
+    "enemies": [
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Shy Boy",
+        "200%"
+      ],
+      [
+        "Doge Dark",
+        "400%"
+      ],
+      [
+        "Shy Boy",
+        "1,000%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Squire Rel",
+        "100%"
+      ]
+    ]
+  },
+  "Dawn of Gaia": {
+    "enemies": [
+      [
+        "Doge",
+        "1,200%"
+      ],
+      [
+        "Snache",
+        "1,200%"
+      ],
+      [
+        "Baa Baa",
+        "1,200%"
+      ],
+      [
+        "Metal One Horn",
+        "100%"
+      ],
+      [
+        "Gory",
+        "1,200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Gates of Aphrodite": {
+    "enemies": [
+      [
+        "Doge",
+        "1,200%"
+      ],
+      [
+        "Snache",
+        "1,200%"
+      ],
+      [
+        "Le'boin",
+        "2,400%"
+      ],
+      [
+        "Hippoe",
+        "1,200%"
+      ],
+      [
+        "Jackie Peng",
+        "1,200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Labyrinth of Hades": {
+    "enemies": [
+      [
+        "Doge Dark",
+        "400%"
+      ],
+      [
+        "Kang Roo",
+        "100%"
+      ],
+      [
+        "Kory",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Bun Bun Black",
+        "100%"
+      ]
+    ]
+  },
+  "Clammy Cove": {
+    "enemies": [
+      [
+        "Doge",
+        "2,000%"
+      ],
+      [
+        "Snache",
+        "2,000%"
+      ],
+      [
+        "Jackie Peng",
+        "2,000%"
+      ],
+      [
+        "Pigge",
+        "2,000%"
+      ],
+      [
+        "Celeboodle",
+        "800%"
+      ],
+      [
+        "Mooth",
+        "2,000%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Beached Mammals": {
+    "enemies": [
+      [
+        "Shadow Boxer K",
+        "100%"
+      ],
+      [
+        "Those Guys",
+        "2,000%"
+      ],
+      [
+        "Hippoe",
+        "2,000%"
+      ],
+      [
+        "Kang Roo",
+        "2,000%"
+      ],
+      [
+        "Bore",
+        "100%"
+      ],
+      [
+        "J.K Bun Bun",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Bun Bun Black",
+        "200%"
+      ]
+    ]
+  },
+  "Bikini Territory": {
+    "enemies": [
+      [
+        "Those Guys",
+        "2,000%"
+      ],
+      [
+        "Rain D.",
+        "100%"
+      ],
+      [
+        "Doge Dark",
+        "400%"
+      ],
+      [
+        "Master A.",
+        "200%"
+      ],
+      [
+        "Shy Boy",
+        "800%"
+      ],
+      [
+        "Gory Dark",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Squire Rel",
+        "100%"
+      ]
+    ]
+  },
+  "Apple Bobbing Ocean": {
+    "enemies": [
+      [
+        "Doge",
+        "2,000%"
+      ],
+      [
+        "Snache",
+        "2,000%"
+      ],
+      [
+        "Baa Baa",
+        "2,000%"
+      ],
+      [
+        "Gory",
+        "2,000%"
+      ],
+      [
+        "Those Guys",
+        "2,000%"
+      ],
+      [
+        "Otta-smack-u",
+        "300%"
+      ],
+      [
+        "Le'boin",
+        "4,000%"
+      ],
+      [
+        "Squire Rel",
+        "40,000%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Squire Rel",
+        "100%"
+      ]
+    ]
+  },
+  "Parasol Field": {
+    "enemies": [
+      [
+        "Doge",
+        "2,000%"
+      ],
+      [
+        "Snache",
+        "2,000%"
+      ],
+      [
+        "Hippoe",
+        "2,000%"
+      ],
+      [
+        "Jackie Peng",
+        "2,000%"
+      ],
+      [
+        "Doge Dark",
+        "400%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Teacher Bear",
+        "6,000%"
+      ]
+    ]
+  },
+  "Ancient One-Piece": {
+    "enemies": [
+      [
+        "Sir Seal",
+        "2,000%"
+      ],
+      [
+        "Bore",
+        "100%"
+      ],
+      [
+        "THE SLOTH",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Director Kurosawah",
+        "100%"
+      ]
+    ]
+  },
+  "Glassy Sands": {
+    "enemies": [
+      [
+        "Doge",
+        "2,000%"
+      ],
+      [
+        "Snache",
+        "2,000%"
+      ],
+      [
+        "Dagshund",
+        "300%"
+      ],
+      [
+        "Celeboodle",
+        "400%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Star Ocean": {
+    "enemies": [
+      [
+        "Doge",
+        "2,000%"
+      ],
+      [
+        "Those Guys",
+        "400%"
+      ],
+      [
+        "Doge Dark",
+        "400%"
+      ],
+      [
+        "Doge Dark",
+        "500%"
+      ],
+      [
+        "Doge Dark",
+        "600%"
+      ],
+      [
+        "Doge Dark",
+        "800%"
+      ],
+      [
+        "Doge Dark",
+        "1,000%"
+      ],
+      [
+        "Doge Dark",
+        "1,200%"
+      ],
+      [
+        "Doge Dark",
+        "2,000%"
+      ]
+    ],
+    "bosses": [
+      [
+        "H. Nah",
+        "200%"
+      ]
+    ]
+  },
+  "Gull Coast": {
+    "enemies": [
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Snache",
+        "1,200%"
+      ],
+      [
+        "Hippoe",
+        "1,200%"
+      ],
+      [
+        "Gory",
+        "1,200%"
+      ],
+      [
+        "Bore",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Snache",
+        "100%"
+      ]
+    ]
+  },
+  "Pelican Island": {
+    "enemies": [
+      [
+        "Croco",
+        "1,600%"
+      ],
+      [
+        "Croco",
+        "400%"
+      ],
+      [
+        "Celeboodle",
+        "400%"
+      ],
+      [
+        "Otta-smack-u",
+        "400%"
+      ],
+      [
+        "Duche",
+        "400%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Master A.",
+        "400%"
+      ]
+    ]
+  },
+  "Underground Base": {
+    "enemies": [
+      [
+        "Owlbrow",
+        "400%"
+      ],
+      [
+        "Le'boin",
+        "2,000%"
+      ],
+      [
+        "Squire Rel",
+        "3,000%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Villains Jungle": {
+    "enemies": [
+      [
+        "Doge",
+        "1,600%"
+      ],
+      [
+        "Snache",
+        "1,600%"
+      ],
+      [
+        "Those Guys",
+        "1,600%"
+      ],
+      [
+        "Otta-smack-u",
+        "200%"
+      ],
+      [
+        "Duche",
+        "250%"
+      ],
+      [
+        "Squire Rel",
+        "2,000%"
+      ]
+    ],
+    "bosses": [
+      [
+        "R.Ost",
+        "100%"
+      ]
+    ]
+  },
+  "Chicken Game": {
+    "enemies": [
+      [
+        "Doge",
+        "800%"
+      ],
+      [
+        "Snache",
+        "800%"
+      ],
+      [
+        "Jackie Peng",
+        "2,400%"
+      ],
+      [
+        "Mooth",
+        "1,200%"
+      ],
+      [
+        "Rain D.",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "The Face",
+        "1,000%"
+      ]
+    ]
+  },
+  "Cat Trial": {
+    "enemies": [
+      [
+        "Doge",
+        "1,200%"
+      ],
+      [
+        "Snache",
+        "1,200%"
+      ],
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "One Horn",
+        "2,000%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Camelle",
+        "200%"
+      ]
+    ]
+  },
+  "Prison Prairie": {
+    "enemies": [
+      [
+        "Doge Dark",
+        "300%"
+      ],
+      [
+        "Squire Rel",
+        "1,000%"
+      ],
+      [
+        "Shadow Boxer K",
+        "120%"
+      ],
+      [
+        "H. Nah",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Squire Rel",
+        "100%"
+      ]
+    ]
+  },
+  "Jailer in the Morgue": {
+    "enemies": [
+      [
+        "Doge",
+        "800%"
+      ],
+      [
+        "Snache",
+        "800%"
+      ],
+      [
+        "Those Guys",
+        "800%"
+      ],
+      [
+        "Otta-smack-u",
+        "200%"
+      ],
+      [
+        "Squire Rel",
+        "2,000%"
+      ],
+      [
+        "Dagshund",
+        "300%"
+      ],
+      [
+        "Celeboodle",
+        "400%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Dober P.D",
+        "100%"
+      ]
+    ]
+  },
+  "Sin and Punishment": {
+    "enemies": [
+      [
+        "Squire Rel",
+        "1,600%"
+      ],
+      [
+        "Mooth",
+        "400%"
+      ],
+      [
+        "R.Ost",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Squire Rel",
+        "100%"
+      ]
+    ]
+  },
+  "Prison Sentence": {
+    "enemies": [
+      [
+        "Doge",
+        "1,600%"
+      ],
+      [
+        "Doge Dark",
+        "400%"
+      ],
+      [
+        "B.B.Bunny",
+        "14,000%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Shy Boy",
+        "1,800%"
+      ]
+    ]
+  },
+  "Harry Tunnel": {
+    "enemies": [
+      [
+        "Doge",
+        "1,600%"
+      ],
+      [
+        "Snache",
+        "1,600%"
+      ],
+      [
+        "Duche",
+        "200%"
+      ],
+      [
+        "Baa Baa",
+        "1,600%"
+      ],
+      [
+        "Owlbrow",
+        "400%"
+      ],
+      [
+        "Gory Dark",
+        "200%"
+      ],
+      [
+        "Kory",
+        "200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Dead Falls": {
+    "enemies": [
+      [
+        "Squire Rel",
+        "1,200%"
+      ],
+      [
+        "Sir Seal",
+        "1,200%"
+      ],
+      [
+        "Metal Hippoe",
+        "100%"
+      ],
+      [
+        "H. Nah",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Sir Metal Seal",
+        "100%"
+      ]
+    ]
+  },
+  "Pitfall Zone": {
+    "enemies": [
+      [
+        "THE SLOTH",
+        "100%"
+      ],
+      [
+        "Assassin Bear",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Director Kurosawah",
+        "200%"
+      ],
+      [
+        "The Face",
+        "2,000%"
+      ]
+    ]
+  },
+  "The Great Escaper": {
+    "enemies": [
+      [
+        "Those Guys",
+        "1,600%"
+      ],
+      [
+        "Squire Rel",
+        "1,600%"
+      ],
+      [
+        "Squire Rel",
+        "12,000%"
+      ],
+      [
+        "R.Ost",
+        "100%"
+      ],
+      [
+        "Shadow Boxer K",
+        "100%"
+      ],
+      [
+        "Squire Rel",
+        "8,000%"
+      ],
+      [
+        "Bore",
+        "100%"
+      ],
+      [
+        "Assassin Bear",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Ururun Wolf",
+        "100%"
+      ]
+    ]
+  },
+  "Jailbreak Diary": {
+    "enemies": [
+      [
+        "Squire Rel",
+        "1,600%"
+      ],
+      [
+        "Gory Dark",
+        "100%"
+      ],
+      [
+        "Shadow Boxer K",
+        "100%"
+      ],
+      [
+        "Heavenly Hippoe",
+        "100%"
+      ],
+      [
+        "Otta-smack-u",
+        "200%"
+      ],
+      [
+        "H. Nah",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Bun Bun Black",
+        "200%"
+      ]
+    ]
+  },
+  "Last Gang": {
+    "enemies": [
+      [
+        "Doge",
+        "100%"
+      ],
+      [
+        "Doge Dark",
+        "200%"
+      ],
+      [
+        "Assassin Bear",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Dark Emperor Nyandam",
+        "2,200%"
+      ]
+    ]
+  },
+  "Prison Destruction": {
+    "enemies": [
+      [
+        "Metal Hippoe",
+        "100%"
+      ],
+      [
+        "Owlbrow",
+        "200%"
+      ],
+      [
+        "Bore",
+        "100%"
+      ],
+      [
+        "Shadow Boxer K",
+        "150%"
+      ],
+      [
+        "Gory Dark",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Metal One Horn",
+        "200%"
+      ]
+    ]
+  },
+  "King of Freedom": {
+    "enemies": [
+      [
+        "Camelle",
+        "100%"
+      ],
+      [
+        "Master A.",
+        "500%"
+      ],
+      [
+        "Doge Dark",
+        "300%"
+      ],
+      [
+        "Doge Dark",
+        "200%"
+      ],
+      [
+        "Gabriel",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Liar's Fate": {
+    "enemies": [
+      [
+        "Doge",
+        "2,000%"
+      ],
+      [
+        "Snache",
+        "2,000%"
+      ],
+      [
+        "Baa Baa",
+        "2,000%"
+      ],
+      [
+        "Gory Dark",
+        "100%"
+      ],
+      [
+        "Angelic Gory",
+        "100%"
+      ],
+      [
+        "Gabriel",
+        "100%"
+      ],
+      [
+        "Those Guys",
+        "2,000%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Le'boin",
+        "5,000%"
+      ]
+    ]
+  },
+  "Pigpen Taboo": {
+    "enemies": [
+      [
+        "Doge",
+        "1,600%"
+      ],
+      [
+        "Snache",
+        "1,600%"
+      ],
+      [
+        "Hippoe",
+        "1,600%"
+      ],
+      [
+        "Kang Roo",
+        "1,600%"
+      ],
+      [
+        "Shadow Boxer K",
+        "200%"
+      ],
+      [
+        "Dober P.D",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Snache",
+        "100%"
+      ]
+    ]
+  },
+  "Gandara's Rest": {
+    "enemies": [
+      [
+        "Shy Boy",
+        "1,000%"
+      ],
+      [
+        "Ginger Snache",
+        "100%"
+      ],
+      [
+        "Snache",
+        "1,600%"
+      ]
+    ],
+    "bosses": [
+      [
+        "THE SLOTH",
+        "300%"
+      ]
+    ]
+  },
+  "Utopia is Over There": {
+    "enemies": [
+      [
+        "Hippoe",
+        "400%"
+      ],
+      [
+        "Metal Hippoe",
+        "400%"
+      ],
+      [
+        "Heavenly Hippoe",
+        "100%"
+      ],
+      [
+        "Super Metal Hippoe",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Sir Metal Seal",
+        "100%"
+      ]
+    ]
+  },
+  "Godiego Pass": {
+    "enemies": [
+      [
+        "Those Guys",
+        "1,600%"
+      ],
+      [
+        "Dober P.D",
+        "100%"
+      ],
+      [
+        "Shadow Boxer K",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "The Face",
+        "1,000%"
+      ]
+    ]
+  },
+  "Monkey Magic": {
+    "enemies": [
+      [
+        "Doge",
+        "1,600%"
+      ],
+      [
+        "Wall Doge",
+        "100%"
+      ],
+      [
+        "Gory Dark",
+        "150%"
+      ],
+      [
+        "Gory Dark",
+        "100%"
+      ],
+      [
+        "Dark Emperor Nyandam",
+        "300%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Director Kurosawah",
+        "200%"
+      ]
+    ]
+  },
+  "Outsider's Gate": {
+    "enemies": [
+      [
+        "Master A.",
+        "400%"
+      ],
+      [
+        "Owlbrow",
+        "400%"
+      ],
+      [
+        "Squire Rel",
+        "800%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Marco Po Road": {
+    "enemies": [
+      [
+        "Doge",
+        "1,000%"
+      ],
+      [
+        "Doge Dark",
+        "200%"
+      ],
+      [
+        "Gabriel",
+        "100%"
+      ],
+      [
+        "Doge",
+        "2,000%"
+      ],
+      [
+        "Doge Dark",
+        "400%"
+      ],
+      [
+        "Gabriel",
+        "300%"
+      ],
+      [
+        "Doge",
+        "3,000%"
+      ],
+      [
+        "Doge Dark",
+        "1,200%"
+      ],
+      [
+        "Gabriel",
+        "600%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Teacher Bun Bun",
+        "900%"
+      ]
+    ]
+  },
+  "Pig Swill": {
+    "enemies": [
+      [
+        "Wall Doge",
+        "100%"
+      ],
+      [
+        "Bore",
+        "150%"
+      ],
+      [
+        "Ginger Snache",
+        "100%"
+      ],
+      [
+        "Kory",
+        "200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Imp's cold sweat": {
+    "enemies": [
+      [
+        "Those Guys",
+        "1,400%"
+      ],
+      [
+        "Ginger Snache",
+        "100%"
+      ],
+      [
+        "Angelic Gory",
+        "100%"
+      ],
+      [
+        "Gabriel",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Sunfish Jones",
+        "100%"
+      ]
+    ]
+  },
+  "Safe & not Sorry": {
+    "enemies": [
+      [
+        "Squire Rel",
+        "100%"
+      ],
+      [
+        "Pigeon de Sable",
+        "100%"
+      ],
+      [
+        "Snache",
+        "2,400%"
+      ],
+      [
+        "Mooth",
+        "1,600%"
+      ]
+    ],
+    "bosses": [
+      [
+        "R.Ost",
+        "200%"
+      ]
+    ]
+  },
+  "Claustronyctophobia": {
+    "enemies": [
+      [
+        "Wall Doge",
+        "100%"
+      ],
+      [
+        "H. Nah",
+        "100%"
+      ],
+      [
+        "Doge Dark",
+        "100%"
+      ],
+      [
+        "Gory Dark",
+        "100%"
+      ],
+      [
+        "Dark Otter",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "The Face",
+        "1,000%"
+      ]
+    ]
+  },
+  "Red Alert": {
+    "enemies": [
+      [
+        "B.B.Bunny",
+        "2,000%"
+      ],
+      [
+        "Ginger Snache",
+        "200%"
+      ],
+      [
+        "One Horn",
+        "2,000%"
+      ],
+      [
+        "Sir Seal",
+        "2,000%"
+      ],
+      [
+        "Shy Boy",
+        "1,200%"
+      ],
+      [
+        "St. Pigge the 2nd",
+        "2,000%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Dark Emperor Nyandam",
+        "2,200%"
+      ]
+    ]
+  },
+  "Pitfalls of Life": {
+    "enemies": [
+      [
+        "Squire Rel",
+        "1,800%"
+      ],
+      [
+        "Bore",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Sunfish Jones",
+        "100%"
+      ]
+    ]
+  },
+  "Subtle Curfew": {
+    "enemies": [
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Dagshund",
+        "200%"
+      ],
+      [
+        "Pigeon de Sable",
+        "100%"
+      ],
+      [
+        "Gabriel",
+        "200%"
+      ],
+      [
+        "Celeboodle",
+        "400%"
+      ],
+      [
+        "Dark Otter",
+        "100%"
+      ],
+      [
+        "Metal Hippoe",
+        "300%"
+      ],
+      [
+        "One Horn",
+        "800%"
+      ],
+      [
+        "Angelic Sleipnir",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Underground": {
+    "enemies": [
+      [
+        "Shadow Boxer K",
+        "100%"
+      ],
+      [
+        "Ginger Snache",
+        "100%"
+      ],
+      [
+        "Gabriel",
+        "100%"
+      ],
+      [
+        "Squire Rel",
+        "1,200%"
+      ],
+      [
+        "Heavenly Hippoe",
+        "100%"
+      ],
+      [
+        "J.K Bun Bun",
+        "400%"
+      ],
+      [
+        "Squire Rel",
+        "800%"
+      ],
+      [
+        "Teacher Bun Bun",
+        "1,100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Bun Bun Black",
+        "400%"
+      ]
+    ]
+  },
+  "The Red Carpet": {
+    "enemies": [
+      [
+        "Squire Rel",
+        "800%"
+      ],
+      [
+        "Trolly Blogger",
+        "100%"
+      ],
+      [
+        "Celeboodle",
+        "600%"
+      ],
+      [
+        "Celeboodle",
+        "700%"
+      ],
+      [
+        "Celeboodle",
+        "800%"
+      ],
+      [
+        "Celeboodle",
+        "900%"
+      ],
+      [
+        "Celeboodle",
+        "100%"
+      ],
+      [
+        "Teacher Bear",
+        "6,000%"
+      ]
+    ],
+    "bosses": [
+      [
+        "THE SLOTH",
+        "400%"
+      ]
+    ]
+  },
+  "The Bathroom": {
+    "enemies": [
+      [
+        "R.Ost",
+        "100%"
+      ],
+      [
+        "Master A.",
+        "400%"
+      ],
+      [
+        "Trolly Blogger",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "The VIP Room": {
+    "enemies": [
+      [
+        "Metal Doge",
+        "100%"
+      ],
+      [
+        "Dagshund",
+        "300%"
+      ],
+      [
+        "Celeboodle",
+        "300%"
+      ],
+      [
+        "Doge",
+        "2,400%"
+      ],
+      [
+        "Doge Dark",
+        "400%"
+      ],
+      [
+        "Gabriel",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Dober P.D",
+        "100%"
+      ]
+    ]
+  },
+  "Torture Room": {
+    "enemies": [
+      [
+        "Assassin Bear",
+        "400%"
+      ],
+      [
+        "Shy Boy",
+        "400%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Dictator's Garden": {
+    "enemies": [
+      [
+        "Pigeon de Sable",
+        "100%"
+      ],
+      [
+        "Angelic Sleipnir",
+        "100%"
+      ],
+      [
+        "Dark Otter",
+        "100%"
+      ],
+      [
+        "Wall Doge",
+        "100%"
+      ],
+      [
+        "Teacher Bear",
+        "4,000%"
+      ],
+      [
+        "Rain D.",
+        "300%"
+      ],
+      [
+        "Kory",
+        "300%"
+      ],
+      [
+        "Camelle",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Dark Emperor Nyandam",
+        "800%"
+      ]
+    ]
+  },
+  "Satan's Bedroom": {
+    "enemies": [
+      [
+        "Trolly Blogger",
+        "100%"
+      ],
+      [
+        "Master A.",
+        "400%"
+      ],
+      [
+        "Shy Boy",
+        "1,400%"
+      ],
+      [
+        "Metal Doge",
+        "100%"
+      ],
+      [
+        "Bun Bun Black",
+        "300%"
+      ],
+      [
+        "Dark Otter",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "The Face",
+        "800%"
+      ],
+      [
+        "Bore",
+        "300%"
+      ],
+      [
+        "Director Kurosawah",
+        "100%"
+      ]
+    ]
+  },
+  "Feast of Betrayal": {
+    "enemies": [
+      [
+        "Wall Doge",
+        "100%"
+      ],
+      [
+        "Metal Doge",
+        "100%"
+      ],
+      [
+        "H. Nah",
+        "200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Catharsis' End": {
+    "enemies": [
+      [
+        "Trolly Blogger",
+        "100%"
+      ],
+      [
+        "Those Guys",
+        "1,400%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Those Guys",
+        "100%"
+      ],
+      [
+        "Dark Emperor Nyandam",
+        "1,200%"
+      ]
+    ]
+  },
+  "Dark Premonition": {
+    "enemies": [
+      [
+        "Doge Dark",
+        "800%"
+      ],
+      [
+        "Dark Otter",
+        "100%"
+      ],
+      [
+        "Gory Dark",
+        "150%"
+      ],
+      [
+        "Shadow Boxer K",
+        "150%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Bun Bun Black",
+        "200%"
+      ],
+      [
+        "Le'noir",
+        "100%"
+      ]
+    ]
+  },
+  "Broken Mask": {
+    "enemies": [
+      [
+        "Heavenly Hippoe",
+        "100%"
+      ],
+      [
+        "Angelic Gory",
+        "100%"
+      ],
+      [
+        "Gabriel",
+        "100%"
+      ],
+      [
+        "Angelic Sleipnir",
+        "150%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Sunfish Jones",
+        "100%"
+      ]
+    ]
+  },
+  "Agape's Cage": {
+    "enemies": [
+      [
+        "Pigeon de Sable",
+        "100%"
+      ],
+      [
+        "The Face",
+        "600%"
+      ],
+      [
+        "Kory",
+        "150%"
+      ],
+      [
+        "Dober P.D",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Saint Red Fox": {
+    "enemies": [
+      [
+        "Teacher Bun Bun",
+        "400%"
+      ],
+      [
+        "Metal Doge",
+        "100%"
+      ],
+      [
+        "Heavenly Hippoe",
+        "200%"
+      ],
+      [
+        "Le'noir",
+        "100%"
+      ],
+      [
+        "Trolly Blogger",
+        "100%"
+      ],
+      [
+        "Shy Boy",
+        "800%"
+      ],
+      [
+        "Wall Doge",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Li'l Nyandam",
+        "100%"
+      ]
+    ]
+  },
+  "Her Highness, Milk T.": {
+    "enemies": [
+      [
+        "Chickful A",
+        "100%"
+      ],
+      [
+        "Doge",
+        "2,500%"
+      ],
+      [
+        "Snache",
+        "2,500%"
+      ],
+      [
+        "Those Guys",
+        "2,500%"
+      ],
+      [
+        "B.B.Bunny",
+        "2,000%"
+      ],
+      [
+        "Doge Dark",
+        "400%"
+      ],
+      [
+        "Gabriel",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Kory",
+        "200%"
+      ]
+    ]
+  },
+  "Angry Fighting": {
+    "enemies": [
+      [
+        "Owlbrow",
+        "800%"
+      ],
+      [
+        "Le'noir",
+        "100%"
+      ],
+      [
+        "Ginger Snache",
+        "50%"
+      ],
+      [
+        "Sir Seal",
+        "6,000%"
+      ]
+    ],
+    "bosses": []
+  },
+  "The Horrible Song": {
+    "enemies": [
+      [
+        "Squire Rel",
+        "2,000%"
+      ],
+      [
+        "Baa Baa",
+        "1,000%"
+      ],
+      [
+        "Heavenly Hippoe",
+        "200%"
+      ],
+      [
+        "Metal Hippoe",
+        "100%"
+      ],
+      [
+        "Angelic Sleipnir",
+        "150%"
+      ],
+      [
+        "One Horn",
+        "6,000%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Metal One Horn",
+        "300%"
+      ]
+    ]
+  },
+  "Trap of Cowards": {
+    "enemies": [
+      [
+        "Croco",
+        "10,000%"
+      ],
+      [
+        "Duche",
+        "300%"
+      ],
+      [
+        "Rain D.",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Camelle",
+        "200%"
+      ]
+    ]
+  },
+  "Dark Nemesis": {
+    "enemies": [
+      [
+        "Trolly Blogger",
+        "100%"
+      ],
+      [
+        "Wall Doge",
+        "100%"
+      ],
+      [
+        "One Horn",
+        "1,600%"
+      ],
+      [
+        "Director Kurosawah",
+        "300%"
+      ]
+    ],
+    "bosses": [
+      [
+        "J.K Bun Bun",
+        "300%"
+      ]
+    ]
+  },
+  "Scent of Gore & Fish": {
+    "enemies": [
+      [
+        "Jackie Peng",
+        "2,000%"
+      ],
+      [
+        "Kang Roo",
+        "1,000%"
+      ],
+      [
+        "Chickful A",
+        "100%"
+      ],
+      [
+        "Bore",
+        "100%"
+      ],
+      [
+        "Angelic Gory",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "THE SLOTH",
+        "200%"
+      ],
+      [
+        "Bun Bun Black",
+        "100%"
+      ]
+    ]
+  },
+  "Valkyrie Plains": {
+    "enemies": [
+      [
+        "Shibalien",
+        "800%"
+      ],
+      [
+        "Shibalien",
+        "1,200%"
+      ],
+      [
+        "Shibalien",
+        "1,000%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Metal Doge",
+        "800%"
+      ],
+      [
+        "Gabriel",
+        "1,800%"
+      ],
+      [
+        "Doge Dark",
+        "2,400%"
+      ],
+      [
+        "Doge",
+        "36,000%"
+      ]
+    ]
+  },
+  "Minefield": {
+    "enemies": [
+      [
+        "Croco",
+        "1,200%"
+      ],
+      [
+        "Snache",
+        "1,200%"
+      ],
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Hyppoh",
+        "400%"
+      ],
+      [
+        "Helmut Krabbe",
+        "400%"
+      ],
+      [
+        "Chickful A",
+        "200%"
+      ],
+      [
+        "Trolly Blogger",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Master A.",
+        "800%"
+      ]
+    ]
+  },
+  "Kugel Schreiber": {
+    "enemies": [
+      [
+        "Assassin Bear",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Dober P.D",
+        "100%"
+      ],
+      [
+        "R.Ost",
+        "100%"
+      ],
+      [
+        "THE SLOTH",
+        "200%"
+      ]
+    ]
+  },
+  "Muddy Trench": {
+    "enemies": [
+      [
+        "Sir Seal",
+        "2,000%"
+      ],
+      [
+        "Imperator Sael",
+        "400%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Camelle",
+        "200%"
+      ]
+    ]
+  },
+  "Sniper Jungle": {
+    "enemies": [
+      [
+        "Shy Boy",
+        "1,000%"
+      ],
+      [
+        "Maawth",
+        "400%"
+      ],
+      [
+        "Mooth",
+        "1,200%"
+      ],
+      [
+        "Pigeon de Sable",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "J.K Bun Bun",
+        "200%"
+      ]
+    ]
+  },
+  "Sunset Soldier": {
+    "enemies": [
+      [
+        "Shibalien",
+        "400%"
+      ],
+      [
+        "Snache",
+        "1,200%"
+      ],
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Ursamajor",
+        "300%"
+      ],
+      [
+        "Trolly Blogger",
+        "200%"
+      ],
+      [
+        "Assassin Bear",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Ursamajor",
+        "300%"
+      ],
+      [
+        "Squire Rel",
+        "100%"
+      ]
+    ]
+  },
+  "Father's Back": {
+    "enemies": [
+      [
+        "Doge",
+        "1,200%"
+      ],
+      [
+        "Elizabeth the LVIth",
+        "300%"
+      ],
+      [
+        "Gory Dark",
+        "200%"
+      ],
+      [
+        "Trolly Blogger",
+        "200%"
+      ],
+      [
+        "Pigeon de Sable",
+        "200%"
+      ],
+      [
+        "Ginger Snache",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Sunfish Jones",
+        "100%"
+      ]
+    ]
+  },
+  "Winning Back": {
+    "enemies": [
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Trolly Blogger",
+        "200%"
+      ],
+      [
+        "Bore",
+        "300%"
+      ],
+      [
+        "Shibalien",
+        "400%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Nimoy Bore",
+        "200%"
+      ]
+    ]
+  },
+  "Oil Platform": {
+    "enemies": [
+      [
+        "Le'boin",
+        "2,400%"
+      ],
+      [
+        "Those Guys",
+        "1,200%"
+      ],
+      [
+        "Capy",
+        "100%"
+      ],
+      [
+        "Dark Emperor Nyandam",
+        "800%"
+      ],
+      [
+        "Trolly Blogger",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "J.K Bun Bun",
+        "400%"
+      ],
+      [
+        "Trolly Blogger",
+        "2,000%"
+      ]
+    ]
+  },
+  "Sweat and Aldehyde": {
+    "enemies": [
+      [
+        "One Horn",
+        "2,000%"
+      ],
+      [
+        "Cyberhorn",
+        "200%"
+      ],
+      [
+        "Metal One Horn",
+        "200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Ancient Trial": {
+    "enemies": [
+      [
+        "Mistress Celeboodle",
+        "200%"
+      ],
+      [
+        "Scissoroo",
+        "200%"
+      ],
+      [
+        "Nimoy Bore",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Galactic Overseer Nyandam",
+        "200%"
+      ]
+    ]
+  },
+  "I'm onto you": {
+    "enemies": [
+      [
+        "Brollow",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Littering Coast": {
+    "enemies": [
+      [
+        "Assassin Bear",
+        "500%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Wall Doge",
+        "6,000%"
+      ]
+    ]
+  },
+  "Benzene Field": {
+    "enemies": [
+      [
+        "Squire Rel",
+        "800%"
+      ],
+      [
+        "Bore",
+        "200%"
+      ],
+      [
+        "The Face",
+        "200%"
+      ],
+      [
+        "Rain D.",
+        "300%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Government Watchdog": {
+    "enemies": [
+      [
+        "Shibalien",
+        "1,600%"
+      ],
+      [
+        "Scissoroo",
+        "400%"
+      ],
+      [
+        "Doge Dark",
+        "800%"
+      ],
+      [
+        "Gabriel",
+        "400%"
+      ],
+      [
+        "Metal Doge",
+        "200%"
+      ],
+      [
+        "Celeboodle",
+        "1,600%"
+      ],
+      [
+        "Mistress Celeboodle",
+        "800%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Shibalien",
+        "100%"
+      ]
+    ]
+  },
+  "Revolving-door Floats": {
+    "enemies": [
+      [
+        "Kory",
+        "200%"
+      ],
+      [
+        "Capy",
+        "100%"
+      ],
+      [
+        "Brollow",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Berserkory",
+        "100%"
+      ]
+    ]
+  },
+  "Sunset's Howl": {
+    "enemies": [
+      [
+        "Berserkory",
+        "100%"
+      ],
+      [
+        "B.B.Bunny",
+        "800%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Gestalt, Decay": {
+    "enemies": [
+      [
+        "Scissoroo",
+        "800%"
+      ],
+      [
+        "Kroxo",
+        "1,600%"
+      ],
+      [
+        "Shibalien",
+        "3,200%"
+      ],
+      [
+        "Gory Dark",
+        "300%"
+      ],
+      [
+        "Doge Dark",
+        "800%"
+      ],
+      [
+        "Shadow Boxer K",
+        "300%"
+      ],
+      [
+        "Dark Otter",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Shibalien",
+        "3,200%"
+      ]
+    ]
+  },
+  "Warrior's Dawn": {
+    "enemies": [
+      [
+        "Those Guys",
+        "2,800%"
+      ],
+      [
+        "Croco",
+        "2,800%"
+      ],
+      [
+        "B.B.Bunny",
+        "2,800%"
+      ],
+      [
+        "Gory",
+        "2,800%"
+      ],
+      [
+        "Pigge",
+        "2,800%"
+      ],
+      [
+        "Kang Roo",
+        "2,800%"
+      ],
+      [
+        "Sir Seal",
+        "2,800%"
+      ],
+      [
+        "Mooth",
+        "2,800%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Teacher Bun Bun",
+        "2,800%"
+      ]
+    ]
+  },
+  "Cursed Blizzards": {
+    "enemies": [
+      [
+        "THE SLOTH",
+        "400%"
+      ],
+      [
+        "Elder Sloth",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Elder Sloth",
+        "200%"
+      ]
+    ]
+  },
+  "Sign of the Cat": {
+    "enemies": [
+      [
+        "Calamary",
+        "100%"
+      ],
+      [
+        "Imperator Sael",
+        "1,200%"
+      ],
+      [
+        "Baa Baa",
+        "800%"
+      ],
+      [
+        "Cyberhorn",
+        "500%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Alpacky",
+        "300%"
+      ]
+    ]
+  },
+  "Out of Despair": {
+    "enemies": [
+      [
+        "Capy",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Metabolic Syndrome": {
+    "enemies": [
+      [
+        "Shibalien",
+        "3,200%"
+      ],
+      [
+        "I.M. Phace",
+        "1,000%"
+      ],
+      [
+        "Bun Bun Symbiote",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Galactic Overseer Nyandam",
+        "600%"
+      ]
+    ]
+  },
+  "Love and Death": {
+    "enemies": [
+      [
+        "Mr. Mole",
+        "100%"
+      ],
+      [
+        "Bore",
+        "150%"
+      ],
+      [
+        "Bore",
+        "100%"
+      ],
+      [
+        "Ginger Snache",
+        "200%"
+      ],
+      [
+        "Trolly Blogger",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "At Least I'm a Cat": {
+    "enemies": [
+      [
+        "Metal One Horn",
+        "100%"
+      ],
+      [
+        "Kang Roo",
+        "1,200%"
+      ],
+      [
+        "Rain D.",
+        "300%"
+      ],
+      [
+        "Gory Dark",
+        "200%"
+      ],
+      [
+        "Shadow Boxer K",
+        "200%"
+      ],
+      [
+        "Gabriel",
+        "400%"
+      ],
+      [
+        "Angelic Gory",
+        "100%"
+      ],
+      [
+        "Elizabeth the LVIth",
+        "300%"
+      ],
+      [
+        "Scissoroo",
+        "800%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Knights of the Round": {
+    "enemies": [
+      [
+        "CyberFace",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "The Face",
+        "1,600%"
+      ],
+      [
+        "Shy Boy",
+        "1,200%"
+      ],
+      [
+        "I.M. Phace",
+        "600%"
+      ],
+      [
+        "CyberFace",
+        "100%"
+      ]
+    ]
+  },
+  "Cat Catharsis": {
+    "enemies": [
+      [
+        "Dark Emperor Nyandam",
+        "700%"
+      ],
+      [
+        "Director Kurosawah",
+        "150%"
+      ],
+      [
+        "Kory",
+        "200%"
+      ],
+      [
+        "Berserkory",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Galactic Overseer Nyandam",
+        "400%"
+      ]
+    ]
+  },
+  "Beautiful Finale": {
+    "enemies": [
+      [
+        "Owlbrow",
+        "1,000%"
+      ],
+      [
+        "Pigeon de Sable",
+        "200%"
+      ],
+      [
+        "Gabriel",
+        "400%"
+      ],
+      [
+        "LeMurr",
+        "800%"
+      ],
+      [
+        "Brollow",
+        "100%"
+      ],
+      [
+        "Two Can",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Sunfish Jones",
+        "100%"
+      ]
+    ]
+  },
+  "No More Bad Dreams": {
+    "enemies": [
+      [
+        "Doge",
+        "100%"
+      ],
+      [
+        "Snache",
+        "100%"
+      ],
+      [
+        "Those Guys",
+        "100%"
+      ],
+      [
+        "Bun Bun Symbiote",
+        "200%"
+      ],
+      [
+        "Squire Rel",
+        "100%"
+      ],
+      [
+        "Bun Bun Black",
+        "200%"
+      ],
+      [
+        "Croco",
+        "100%"
+      ],
+      [
+        "J.K Bun Bun",
+        "300%"
+      ],
+      [
+        "Teacher Bun Bun",
+        "1,200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Those Guys",
+        "100%"
+      ]
+    ]
+  },
+  "Learned to Love": {
+    "enemies": [
+      [
+        "Squire Rel",
+        "2,000%"
+      ],
+      [
+        "Those Guys",
+        "2,000%"
+      ],
+      [
+        "H. Nah",
+        "200%"
+      ],
+      [
+        "Trolly Blogger",
+        "100%"
+      ],
+      [
+        "Sunfish Jones",
+        "100%"
+      ],
+      [
+        "Doge Dark",
+        "800%"
+      ],
+      [
+        "Le'noir",
+        "100%"
+      ],
+      [
+        "Brollow",
+        "100%"
+      ],
+      [
+        "Assassin Bear",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Codename \"Red Riding\"",
+        "100%"
+      ]
+    ]
+  },
+  "Renewed Conflict": {
+    "enemies": [
+      [
+        "Mr. Angel",
+        "100%"
+      ],
+      [
+        "Trolly Blogger",
+        "100%"
+      ],
+      [
+        "Shy Boy",
+        "1,600%"
+      ]
+    ],
+    "bosses": [
+      [
+        "I.M. Phace",
+        "1,000%"
+      ]
+    ]
+  },
+  "Mysterious Order": {
+    "enemies": [
+      [
+        "Mistress Celeboodle",
+        "1,000%"
+      ],
+      [
+        "Maawth",
+        "1,000%"
+      ],
+      [
+        "Calamary",
+        "200%"
+      ],
+      [
+        "Metal Doge",
+        "200%"
+      ],
+      [
+        "Cyberhorn",
+        "600%"
+      ],
+      [
+        "Ursamajor",
+        "1,800%"
+      ],
+      [
+        "Owlbrow",
+        "1,000%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Those Guys",
+        "100%"
+      ]
+    ]
+  },
+  "Birdwatching": {
+    "enemies": [
+      [
+        "Duche",
+        "300%"
+      ],
+      [
+        "R.Ost",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Thorny Dialogue": {
+    "enemies": [
+      [
+        "Wall Doge",
+        "300%"
+      ],
+      [
+        "Tackey",
+        "100%"
+      ],
+      [
+        "Squire Rel",
+        "2,400%"
+      ],
+      [
+        "Alpacky",
+        "300%"
+      ],
+      [
+        "Imperator Sael",
+        "1,800%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Darkweb": {
+    "enemies": [
+      [
+        "Gory Dark",
+        "200%"
+      ],
+      [
+        "Otta-smack-u",
+        "300%"
+      ],
+      [
+        "Mr. Angel",
+        "100%"
+      ],
+      [
+        "Le'noir",
+        "100%"
+      ],
+      [
+        "Dober P.D",
+        "150%"
+      ],
+      [
+        "Berserkory",
+        "100%"
+      ],
+      [
+        "Two Can",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Hungry Forest": {
+    "enemies": [
+      [
+        "Rain D.",
+        "300%"
+      ],
+      [
+        "Gory",
+        "2,800%"
+      ],
+      [
+        "R.Ost",
+        "100%"
+      ],
+      [
+        "Trolly Blogger",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Elder Sloth",
+        "200%"
+      ]
+    ]
+  },
+  "Overachiever Central": {
+    "enemies": [
+      [
+        "Owlbrow",
+        "800%"
+      ],
+      [
+        "Gory",
+        "2,800%"
+      ],
+      [
+        "J.K Bun Bun",
+        "300%"
+      ],
+      [
+        "I.M. Phace",
+        "1,000%"
+      ],
+      [
+        "Angelic Gory",
+        "200%"
+      ],
+      [
+        "Trolly Blogger",
+        "100%"
+      ],
+      [
+        "Doge Dark",
+        "800%"
+      ],
+      [
+        "Dark Otter",
+        "200%"
+      ],
+      [
+        "Chickful A",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Doge Dark",
+        "800%"
+      ]
+    ]
+  },
+  "Morning Rush Hour": {
+    "enemies": [
+      [
+        "Capy",
+        "100%"
+      ],
+      [
+        "Sir Seal",
+        "2,800%"
+      ],
+      [
+        "Sunfish Jones",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Sunfish Jones",
+        "100%"
+      ]
+    ]
+  },
+  "Docking Massacre": {
+    "enemies": [
+      [
+        "Doge Dark",
+        "800%"
+      ],
+      [
+        "Berserkory",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Bun Bun Symbiote",
+        "150%"
+      ]
+    ]
+  },
+  "Subterranean Stalker": {
+    "enemies": [
+      [
+        "Pigeon de Sable",
+        "200%"
+      ],
+      [
+        "Brollow",
+        "100%"
+      ],
+      [
+        "Tackey",
+        "100%"
+      ],
+      [
+        "Mr. Mole",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Brollow",
+        "100%"
+      ]
+    ]
+  },
+  "Lord of the Abyss": {
+    "enemies": [
+      [
+        "Doge",
+        "2,800%"
+      ],
+      [
+        "Those Guys",
+        "2,800%"
+      ],
+      [
+        "Hippoe",
+        "2,800%"
+      ],
+      [
+        "Mr. Angel",
+        "100%"
+      ],
+      [
+        "Gabriel",
+        "400%"
+      ],
+      [
+        "Heavenly Hippoe",
+        "400%"
+      ],
+      [
+        "Angelic Sleipnir",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Bore",
+        "200%"
+      ],
+      [
+        "Boraphim",
+        "100%"
+      ]
+    ]
+  },
+  "DNA & DHA": {
+    "enemies": [
+      [
+        "Two Can",
+        "100%"
+      ],
+      [
+        "Tackey",
+        "100%"
+      ],
+      [
+        "Le'noir",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Bun Bun Black",
+        "200%"
+      ]
+    ]
+  },
+  "Twilight Poachers": {
+    "enemies": [
+      [
+        "Assassin Bear",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Dober P.D",
+        "150%"
+      ]
+    ]
+  },
+  "Surviving Herd": {
+    "enemies": [
+      [
+        "Snache",
+        "2,800%"
+      ],
+      [
+        "Those Guys",
+        "2,800%"
+      ],
+      [
+        "Ginger Snache",
+        "300%"
+      ],
+      [
+        "Brollow",
+        "100%"
+      ],
+      [
+        "Trolly Blogger",
+        "100%"
+      ],
+      [
+        "Master A.",
+        "1,000%"
+      ],
+      [
+        "B.B.Bunny",
+        "2,800%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Camelle",
+        "500%"
+      ]
+    ]
+  },
+  "Alien Ecology": {
+    "enemies": [
+      [
+        "Metal Hippoe",
+        "200%"
+      ],
+      [
+        "Hyppoh",
+        "1,600%"
+      ],
+      [
+        "Kroxo",
+        "1,600%"
+      ],
+      [
+        "Ursamajor",
+        "1,600%"
+      ],
+      [
+        "Super Metal Hippoe",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Galactic Overseer Nyandam",
+        "400%"
+      ]
+    ]
+  },
+  "Heavenly Creatures": {
+    "enemies": [
+      [
+        "Doge Dark",
+        "800%"
+      ],
+      [
+        "Gabriel",
+        "200%"
+      ],
+      [
+        "Boraphim",
+        "100%"
+      ],
+      [
+        "Owlbrow",
+        "800%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Director Kurosawah",
+        "150%"
+      ]
+    ]
+  },
+  "Conservation Society": {
+    "enemies": [
+      [
+        "Capy",
+        "100%"
+      ],
+      [
+        "Ginger Snache",
+        "300%"
+      ],
+      [
+        "Dark Otter",
+        "200%"
+      ],
+      [
+        "Gory Dark",
+        "300%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Henry",
+        "100%"
+      ]
+    ]
+  },
+  "Rinrin Shelterbelt": {
+    "enemies": [
+      [
+        "Gory Dark",
+        "200%"
+      ],
+      [
+        "Angelic Gory",
+        "200%"
+      ],
+      [
+        "Gory",
+        "6,000%"
+      ],
+      [
+        "Metal Doge",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Gory",
+        "100%"
+      ]
+    ]
+  },
+  "Iberian Plains": {
+    "enemies": [
+      [
+        "Elizabeth the LVIth",
+        "1,000%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Calamary",
+        "400%"
+      ]
+    ]
+  },
+  "Weeping Dunes": {
+    "enemies": [
+      [
+        "Henry",
+        "100%"
+      ],
+      [
+        "Tackey",
+        "100%"
+      ],
+      [
+        "H. Nah",
+        "200%"
+      ],
+      [
+        "Mooth",
+        "2,800%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Golden Gai": {
+    "enemies": [
+      [
+        "Trolly Blogger",
+        "200%"
+      ],
+      [
+        "Kang Roo",
+        "2,000%"
+      ],
+      [
+        "Kory",
+        "300%"
+      ],
+      [
+        "Pigeon de Sable",
+        "200%"
+      ],
+      [
+        "Squire Rel",
+        "2,000%"
+      ],
+      [
+        "Those Guys",
+        "2,000%"
+      ],
+      [
+        "Le'boin",
+        "8,000%"
+      ],
+      [
+        "Capy",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Those Guys",
+        "2,000%"
+      ]
+    ]
+  },
+  "Leadfoot Drive": {
+    "enemies": [
+      [
+        "Le'noir",
+        "200%"
+      ],
+      [
+        "Chickful A",
+        "200%"
+      ],
+      [
+        "Owlbrow",
+        "1,000%"
+      ],
+      [
+        "Pigge",
+        "6,000%"
+      ],
+      [
+        "St. Pigge the 2nd",
+        "2,000%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Trouble at the Mansion": {
+    "enemies": [
+      [
+        "Doge",
+        "3,000%"
+      ],
+      [
+        "Snache",
+        "3,000%"
+      ],
+      [
+        "Those Guys",
+        "3,000%"
+      ],
+      [
+        "Brollow",
+        "100%"
+      ],
+      [
+        "Li'l Bun Bun",
+        "1,000%"
+      ],
+      [
+        "Squire Rel",
+        "3,000%"
+      ],
+      [
+        "Teacher Bun Bun",
+        "1,500%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Elder Sloth",
+        "200%"
+      ]
+    ]
+  },
+  "Pecking Order": {
+    "enemies": [
+      [
+        "Brollow",
+        "100%"
+      ],
+      [
+        "Angelic Gory",
+        "200%"
+      ],
+      [
+        "Dagshund",
+        "1,000%"
+      ],
+      [
+        "Gory Dark",
+        "200%"
+      ],
+      [
+        "Sir Seal",
+        "6,000%"
+      ],
+      [
+        "Doge Dark",
+        "800%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Professor A.",
+        "100%"
+      ]
+    ]
+  },
+  "Technocracy": {
+    "enemies": [
+      [
+        "I.M. Phace",
+        "1,000%"
+      ],
+      [
+        "B.B.Bunny",
+        "3,000%"
+      ],
+      [
+        "Scissoroo",
+        "800%"
+      ],
+      [
+        "Kang Roo",
+        "3,000%"
+      ],
+      [
+        "Angelic Sleipnir",
+        "200%"
+      ],
+      [
+        "J.K Bun Bun",
+        "300%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Director Kurosawah",
+        "300%"
+      ]
+    ]
+  },
+  "Merciless Onslaught": {
+    "enemies": [
+      [
+        "One Horn",
+        "2,200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Assassin Bear",
+        "4,000%"
+      ]
+    ]
+  },
+  "Celestial Seas": {
+    "enemies": [
+      [
+        "Doge",
+        "3,000%"
+      ],
+      [
+        "Those Guys",
+        "2,000%"
+      ],
+      [
+        "Gabriel",
+        "400%"
+      ],
+      [
+        "Gabriel",
+        "600%"
+      ],
+      [
+        "Gabriel",
+        "700%"
+      ],
+      [
+        "Gabriel",
+        "800%"
+      ],
+      [
+        "Gabriel",
+        "900%"
+      ],
+      [
+        "Gabriel",
+        "1,000%"
+      ],
+      [
+        "Gabriel",
+        "2,000%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Le'boin",
+        "10,000%"
+      ]
+    ]
+  },
+  "Close Encounters": {
+    "enemies": [
+      [
+        "Henry",
+        "100%"
+      ],
+      [
+        "Nimoy Bore",
+        "800%"
+      ],
+      [
+        "Doge",
+        "400%"
+      ],
+      [
+        "Trolly Blogger",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Cli-One",
+        "2,000%"
+      ]
+    ]
+  },
+  "The Spy Who Pet Me": {
+    "enemies": [
+      [
+        "Mr. Angel",
+        "100%"
+      ],
+      [
+        "Mr. Mole",
+        "100%"
+      ],
+      [
+        "Ginger Snache",
+        "300%"
+      ],
+      [
+        "Doge Dark",
+        "800%"
+      ],
+      [
+        "Mooth",
+        "1,400%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Razorback",
+        "100%"
+      ]
+    ]
+  },
+  "Home Sweet Mausoleum": {
+    "enemies": [
+      [
+        "Zoge",
+        "400%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Doge Dark",
+        "2,000%"
+      ]
+    ]
+  },
+  "Swamp of Sacrifice": {
+    "enemies": [
+      [
+        "Znache",
+        "200%"
+      ],
+      [
+        "Zackie Peng",
+        "200%"
+      ],
+      [
+        "Ginger Snache",
+        "300%"
+      ]
+    ],
+    "bosses": [
+      [
+        "THE SLOTH",
+        "400%"
+      ]
+    ]
+  },
+  "Dungeon of Dreams": {
+    "enemies": [
+      [
+        "Berserkory",
+        "100%"
+      ],
+      [
+        "Gabriel",
+        "400%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Sunfish Jones",
+        "100%"
+      ]
+    ]
+  },
+  "Revenant Road": {
+    "enemies": [
+      [
+        "Zroco",
+        "200%"
+      ],
+      [
+        "Zir Zeal",
+        "200%"
+      ],
+      [
+        "Zigge",
+        "200%"
+      ],
+      [
+        "Zomboe",
+        "200%"
+      ],
+      [
+        "B.B.Bunny",
+        "2,800%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Teacher Bun Bun",
+        "1,500%"
+      ]
+    ]
+  },
+  "Ghostlight Gardens": {
+    "enemies": [
+      [
+        "Baa Baa",
+        "2,000%"
+      ],
+      [
+        "Squire Rel",
+        "2,000%"
+      ],
+      [
+        "Gory",
+        "2,000%"
+      ],
+      [
+        "H. Nah",
+        "200%"
+      ],
+      [
+        "Brollow",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Camelle",
+        "500%"
+      ]
+    ]
+  },
+  "Silenced Meowing": {
+    "enemies": [
+      [
+        "Shadow Boxer K",
+        "200%"
+      ],
+      [
+        "Gory Dark",
+        "200%"
+      ],
+      [
+        "Zoge",
+        "200%"
+      ],
+      [
+        "Zang Roo",
+        "200%"
+      ],
+      [
+        "Zroco",
+        "200%"
+      ],
+      [
+        "Zory",
+        "200%"
+      ],
+      [
+        "Znache",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Lord Gravey",
+        "200%"
+      ]
+    ]
+  },
+  "Virus Smugglers": {
+    "enemies": [
+      [
+        "Li'l Bun Bun",
+        "1,000%"
+      ],
+      [
+        "Zackie Peng",
+        "200%"
+      ],
+      [
+        "Zroco",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "The Face",
+        "1,600%"
+      ]
+    ]
+  },
+  "Bionic Seaweed": {
+    "enemies": [
+      [
+        "Metal One Horn",
+        "200%"
+      ],
+      [
+        "Metal Doge",
+        "200%"
+      ],
+      [
+        "Super Metal Hippoe",
+        "200%"
+      ],
+      [
+        "Metal Hippoe",
+        "200%"
+      ],
+      [
+        "Sir Metal Seal",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Metal Doge",
+        "10%"
+      ]
+    ]
+  },
+  "Ancestral Ways": {
+    "enemies": [
+      [
+        "Zoge",
+        "200%"
+      ],
+      [
+        "Znache",
+        "200%"
+      ],
+      [
+        "Zomboe",
+        "200%"
+      ],
+      [
+        "Zigge",
+        "200%"
+      ],
+      [
+        "Zory",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Kory",
+        "400%"
+      ]
+    ]
+  },
+  "High Watchtower": {
+    "enemies": [
+      [
+        "Those Guys",
+        "2,000%"
+      ],
+      [
+        "B.B.Bunny",
+        "2,000%"
+      ],
+      [
+        "Squire Rel",
+        "2,000%"
+      ],
+      [
+        "Bore",
+        "300%"
+      ],
+      [
+        "Razorback",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Galactic Overseer Nyandam",
+        "400%"
+      ]
+    ]
+  },
+  "Tunafish Trenches": {
+    "enemies": [
+      [
+        "Those Guys",
+        "800%"
+      ],
+      [
+        "Duche",
+        "800%"
+      ],
+      [
+        "Dagshund",
+        "800%"
+      ],
+      [
+        "Celeboodle",
+        "800%"
+      ],
+      [
+        "Doge Dark",
+        "800%"
+      ],
+      [
+        "Metal Hippoe",
+        "200%"
+      ],
+      [
+        "St. Pigge the 2nd",
+        "800%"
+      ],
+      [
+        "Professor A.",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "The Infected King": {
+    "enemies": [
+      [
+        "Camelle",
+        "400%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Big Sal",
+        "200%"
+      ]
+    ]
+  },
+  "Greeter at the Gates": {
+    "enemies": [
+      [
+        "Coffin Zoge",
+        "200%"
+      ],
+      [
+        "Tackey",
+        "200%"
+      ],
+      [
+        "Zory",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Dark Emperor Nyandam",
+        "1,600%"
+      ]
+    ]
+  },
+  "Rickety Coaster": {
+    "enemies": [
+      [
+        "Pigeon de Sable",
+        "200%"
+      ],
+      [
+        "Two Can",
+        "200%"
+      ],
+      [
+        "Dober P.D",
+        "150%"
+      ],
+      [
+        "Berserkory",
+        "100%"
+      ],
+      [
+        "Kory",
+        "400%"
+      ],
+      [
+        "Elizabeth the LVIth",
+        "1,000%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Pigeon de Sable",
+        "200%"
+      ]
+    ]
+  },
+  "Virtual Nightmare": {
+    "enemies": [
+      [
+        "Zoge",
+        "200%"
+      ],
+      [
+        "Zigge",
+        "200%"
+      ],
+      [
+        "Gory Dark",
+        "200%"
+      ],
+      [
+        "Zang Roo",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Henry",
+        "100%"
+      ]
+    ]
+  },
+  "50 Degrees Hotter": {
+    "enemies": [
+      [
+        "Brollow",
+        "100%"
+      ],
+      [
+        "Zroco",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Zamelle",
+        "200%"
+      ]
+    ]
+  },
+  "Irresistable Henhouse": {
+    "enemies": [
+      [
+        "Trolly Blogger",
+        "100%"
+      ],
+      [
+        "Calamary",
+        "300%"
+      ],
+      [
+        "Boraphim",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Sunfish Jones",
+        "100%"
+      ]
+    ]
+  },
+  "The Haunted 1LDK": {
+    "enemies": [
+      [
+        "Ghost Doge",
+        "6,000%"
+      ],
+      [
+        "Ghost Snache",
+        "6,000%"
+      ],
+      [
+        "Ghost Baa Baa",
+        "6,000%"
+      ],
+      [
+        "Zoge",
+        "200%"
+      ],
+      [
+        "Zir Zeal",
+        "200%"
+      ],
+      [
+        "Zory",
+        "200%"
+      ],
+      [
+        "Lord Gravey",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Miss Haka",
+        "200%"
+      ]
+    ]
+  },
+  "Paparazzi Paradise": {
+    "enemies": [
+      [
+        "Coffin Zoge",
+        "200%"
+      ],
+      [
+        "Kory",
+        "400%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Gossip Rags": {
+    "enemies": [
+      [
+        "Li'l Bun Bun",
+        "1,000%"
+      ],
+      [
+        "Znache",
+        "200%"
+      ],
+      [
+        "Zackie Peng",
+        "200%"
+      ],
+      [
+        "Zir Zeal",
+        "200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Beverly Hills Scoop": {
+    "enemies": [
+      [
+        "Doge",
+        "100%"
+      ],
+      [
+        "Snache",
+        "100%"
+      ],
+      [
+        "Those Guys",
+        "100%"
+      ],
+      [
+        "Croco",
+        "100%"
+      ],
+      [
+        "Squire Rel",
+        "100%"
+      ],
+      [
+        "Tackey",
+        "200%"
+      ],
+      [
+        "R.Ost",
+        "200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Lovechild Lane": {
+    "enemies": [
+      [
+        "Mr. Mole",
+        "100%"
+      ],
+      [
+        "Trolly Blogger",
+        "100%"
+      ],
+      [
+        "One Horn",
+        "6,000%"
+      ],
+      [
+        "Zang Roo",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Zamelle",
+        "200%"
+      ]
+    ]
+  },
+  "Saucy Scandals": {
+    "enemies": [
+      [
+        "Professor A.",
+        "100%"
+      ],
+      [
+        "Mr. Angel",
+        "150%"
+      ],
+      [
+        "Super Metal Hippoe",
+        "200%"
+      ],
+      [
+        "Dark Otter",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Lord Gravey",
+        "200%"
+      ]
+    ]
+  },
+  "Multiversal Studios": {
+    "enemies": [
+      [
+        "Zoge",
+        "200%"
+      ],
+      [
+        "Zroco",
+        "200%"
+      ],
+      [
+        "Croco",
+        "2,000%"
+      ],
+      [
+        "Those Guys",
+        "2,000%"
+      ],
+      [
+        "Zory",
+        "200%"
+      ],
+      [
+        "Zir Zeal",
+        "200%"
+      ],
+      [
+        "Zang Roo",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Inumusha",
+        "100%"
+      ]
+    ]
+  },
+  "Swim Meet": {
+    "enemies": [
+      [
+        "Kroxo",
+        "1,600%"
+      ],
+      [
+        "Helmut Krabbe",
+        "1,600%"
+      ],
+      [
+        "LeMurr",
+        "1,600%"
+      ],
+      [
+        "Ursamajor",
+        "1,600%"
+      ],
+      [
+        "Calamary",
+        "400%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Kroxo",
+        "100%"
+      ]
+    ]
+  },
+  "Sea Breeze Salon": {
+    "enemies": [
+      [
+        "Bore",
+        "150%"
+      ],
+      [
+        "Nimoy Bore",
+        "400%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Boraphim",
+        "100%"
+      ]
+    ]
+  },
+  "Deep Sea Dying": {
+    "enemies": [
+      [
+        "One Horn",
+        "2,000%"
+      ],
+      [
+        "B.B.Bunny",
+        "2,000%"
+      ],
+      [
+        "Big Sal",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "J.K Bun Bun",
+        "300%"
+      ]
+    ]
+  },
+  "Procrastinator Parade": {
+    "enemies": [
+      [
+        "R.Ost",
+        "100%"
+      ],
+      [
+        "Squire Rel",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Camelle",
+        "200%"
+      ]
+    ]
+  },
+  "Grand Exhibition": {
+    "enemies": [
+      [
+        "Two Can",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Director Kurosawah",
+        "300%"
+      ]
+    ]
+  },
+  "No Return Flights": {
+    "enemies": [
+      [
+        "Otta-smack-u",
+        "400%"
+      ],
+      [
+        "Croco",
+        "2,000%"
+      ],
+      [
+        "Rain D.",
+        "400%"
+      ],
+      [
+        "Dolphina",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Master A.",
+        "1,500%"
+      ]
+    ]
+  },
+  "Electric Bath": {
+    "enemies": [
+      [
+        "Metal Doge",
+        "200%"
+      ],
+      [
+        "Metal Hippoe",
+        "200%"
+      ],
+      [
+        "Metal One Horn",
+        "200%"
+      ],
+      [
+        "Henry",
+        "100%"
+      ],
+      [
+        "Super Metal Hippoe",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Sir Metal Seal",
+        "100%"
+      ]
+    ]
+  },
+  "Boiling Spring": {
+    "enemies": [
+      [
+        "Capy",
+        "150%"
+      ],
+      [
+        "Berserkory",
+        "100%"
+      ],
+      [
+        "Ginger Snache",
+        "300%"
+      ],
+      [
+        "Pigge",
+        "3,000%"
+      ],
+      [
+        "Professor A.",
+        "150%"
+      ]
+    ],
+    "bosses": [
+      [
+        "J.K Bun Bun",
+        "400%"
+      ]
+    ]
+  },
+  "Mineral Treatment": {
+    "enemies": [
+      [
+        "Those Guys",
+        "2,000%"
+      ],
+      [
+        "Elder Sloth",
+        "300%"
+      ],
+      [
+        "Wall Doge",
+        "600%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Soap Scum": {
+    "enemies": [
+      [
+        "Director Kurosawah",
+        "300%"
+      ],
+      [
+        "Dark Otter",
+        "200%"
+      ],
+      [
+        "Doge Dark",
+        "800%"
+      ],
+      [
+        "Gory Dark",
+        "200%"
+      ],
+      [
+        "Trolly Blogger",
+        "100%"
+      ],
+      [
+        "Tackey",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Razorback",
+        "100%"
+      ]
+    ]
+  },
+  "The Sauna Crew": {
+    "enemies": [
+      [
+        "Mr. Mole",
+        "100%"
+      ],
+      [
+        "Dolphina",
+        "100%"
+      ],
+      [
+        "Those Guys",
+        "2,000%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Steamed to Death": {
+    "enemies": [
+      [
+        "Croco",
+        "2,000%"
+      ],
+      [
+        "Berserkory",
+        "100%"
+      ],
+      [
+        "Gabriel",
+        "400%"
+      ],
+      [
+        "Kang Roo",
+        "3,000%"
+      ],
+      [
+        "Kory",
+        "400%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Cala Maria",
+        "100%"
+      ]
+    ]
+  },
+  "Narrow Docks": {
+    "enemies": [
+      [
+        "Sir Seal",
+        "1,000%"
+      ],
+      [
+        "Zir Zeal",
+        "200%"
+      ],
+      [
+        "Imperator Sael",
+        "1,000%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Cli-One",
+        "800%"
+      ]
+    ]
+  },
+  "Romantic Highway": {
+    "enemies": [
+      [
+        "Brollow",
+        "100%"
+      ],
+      [
+        "Dolphina",
+        "100%"
+      ],
+      [
+        "Assassin Bear",
+        "600%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Drunken Backrub": {
+    "enemies": [
+      [
+        "Cala Maria",
+        "100%"
+      ],
+      [
+        "Capy",
+        "100%"
+      ],
+      [
+        "B.B.Bunny",
+        "3,000%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Gulag of Love": {
+    "enemies": [
+      [
+        "Doge",
+        "3,000%"
+      ],
+      [
+        "Snache",
+        "3,000%"
+      ],
+      [
+        "Hippoe",
+        "3,000%"
+      ],
+      [
+        "Kang Roo",
+        "3,000%"
+      ],
+      [
+        "Zang Roo",
+        "200%"
+      ],
+      [
+        "Dober P.D",
+        "150%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Snache",
+        "100%"
+      ]
+    ]
+  },
+  "Perfume Room": {
+    "enemies": [
+      [
+        "Trolly Blogger",
+        "4,000%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Trolly Blogger",
+        "100%"
+      ]
+    ]
+  },
+  "Houses of the Holy": {
+    "enemies": [
+      [
+        "Mr. Angel",
+        "150%"
+      ],
+      [
+        "Pigeon de Sable",
+        "300%"
+      ],
+      [
+        "Brollow",
+        "150%"
+      ],
+      [
+        "Li'l Bun Bun",
+        "1,000%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Mr. Angel",
+        "150%"
+      ]
+    ]
+  },
+  "Caliban's Keeper": {
+    "enemies": [
+      [
+        "Snache",
+        "3,000%"
+      ],
+      [
+        "Croco",
+        "3,000%"
+      ],
+      [
+        "Squire Rel",
+        "3,000%"
+      ],
+      [
+        "R.Ost",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Henry",
+        "100%"
+      ]
+    ]
+  },
+  "Dial-Up Dreams": {
+    "enemies": [
+      [
+        "Cala Maria",
+        "100%"
+      ],
+      [
+        "Angelic Gory",
+        "200%"
+      ],
+      [
+        "Zory",
+        "200%"
+      ],
+      [
+        "Znache",
+        "200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Throne of Phone": {
+    "enemies": [
+      [
+        "Brollow",
+        "4,000%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Brollow",
+        "4,000%"
+      ]
+    ]
+  },
+  "OS Graveyard": {
+    "enemies": [
+      [
+        "Teacher Bun Bun",
+        "1,500%"
+      ],
+      [
+        "Bun Bun Black",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Professor A.",
+        "150%"
+      ]
+    ]
+  },
+  "The Holy Exploit": {
+    "enemies": [
+      [
+        "Gabriel",
+        "400%"
+      ],
+      [
+        "Doge Dark",
+        "800%"
+      ],
+      [
+        "Razorback",
+        "100%"
+      ],
+      [
+        "Boraphim",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Gabriel",
+        "100%"
+      ]
+    ]
+  },
+  "Broadband Omens": {
+    "enemies": [
+      [
+        "The Face",
+        "2,000%"
+      ],
+      [
+        "Wall Doge",
+        "400%"
+      ],
+      [
+        "Berserkory",
+        "150%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Croakley",
+        "100%"
+      ]
+    ]
+  },
+  "Cubist Crimes": {
+    "enemies": [
+      [
+        "Squire Rel",
+        "3,000%"
+      ],
+      [
+        "Doge",
+        "1,000%"
+      ],
+      [
+        "Snache",
+        "1,000%"
+      ],
+      [
+        "Those Guys",
+        "1,000%"
+      ],
+      [
+        "B.B.Bunny",
+        "100%"
+      ],
+      [
+        "Brollow",
+        "4,000%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Surrealist Sins": {
+    "enemies": [
+      [
+        "Assassin Bear",
+        "4,500%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Gouache Ghouls": {
+    "enemies": [
+      [
+        "Angel Fanboy",
+        "10%"
+      ],
+      [
+        "Angelic Gory",
+        "100%"
+      ],
+      [
+        "Sunfish Jones",
+        "1,000%"
+      ],
+      [
+        "Angelic Sleipnir",
+        "1,000%"
+      ],
+      [
+        "Angelic Gory",
+        "1,000%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Death by Dada": {
+    "enemies": [
+      [
+        "Croakley",
+        "100%"
+      ],
+      [
+        "Znache",
+        "200%"
+      ],
+      [
+        "Ginger Snache",
+        "300%"
+      ]
+    ],
+    "bosses": [
+      [
+        "One Horn",
+        "3,000%"
+      ]
+    ]
+  },
+  "Baroque Beasts": {
+    "enemies": [
+      [
+        "Wall Doge",
+        "300%"
+      ],
+      [
+        "CyberFace",
+        "1,000%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Teacher Bun Bun",
+        "1,000%"
+      ]
+    ]
+  },
+  "Atrocious Deco": {
+    "enemies": [
+      [
+        "Angelic Sleipnir",
+        "200%"
+      ],
+      [
+        "Boraphim",
+        "100%"
+      ],
+      [
+        "Bun Bun Symbiote",
+        "250%"
+      ],
+      [
+        "Razorback",
+        "100%"
+      ],
+      [
+        "Berserkory",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Squire Rel",
+        "100%"
+      ]
+    ]
+  },
+  "Roswell Incident": {
+    "enemies": [
+      [
+        "Shibalien Elite",
+        "200%"
+      ],
+      [
+        "Metal Doge",
+        "200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Cat Abduction": {
+    "enemies": [
+      [
+        "Kory",
+        "400%"
+      ],
+      [
+        "Star Peng",
+        "200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Adamski Type": {
+    "enemies": [
+      [
+        "Zamelle",
+        "250%"
+      ],
+      [
+        "Le'Solar",
+        "200%"
+      ],
+      [
+        "Zroco",
+        "200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Chupacabra Love": {
+    "enemies": [
+      [
+        "Dolphina",
+        "100%"
+      ],
+      [
+        "Shibalien Elite",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Project A",
+        "200%"
+      ]
+    ]
+  },
+  "Tunguska Event": {
+    "enemies": [
+      [
+        "Star Peng",
+        "200%"
+      ],
+      [
+        "Li'l Bun Bun",
+        "1,000%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Spacefish Jones",
+        "200%"
+      ]
+    ]
+  },
+  "Offworld Weary": {
+    "enemies": [
+      [
+        "Youcan",
+        "100%"
+      ],
+      [
+        "General GreGory",
+        "200%"
+      ],
+      [
+        "Shibalien Elite",
+        "200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Eat the Weak": {
+    "enemies": [
+      [
+        "Mr. Angel",
+        "150%"
+      ],
+      [
+        "Corporal Weyland",
+        "200%"
+      ],
+      [
+        "H. Nah",
+        "200%"
+      ],
+      [
+        "Gabriel",
+        "400%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Gabriel",
+        "10%"
+      ]
+    ]
+  },
+  "Nikumanjaro": {
+    "enemies": [
+      [
+        "Znache",
+        "200%"
+      ],
+      [
+        "Spacefish Jones",
+        "200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "The Noble Tribe": {
+    "enemies": [
+      [
+        "Doge",
+        "120,000%"
+      ],
+      [
+        "Snache",
+        "120,000%"
+      ],
+      [
+        "Those Guys",
+        "120,000%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Hippoe",
+        "120,000%"
+      ]
+    ]
+  },
+  "Dry Season": {
+    "enemies": [
+      [
+        "THE SLOTH",
+        "400%"
+      ],
+      [
+        "Shibalien Elite",
+        "200%"
+      ],
+      [
+        "Project A",
+        "200%"
+      ],
+      [
+        "Cyberhorn",
+        "600%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Electrosafari": {
+    "enemies": [
+      [
+        "Shibalien Elite",
+        "200%"
+      ],
+      [
+        "Star Peng",
+        "200%"
+      ],
+      [
+        "General GreGory",
+        "200%"
+      ],
+      [
+        "Le'Solar",
+        "200%"
+      ],
+      [
+        "Project A",
+        "200%"
+      ],
+      [
+        "Corporal Weyland",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Spacefish Jones",
+        "200%"
+      ]
+    ]
+  },
+  "Heaven's Oasis": {
+    "enemies": [
+      [
+        "Doge Dark",
+        "800%"
+      ],
+      [
+        "Gabriel",
+        "400%"
+      ],
+      [
+        "Gory Dark",
+        "200%"
+      ],
+      [
+        "Angelic Gory",
+        "200%"
+      ],
+      [
+        "R.Ost",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Winged Pigge",
+        "100%"
+      ]
+    ]
+  },
+  "Shiver Junction": {
+    "enemies": [
+      [
+        "Mr. Mole",
+        "100%"
+      ],
+      [
+        "Gabriel",
+        "400%"
+      ],
+      [
+        "Trolly Blogger",
+        "200%"
+      ],
+      [
+        "Winged Pigge",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Trolly Blogger",
+        "10%"
+      ]
+    ]
+  },
+  "Leaky Tunnel": {
+    "enemies": [
+      [
+        "Project A",
+        "200%"
+      ],
+      [
+        "Doge Dark",
+        "800%"
+      ],
+      [
+        "Tackey",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Croakley",
+        "100%"
+      ]
+    ]
+  },
+  "Frostbite Park": {
+    "enemies": [
+      [
+        "Zigge",
+        "200%"
+      ],
+      [
+        "Znache",
+        "200%"
+      ],
+      [
+        "Zroco",
+        "200%"
+      ],
+      [
+        "Bore",
+        "300%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Zigge",
+        "10%"
+      ]
+    ]
+  },
+  "Toasty Turnpike": {
+    "enemies": [
+      [
+        "Cala Maria",
+        "100%"
+      ],
+      [
+        "Brollow",
+        "150%"
+      ]
+    ],
+    "bosses": [
+      [
+        "The Face",
+        "2,000%"
+      ]
+    ]
+  },
+  "Sleepy Signals": {
+    "enemies": [
+      [
+        "Le'Solar",
+        "200%"
+      ],
+      [
+        "General GreGory",
+        "200%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Scorched Tollbooth": {
+    "enemies": [
+      [
+        "Rain D.",
+        "400%"
+      ],
+      [
+        "Hackey",
+        "100%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Ubiquitous Sales": {
+    "enemies": [
+      [
+        "Project A",
+        "200%"
+      ],
+      [
+        "General GreGory",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Nimoy Bore",
+        "800%"
+      ]
+    ]
+  },
+  "Virtual Harvest": {
+    "enemies": [
+      [
+        "Tackey",
+        "200%"
+      ],
+      [
+        "Le'noir",
+        "200%"
+      ],
+      [
+        "Hackey",
+        "100%"
+      ],
+      [
+        "One Horn",
+        "3,000%"
+      ],
+      [
+        "Ginger Snache",
+        "300%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Wearable Homes": {
+    "enemies": [
+      [
+        "UltraBaaBaa",
+        "100%"
+      ],
+      [
+        "Those Guys",
+        "2,000%"
+      ],
+      [
+        "Trolly Blogger",
+        "200%"
+      ],
+      [
+        "Brollow",
+        "150%"
+      ]
+    ],
+    "bosses": [
+      [
+        "J.K Bun Bun",
+        "400%"
+      ]
+    ]
+  },
+  "8K Fertilizer": {
+    "enemies": [
+      [
+        "Doge Dark",
+        "1,000%"
+      ],
+      [
+        "Gory Dark",
+        "250%"
+      ],
+      [
+        "Dark Otter",
+        "200%"
+      ],
+      [
+        "R.Ost",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Director Kurosawah",
+        "300%"
+      ]
+    ]
+  },
+  "Blockchain Twilight": {
+    "enemies": [
+      [
+        "Metal Doge",
+        "300%"
+      ],
+      [
+        "Mooth",
+        "2,800%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Sir Metal Seal",
+        "300%"
+      ]
+    ]
+  },
+  "Haunted Genome": {
+    "enemies": [
+      [
+        "UltraBaaBaa",
+        "100%"
+      ],
+      [
+        "Pigge",
+        "2,000%"
+      ],
+      [
+        "Angelic Gory",
+        "200%"
+      ],
+      [
+        "Gabriel",
+        "400%"
+      ],
+      [
+        "Chickful A",
+        "200%"
+      ],
+      [
+        "Capy",
+        "150%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Dark Emperor Nyandam",
+        "1,200%"
+      ]
+    ]
+  },
+  "Ultimate Shrine": {
+    "enemies": [
+      [
+        "Dagshund",
+        "1,000%"
+      ],
+      [
+        "Trolly Blogger",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Master A.",
+        "2,000%"
+      ]
+    ]
+  },
+  "Valley of the End": {
+    "enemies": [
+      [
+        "Doge Dark",
+        "800%"
+      ],
+      [
+        "THE SLOTH",
+        "500%"
+      ],
+      [
+        "Dark Otter",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "J.K Bun Bun",
+        "500%"
+      ]
+    ]
+  },
+  "Final Tower": {
+    "enemies": [
+      [
+        "Metal One Horn",
+        "200%"
+      ],
+      [
+        "Metal Doge",
+        "200%"
+      ],
+      [
+        "Sir Metal Seal",
+        "200%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Director Kurosawah",
+        "400%"
+      ]
+    ]
+  },
+  "Last Labyrinth": {
+    "enemies": [
+      [
+        "Brollow",
+        "150%"
+      ],
+      [
+        "Pigeon de Sable",
+        "300%"
+      ],
+      [
+        "Owlbrow",
+        "1,000%"
+      ],
+      [
+        "Duche",
+        "1,000%"
+      ]
+    ],
+    "bosses": [
+      [
+        "R.Ost",
+        "200%"
+      ]
+    ]
+  },
+  "Cave Conclusion": {
+    "enemies": [
+      [
+        "Dober P.D",
+        "150%"
+      ],
+      [
+        "Wall Doge",
+        "300%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Sunfish Jones",
+        "150%"
+      ]
+    ]
+  },
+  "Apocalypse Temple": {
+    "enemies": [
+      [
+        "Berserkory",
+        "150%"
+      ],
+      [
+        "Rain D.",
+        "400%"
+      ]
+    ],
+    "bosses": []
+  },
+  "A Day of Reckoning": {
+    "enemies": [
+      [
+        "Capy",
+        "150%"
+      ],
+      [
+        "Gabriel",
+        "400%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Camelle",
+        "400%"
+      ]
+    ]
+  },
+  "Thirst for Vengeance": {
+    "enemies": [
+      [
+        "Razorback",
+        "100%"
+      ],
+      [
+        "Tackey",
+        "200%"
+      ],
+      [
+        "Hackey",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Professor A.",
+        "150%"
+      ]
+    ]
+  },
+  "Glory of Glories": {
+    "enemies": [
+      [
+        "Coffin Zoge",
+        "200%"
+      ],
+      [
+        "Zamelle",
+        "250%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Big Sal",
+        "200%"
+      ]
+    ]
+  },
+  "A Moment of Serenity": {
+    "enemies": [
+      [
+        "Mr. Angel",
+        "150%"
+      ],
+      [
+        "Cala Maria",
+        "100%"
+      ],
+      [
+        "Winged Pigge",
+        "100%"
+      ],
+      [
+        "Boraphim",
+        "100%"
+      ],
+      [
+        "Sunfish Jones",
+        "100%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Mr. Angel",
+        "10%"
+      ]
+    ]
+  },
+  "False Resurrection": {
+    "enemies": [
+      [
+        "Mr. Mole",
+        "100%"
+      ],
+      [
+        "Henry",
+        "100%"
+      ],
+      [
+        "Dolphina",
+        "100%"
+      ],
+      [
+        "Croakley",
+        "100%"
+      ],
+      [
+        "Li'l Bun Bun",
+        "1,000%"
+      ],
+      [
+        "Assassin Bear",
+        "600%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Goblet of the Oath": {
+    "enemies": [
+      [
+        "UltraBaaBaa",
+        "100%"
+      ],
+      [
+        "Two Can",
+        "200%"
+      ],
+      [
+        "Youcan",
+        "100%"
+      ],
+      [
+        "Pigeon de Sable",
+        "300%"
+      ]
+    ],
+    "bosses": []
+  },
+  "Twilight Zephyr": {
+    "enemies": [],
+    "bosses": [
+      [
+        "Shy Boy",
+        "1,200%"
+      ],
+      [
+        "Master A.",
+        "800%"
+      ],
+      [
+        "Kory",
+        "300%"
+      ],
+      [
+        "Metal One Horn",
+        "100%"
+      ],
+      [
+        "Director Kurosawah",
+        "300%"
+      ],
+      [
+        "Bore",
+        "300%"
+      ],
+      [
+        "Camelle",
+        "300%"
+      ],
+      [
+        "R.Ost",
+        "200%"
+      ],
+      [
+        "Boraphim",
+        "100%"
+      ],
+      [
+        "Teacher Bun Bun",
+        "1,800%"
+      ]
+    ]
+  },
+  "Unkept Promises": {
+    "enemies": [
+      [
+        "Doge Dark",
+        "2,000%"
+      ],
+      [
+        "Gabriel",
+        "800%"
+      ],
+      [
+        "Metal Doge",
+        "400%"
+      ],
+      [
+        "Shibalien",
+        "9,600%"
+      ],
+      [
+        "Zoge",
+        "800%"
+      ],
+      [
+        "Shibalien Elite",
+        "400%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Doge",
+        "100%"
+      ]
+    ]
+  },
+  "Eldritch Forces": {
+    "enemies": [
+      [
+        "Doge",
+        "3,000%"
+      ],
+      [
+        "Snache",
+        "3,000%"
+      ],
+      [
+        "Those Guys",
+        "3,000%"
+      ],
+      [
+        "Gabriel",
+        "400%"
+      ],
+      [
+        "Croco",
+        "3,000%"
+      ],
+      [
+        "Doge Dark",
+        "1,000%"
+      ],
+      [
+        "Ginger Snache",
+        "400%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Li'l Bun Bun",
+        "1,200%"
+      ],
+      [
+        "Mecha-Bun",
+        "100%"
+      ]
+    ]
+  },
+  "Eldritch Forces/Invasion": {
+    "enemies": [
+      [
+        "Relic Doge",
+        "100%"
+      ],
+      [
+        "Gory Dark",
+        "300%"
+      ],
+      [
+        "Heavenly Hippoe",
+        "400%"
+      ],
+      [
+        "Imperator Sael",
+        "1,800%"
+      ]
+    ],
+    "bosses": [
+      [
+        "Idi:Re",
+        "100%"
+      ]
+    ]
+  }
+}

@@ -3,12 +3,14 @@ import "./App.css";
 import ComboContainer from "@/components/ComboContainer";
 import CatContainer from "@/components/CatContainer";
 import EnemyContainer from "./components/EnemyContainer";
+import LevelContainer from "./components/LevelContainer";
 
 function App() {
   const pages = [
     { title: "Cats Dictionary", page: <CatContainer /> },
     { title: "Combo Library", page: <ComboContainer /> },
     { title: "Enemy Bestiary", page: <EnemyContainer /> },
+    { title: "Level Bestiary", page: <LevelContainer /> },
   ];
   const [display, set_display] = useState(pages[0].page);
   const [selected_page, set_selected_page] = useState(pages[0].title);

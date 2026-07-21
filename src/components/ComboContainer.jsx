@@ -8,6 +8,7 @@ export default function ComboContainer() {
   const [cats_amount, set_cats_amount] = useState(0);
   const [boost_level, set_boost_level] = useState([]);
   const [boost_effect, set_boost_effect] = useState([]);
+  const [final_count, set_final_count] = useState(0);
 
   const filter_items = useMemo(() => {
     const levelsSet = new Set();
@@ -148,11 +149,10 @@ export default function ComboContainer() {
               boost_effect.length == 0 || boost_effect.includes(combo.effect);
             const amount_condition =
               cats_amount == 0 || cats_amount == combo.cats.length;
-
             return level_condition && effect_condition && amount_condition;
           })
-          .map((combo) => (
-            <ComboCard combo_data={combo} key={combo.name} />
+          .map((combo, index) => (
+            <ComboCard combo_data={combo} key={combo.name} index={index} />
           ))}
       </div>
     </>

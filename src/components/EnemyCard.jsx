@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 
 export default function EnemyCard(params) {
+  console.log(params);
   const enemy = params.enemy;
-  const [percentage, set_percentage] = useState(100);
+  const [percentage, set_percentage] = useState(params.percentage || 100);
   // Guard against initial loading state
   if (!enemy) return null;
 

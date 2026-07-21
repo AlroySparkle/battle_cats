@@ -23,7 +23,7 @@ export default function ComboCard(params) {
           {combo_data.effect}
         </h3>
         <h3 style={{ fontSize: "1rem", fontFamily: "sans-serif" }}>
-          {combo_data.boost_level}
+          {combo_data.boost_level + "-" + (params.index + 1)}
         </h3>
       </div>
       <hr style={{ width: "100%", background: "silver" }} />
